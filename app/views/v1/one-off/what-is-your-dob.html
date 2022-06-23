@@ -1,0 +1,59 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="register-create-password" autocomplete="on">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              What is your date of birth?
+            </h1>
+            <div class="nhsuk-hint"><p>For example, 15 3 1984</p></div>
+          </legend>
+<div class="nhsuk-date-input" autocomplete="off" id="date-of-birth">
+  <div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-day--label" for="date-of-birth-day">Day</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" aria-labelledby="date-of-birth-day--label" name="date-of-birth-day" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-month--label" for="date-of-birth-month">Month</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" aria-labelledby="date-of-birth-month--label" name="date-of-birth-month" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-year--label" for="date-of-birth-year">Year</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" aria-labelledby="date-of-birth-year--label" name="date-of-birth-year" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div></div>
+
+
+            <a href="do-you-know-nhs" data-redirect="register-create-password" class="nhsuk-button full-width" id="button--save">Continue</a>
+
+        </fieldset>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

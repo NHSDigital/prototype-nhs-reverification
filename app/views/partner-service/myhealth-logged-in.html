@@ -1,0 +1,117 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends '../layouts/blank.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  stepWell - Your account
+{% endblock %}
+
+<!-- if the user is logging in as another person then display the banner -->
+{% block proxy %}
+  <!-- {% if (data.primaryUserFirstName or 'Alice' ) == (data.loggedInUser or 'Bob') %}-->
+    <div class="proxy">You are acting on behalf of <b>{{ data.primaryUserFirstName or 'Alice' }}</b></div>
+  <!-- {% endif %} -->
+
+ <!-- {% if (data.primaryUserFirstName or 'David' ) == (data.loggedInUser or 'David') %}
+    <div class="proxy">You are acting on behalf of <b>{{ data.primaryUserFirstName or 'David' }}</b></div>
+  {% endif %} -->
+{% endblock %}  
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+
+
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h2>About you</h2>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data.primaryUserFirstName or 'Alice' }} {{ data.primaryUserLastName or 'Smith' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date of birth
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              5 January 1978
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="nhsuk-u-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Contact information
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            72 Guild Street
+            <br>London
+            <br>SE23 6FH
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="nhsuk-u-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p class="nhsuk-body">07700 900457</p>
+            <p class="nhsuk-body">{{ data.primaryUserFirstName or 'Alice' }}.{{ data.primaryUserLastName or 'Smith' }}@gmail.com</p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="nhsuk-u-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="nhsuk-panel-with-label">
+        <h3 class="nhsuk-panel-with-label__label">Allergies</h3>
+        <p>Animals, dust</p>
+      </div>
+
+      <div class="nhsuk-panel-with-label">
+        <h3 class="nhsuk-panel-with-label__label">Medications</h3>
+        <p>Salbutamol 50mg</p>
+      </div>
+
+      <div class="nhsuk-panel-with-label">
+        <h3 class="nhsuk-panel-with-label__label">Immunizations</h3>
+        <p>Influenza</p>
+      </div>
+    </div> 
+  </div>
+<!--</div>  
+
+  </div>-->
+{% endblock %}

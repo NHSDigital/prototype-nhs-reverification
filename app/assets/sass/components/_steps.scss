@@ -1,0 +1,363 @@
+// STEPS pages designs
+
+
+.service-access__wrapper {
+  padding-bottom: 20px;
+}
+
+.service-access {
+  counter-reset: li;
+  padding: 0;
+  list-style: none;
+}
+
+.service-access__item { 
+  position: relative;
+  background-color: white;
+  border: 1px solid #d8dde0;
+  margin-bottom: 8px;
+  padding: 16px;
+  @include clearfix;
+
+  &.hide-number {
+    &:before {
+      content: none;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.service-access__item__step {
+  .completed & {
+    display: none;
+  }
+}
+
+
+.service-access__item__title {
+  vertical-align: top;
+  font-size: 24px;
+  line-height: 32px;
+  padding-top: 0;
+  padding-right: 24px;
+  margin-bottom: 0;
+  /// display: block;
+  .completed & {
+    color: $color_nhsuk-grey-2;
+  }
+
+.service-access__item__title {
+  .completed & {
+    display: none;
+
+  }
+}
+
+  &.ticked {
+    position: relative;
+    color: $color_nhsuk-grey-2;
+    &::before,
+    &::after {
+      content: "";
+      right: 0;
+      top: 0.3em;
+      position: absolute;
+      zoom: 1;
+    }
+    &::before {
+      background: transparent;
+      border: solid;
+      border-color: $color_nhsuk-grey-1;
+      border-width: 0 0 6px 6px;
+      height: 14px;
+      //top: .7em;
+      transform: rotate(-45deg);
+      width: 22px;
+    }
+  }
+}
+
+
+
+.service-access__item__desc {
+  display: inline-block;
+  margin-top: 0;
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: .5em;
+    display: block;
+  }
+
+  .completed & {
+    display: none;
+  }
+
+}
+
+.service-access__item__button {
+  display: inline-block;
+
+  line-height: 20px;
+  margin-top: 2em;
+  }
+
+
+
+// .service-access - trialling icon & colour scheme for completed progressions in service access steps//
+
+.service-access__item__icons {
+  position: relative;
+  background-color: #005eb8;
+  border: 1px solid #d8dde0;
+  margin-bottom: 8px;
+  padding: 20px;
+  @include clearfix;
+
+  &.hide-number {
+    &:before {
+      content: none;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.service-access__item__step__text__leftandright {
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-access__item__title__text__leftandright {
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.service-access__item__title__icons {
+  // vertical-align: top;
+  display: block;
+  .completed & {
+    color: $color_nhsuk-grey-5 ;
+  .name & {
+    color: $color_nhsuk-grey-5;
+  }  
+}
+
+
+
+.service-access__item__title__icons {
+  .completed & {
+    display: none;
+  .name & {
+      display: none;  
+
+  }
+ }
+}
+
+
+  &.white_text {
+    position: relative;
+    color: #ffffff;
+    &::before,
+    &::after {
+      content: "";
+      right: 0;
+      top: 0.15em;
+      position: absolute;
+      zoom: 1;
+    }
+
+  &.ticked {
+    position: relative;
+    color: #ffffff;
+    &::before,
+    &::after {
+      content: "";
+      right: 0;
+      top: 0.15em;
+      position: absolute;
+      zoom: 1;
+    }
+    &::before {
+      background: transparent;
+      border:  solid;
+      // border-color: $color_nhsuk-grey-2; temporarily taken this out 
+      border-color: $color_nhsuk-grey-5;
+      border-width: 0 0 3px 3px; 
+      height: 12px;
+      //top: .7em;
+      transform: rotate(-45deg);
+      width: 32px;
+    }
+  }
+ }
+}
+
+
+// Flex Box tests//
+
+// .parent {
+//   display: flex;
+//   height: 300px; /* Or whatever */
+// }
+
+.child {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.time {
+  text-align: right;
+  color: blue;
+  .completed & {
+    display: none;
+  }
+}
+
+img.icon__resize {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  max-width:20%;
+  max-height:20%;
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.headerchange {
+  text-align: center;
+  color: rgb(14, 226, 96);
+  font-size: 44px;
+}
+
+// h3.headerchange {
+//   text-align: center;
+//   color: $grey-5;
+//   font-size: 64px;
+// }
+
+h3.headerchange-dark {
+  text-align: center;
+  color: $color_nhsuk-grey-4;
+  font-size: 64px;
+}
+
+p.headerchange-dark {
+  text-align: center;
+  color: $color_nhsuk-grey-5;
+  font-family: Frutiger W01;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 12px;
+  text-transform: none;
+}
+
+
+.nhsuk-button-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d5281b; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  // text-align: center;
+  text-decoration: none;
+  // display: inline-block;
+  font-size: 16px;
+
+}
+
+.service-access__item_delete {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #d8dde0;
+  margin-bottom: 4px;
+  padding: 0;
+  @include clearfix;
+
+  &.hide-number {
+    &:before {
+      content: none;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+
+
+.button--cancel-size {
+  background-color: rgb(209, 14, 14) !important;
+  width: min-content;
+}
+
+.nhsuk-button-style-colour {
+  background-color: rgb(209, 14, 14)
+}
+
+.home-header-dash {
+  background: radial-gradient(#a9b7c4 0%, #0053A3 100%);
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  bottom: 12.5em;
+  box-sizing: border-box;
+  text-align:  center;
+  box-shadow: inset 0em -0.375em 0.5em rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gradient #content {
+  background: radial-gradient(#e7eaec 0%, #ec550f 100%);
+  display: block;
+}
+
+
+.bodydash {
+  padding: 0px;
+  margin: 0px;
+  background: #0419df;
+  display: block;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4A4A4A;
+  font-family: "Roboto", Arial, sans-serif; 
+}
+
+* {
+  padding: 0;
+  margin: 0; 
+
+}
+
+.body-webview2 {
+  background-color: $color_nhsuk-black;
+}

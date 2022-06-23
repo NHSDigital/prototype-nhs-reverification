@@ -1,0 +1,120 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="/v1/one-off/do-you-know-nhs"  method="POST">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              Do you know your NHS number?
+            </h1>
+            <div class="nhsuk-hint"><p>Telling us your NHS number will give us the best chance of matching you to your NHS record.
+              <br><br>If you do not know it, you can tell us your postcode instead.</p>
+            </div>
+          </legend>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">How to find your NHS number</span>
+            </summary>
+
+            <div class="nhsuk-details__text">
+              <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+              <p>You can find this:</p>
+              <ul><li>on any letter or document sent to you by the NHS</li><li>by logging in to a GP practice online service</li><li>by using the <a class="nhsuk-link" target="_blank" rel="noopener noreferrer" href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/">NHS number finder service</a><span class="nhsuk-u-visually-hidden"> (opens in a new window)</span></li></ul><p>Ask your GP surgery for help if you can't find your NHS number.</p></div></details>
+
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios" id="nhs-number-choice" role="radiogroup">
+
+
+              <!--<div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="radio-1" name="details" type="radio" value="Yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="radio-1">
+                  Yes, I know my NHS number
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="radio-2" name="details" type="radio" value="No">
+                <label class="nhsuk-label nhsuk-radios__label" for="radio-2">
+                  No, I do not know my NHS number
+                </label>
+              </div>-->
+
+              <div class="nhsuk-radios">
+
+                {% if data['error'] == "nothing-selected" %}
+                  <span class="nhsuk-error-message" id="error">
+                    <span class="nhsuk-u-visually-hidden">Error:</span> You need to tell us if you're using your GP surgery’s online services
+                  </span>
+                  {% endif %}
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="radio-1" name="details" type="radio" value="Yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="radio-1">
+                  Yes, I know my NHS number
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="radio-2" name="details" type="radio" value="No">
+                  <label class="nhsuk-label nhsuk-radios__label" for="radio-2">
+                  No, I do not know my NHS number
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+<button class="nhsuk-button full-width">Continue</button>
+        </fieldset>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+
+
+    </script>
+
+{% endblock %}

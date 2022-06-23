@@ -1,0 +1,38 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Clear data
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Clear data
+      </h1>
+
+      <form method="post" action="index">
+
+        <input type="text" style="display: none;"></input>
+
+        <p>This will clear <b> all of the data entered in this session.</b></p>
+        <p>You're here because:
+          <ul>
+            <li>you tried to turn devMode off</li>
+            <li>you tried to turn devMode on and it's already on</li>
+            <li>you finished research and need to clear a users details</li>
+          </ul>
+        </p>
+
+        <button class="nhsuk-button" type="submit">Clear data</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

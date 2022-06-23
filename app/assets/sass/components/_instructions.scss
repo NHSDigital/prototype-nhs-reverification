@@ -1,0 +1,122 @@
+// instructions pattern
+
+.instructions {
+  background-color: #d40e0e;
+  padding: 16px;
+  color: $color_nhsuk-white;
+
+  .heading-large {
+    color: $color_nhsuk-white;
+    padding-bottom: $baseline-grid-unit*4;
+  }
+
+  .heading-medium {
+    color: $color_nhsuk-white;
+    font-size: 28px;
+  }
+
+  .heading-secondary {
+    color: rgba($color_nhsuk-white, .8);
+  }
+
+  @media (min-width: 600px) {
+    padding: 32px;
+  }
+
+  p , ul>li , ol>li {
+    @include core-font(24);
+  }
+  
+  a {
+    color: $color_nhsuk-white;
+    text-decoration: underline;
+  }
+}
+
+.instructions--link,
+p.instructions--link {
+  @include core-font(20);
+}
+
+.instructions--image {
+  margin: 1em auto;
+  display: block;
+  text-align: center;
+  height: auto;
+  @media (min-width: 600px) {
+    float: right;
+    margin-top: -3em;
+  }
+}
+
+.instructions--image--small {
+  margin: 1.6em auto;
+  display: block;
+  @media (min-width: 500px) {
+    float: right;
+    margin: 1.6em 0 0 2em;
+  }
+}
+
+.instructions-list-unordered {
+  @include core-font(24);
+  padding: inherit 0;
+  padding-bottom: $baseline-grid-unit*4;
+}
+
+.instructions-list-unordered__item {
+  padding: $default-spacing-unit/2 $gutter*1.5 $default-spacing-unit/2 $gutter*0.25;
+  margin: 0!important;
+}
+
+
+.instructions-list {
+  @include core-font(24);
+  counter-reset: li;
+  padding: $baseline-grid-unit 0;
+  list-style: none;
+}
+
+.instructions-list--small {
+  @include core-font(21);
+}
+
+.instructions-list__item {
+  position: relative;
+  border-bottom: 1px solid $blue;
+  border-left: 0;
+  margin: 0!important;
+  padding: $default-spacing-unit/2 $gutter*1.5;
+  padding-right: $gutter*.5;
+  @include clearfix;
+
+  // style the numbers
+  &:before {
+    background-color: $color_nhsuk-white;
+    color: $nhs-blue;
+    display: inline-block;
+    top: $default-spacing-unit/2;
+    left: 0;
+    border-radius: 50%;
+    content: counter(li);
+    counter-increment: li;
+    height: $_step-width;
+    line-height: $_step-width;
+    position: absolute;
+    text-align: center;
+    width: $_step-width;
+    @include core-font(16);
+    font-weight: bold;
+    padding-top: 0.25em;
+  }
+
+  @include media(tablet) {
+    padding-top: $default-spacing-unit/2;
+    padding-left: $gutter*1.5;
+    &:before {
+      top: $default-spacing-unit/2;
+      left: 0;
+    }
+  }
+}
+

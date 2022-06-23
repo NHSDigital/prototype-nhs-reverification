@@ -1,0 +1,65 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/list-border';
+@import 'components/related-nav';
+@import 'components/spinner';
+@import 'components/steps';
+@import 'components/button-spinner';
+@import 'components/hr-thick';
+@import 'components/panel-confirmation';
+
+// Components to override the NHS.UK frontend library
+@import 'overrides/card';
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below...
+///////////////////////////////////////////
+
+// login flow styling
+
+.nhsuk-button.full-width {
+    @include mq($from: mobile) {
+      width: 100%;
+    }
+  
+    @include mq($from: tablet) {
+      width: auto;
+    }
+  
+    @include mq($from: desktop) {
+      width: auto;
+    }
+  }
+
+// Inline password reveal
+
+.nhsuk-form-group.form-group-password-toggle {
+  position: relative;
+}
+
+.inline-password-toggle {
+  position: absolute;
+  top: 35px;
+  right: 180px;
+}
+
+// This is the part that actually hides the 'Choose file' text box for camera inputs
+label.nhsuk-button input[accept*="image/*"],
+label.nhsuk-button input[accept*="video/*"] {
+  display: none;
+}
+
+
+// iprove shrink header and footer
+.nhsuk-header.u-hide {
+  height: 0;
+  transition: all ease 0.5s;
+}
+
+.nhsuk-footer.u-hide {
+  display: none;
+}
+
+

@@ -1,0 +1,129 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  NHS login
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <!-- Change the page title here -->
+      <h1>
+        NHS Reverification prototype
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Running on prototype kit version {{version}}</span>
+        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="font-size:12px;">Maintained by <b>Mikey Cattell</b>, <b>Dani Steen</b></span>
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+
+
+
+      <hr>
+      <h3 class="nhsuk-heading-m">Work in progress</h3>
+      <ul>
+        <li>
+          <a href="/v1/one-off/index">One off journey</a>
+        </li>
+        <li>
+          <a href="/v1/registered-only/index">Registered only user</a>
+        </li>
+        <li>
+          <a href="/v1/p0-level/index">P0 level user</a>
+        </li>
+        <li>
+          <a href="/v1/p5-level/index">P5 level user</a>
+        </li>
+        <li>
+          <a href="/v1/p5-p9-level/index">P5+/P9 level users</a>
+        </li>
+      </ul>
+
+      Version 1:
+
+      <!-- End of content -->
+
+    </div>
+
+    <div class="nhsuk-grid-column-one-third nhsuk-u-margin-bottom-4">
+
+      <h3 class="nhsuk-heading-m">Links</h3>
+      <p>
+        <a href="https://github.com/NHSDigital/prototype-nhs-login">View github repo</a>
+      </p>
+
+<!--
+      <b>Environments</b>
+      <ul>
+        <li><a href="https://nhsd-confluence.digital.nhs.uk/pages/viewpage.action?spaceKey=NL&title=NHS+login+Environment+Links">List of all environments</a></li>
+        <li><a href="https://auth.qa.signin.nhs.uk/authorize?scope=openid&client_id=nhs-onlineOpenPrf&redirect_uri=http://localhost:3000/auth-return&response_type=code&state=appstate&nonce=randomnonce">QA environment (an accurate reflection of what is in live, with field validation)</a></li>
+      </ul>
+
+      <b>Prototypes</b>
+      <ul>
+        <li><a href="https://nhs-login.herokuapp.com/index">P0 (registration), P5 and P9 (IDVM) journeys</a>DEPRECIATED TAG</li>
+        <li><a href="https://nhs-cid.herokuapp.com/start">P9 (PYI and POL) journeys</a>DEPRECIATED TAG</li>
+        <li><a href="https://nhs-login-prototype-idchecker.herokuapp.com/">NHS ID Checker App - u: ID, p: checker</a></li>
+        <li><a href="https://nhs-login-admin-portal.herokuapp.com/search">NHS login admin portal - u: admin, p: portal</a></li>
+      </ul>
+
+      <b>Overviews</b>
+      <ul>
+        <li><a href="https://app.mural.co/invitation/mural/nhsdigital8118/1645028856357?sender=uf76f91a8abb4057219bc1226&key=ad50ce8a-cc99-4856-a001-89a27fd2fb9b">NHS login overview (mural)</a></li>
+        <li><a href="https://nhsconnect.github.io/nhslogin/user-journeys/">NHS login user journeys</a></li>
+      </ul>
+
+      <b>Emails</b>
+      <ul>
+        <li><a href="https://nhsd-confluence.digital.nhs.uk/display/NL/All+emails+in+Notify">All live emails sent via Notify</a></li>
+        <li><a href="https://nhsd-confluence.digital.nhs.uk/pages/viewpage.action?pageId=80252083">Emails that get sent out from rejection reasons in ID Checker App</a></li>
+      </ul>
+
+      <b>Websites</b>
+      <ul>
+        <li><a href="https://help.login.nhs.uk/">NHS login Help Centre</a></li>
+        <li><a href="https://www.nhs.uk/nhs-services/online-services/nhs-login/">NHS login public facing info on NHS.UK</a></li>
+        <li><a href="https://digital.nhs.uk/services/nhs-login">NHS login as a NHS Digital service</a></li>
+        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers">NHS login for partners and developers</a></li>
+        <li><a href="https://nhsconnect.github.io/nhslogin/">NHS login developer documentation</a></li>
+        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/how-nhs-login-works">How NHS login works</a></li>
+        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/nhs-login-integration-toolkit">NHS login integration toolkit</a></li>
+        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/nhs-login-integrated-partners-and-services">List of partners and services that use NHS login</a></li>
+      </ul>
+
+      <b>Misc.</b>
+      <ul>
+        <li><a href="https://hscic365-my.sharepoint.com/:v:/g/personal/lyte1_hscic_gov_uk/EdbttVDcKSxBlPgb85gOTcYB4_owiOgwz8fav4h4EMhYCg">A recording of the Welcome to NHS login meeting</a></li>
+      </ul>
+
+-->
+
+    </div>
+  </div>
+{% endblock %}

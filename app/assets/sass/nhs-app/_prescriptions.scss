@@ -1,0 +1,51 @@
+.nhs-app-status {
+
+  position: relative;
+}
+
+.nhs-app-status-body {
+
+  font-weight: 600;
+  padding-left: 24px;
+}
+
+.nhs-app-status-body--approved {
+
+  color: $color_nhsuk-green;
+
+}
+
+.nhs-app-status-body--waiting {
+
+  color: #A67812;
+
+}
+
+.nhs-app-status-body--rejected {
+
+  color: #da291c;
+
+}
+
+.nhs-app-status-svg {
+  position: absolute;
+  top: 3px;
+}
+
+
+.nhs-app-warning-callout {
+
+  margin-bottom: 24px;
+}
+
+
+
+.nhs-app-prescription__instructions {
+
+  @extend .nhsuk-body-s;
+
+  @include mq($until: tablet) {
+    max-width: 90%;
+  }
+
+}

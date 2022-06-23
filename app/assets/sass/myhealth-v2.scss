@@ -1,0 +1,163 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/panel-confirmation';
+@import 'components/related-nav';
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below... 
+///////////////////////////////////////////
+
+// taken from manage nhs login
+
+h1, h2, h3, h4, h5, h6, p, a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	//font-size:  0.9em;
+}
+
+.b {
+	fill: white;
+}
+
+a.nhsuk-header__navigation-link {	
+		color: white;	
+}
+
+a:focus, a:hover {
+	background-color: #f0f4f5;
+	box-shadow: none;
+}
+
+
+.nhsuk-header__link:hover, .nhsuk-header__link:focus  {
+	box-shadow: 0 0 0 3px white;
+	background-color: #037F8C;
+}
+
+@media (min-width: 61.875em) {
+	.nhsuk-header__link {
+		width: 95px;
+		height: 42.66px;
+		box-shadow: 0 0 0 3px white;
+	}
+	
+	.nhsuk-header__link:hover, .nhsuk-header__link:focus  {
+		box-shadow: 0 0 0 3px white;
+		background-color: #037F8C;
+	}
+
+	.nhsuk-header__navigation-link:focus {
+		box-shadow: none;
+
+	}
+}
+
+.nhsuk-header__navigation-close .nhsuk-icon__close {
+	fill: white;
+}
+
+
+
+.nhsuk-header__navigation-link:active, .nhsuk-header__navigation-link:hover  {
+	background-color: #04BFBF;
+}
+
+.nhsuk-button-red {
+	background-color: $color_nhsuk-red;
+	box-shadow: 0 4px 0 #5d0903;
+}
+
+.nhsuk-button-red:hover, .nhsuk-button-red:focus {
+	background-color: #a5190e;
+}
+
+.nhsuk-hint-list li, .nhsuk-hint-list li span.nhsuk-hint {
+	margin-bottom: 8px;
+}
+
+.nhsuk-header__navigation-item--for-mobile {
+  display: none;
+}
+
+.body-email {
+	background-color: #d8dde0;
+}
+
+.email-width {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.email-width .nhsuk-width-container {
+	max-width: 550px;
+}
+
+.body-email .nhsuk-footer .nhsuk-width-container{
+	display: none;
+}
+
+.nhsuk-details__summary {
+	color: #037F8C;
+}
+
+.nhsuk-panel-with-label__label {
+	background-color: #037F8C;
+}
+
+.nhsuk-details__summary:hover, .nhsuk-details__summary:visited, .nhsuk-details__summary:active, .nhsuk-details__summary:focus {
+	background-color: #f0f4f5;
+	box-shadow: none;
+}
+
+// taken from manage nhs login
+
+// delegate access
+
+.proxy {
+  background-color: orange;
+  text-align: center;
+  //margin-bottom: 0;
+}
+
+.nhsuk-icon__user {
+	fill: $color_nhsuk-blue;
+}
+
+
+// myhealth overrides //
+.nhsuk-header, .nhsuk-header__navigation {
+	background-color: #037F8C;
+}
+
+.nhsuk-footer {
+	background-color:#037F8C;
+	border-top-color: white;
+	color: white;
+}
+
+.nhsuk-footer__copyright {
+	color: white;
+}
+
+.nhsuk-hero--image-description .nhsuk-hero-content {
+	background: none;
+}
+
+.nhsuk-hero--image-description .nhsuk-hero-content .nhsuk-hero__arrow:before, .nhsuk-hero--image-description .nhsuk-hero-content .nhsuk-hero__arrow:after{
+	display:none;
+}
+
+.nhsuk-hero-content h1 {
+	text-shadow: 2px 2px 5px grey;
+}
+
+.nhsuk-header__menu-toggle {
+	border-radius: 0px;
+}
+/*
+.nhsuk-header__link {
+	display: none;
+}*/
