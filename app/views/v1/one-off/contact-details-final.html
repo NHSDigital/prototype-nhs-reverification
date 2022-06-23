@@ -44,7 +44,7 @@
           <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <h3>Your details have been updated</h3>
-            <p>Do we need to include a message to say you have updated your phone number to <strong>0101010101</strong>.</p>
+            <p>Do we need to include a message to say you have updated your phone number to <strong>{{ data['newphone'] }}</strong>.</p>
           </div>
 
           <dl class="nhsuk-summary-list">
@@ -72,7 +72,7 @@
                 Mobile phone number
               </dt>
               <dd class="nhsuk-summary-list__value">
-                0101010101
+                {{ data['newphone'] }}
               </dd>
 
               <dd class="nhsuk-summary-list__actions">
@@ -90,7 +90,7 @@
         </fieldset>
 
       </form>
-
+      <p>should we include some txt to say if there are more incorrect details please go to your GP?</p>
 
     </div>
 

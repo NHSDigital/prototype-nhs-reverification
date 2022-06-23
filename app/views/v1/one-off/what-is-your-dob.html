@@ -33,7 +33,7 @@
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-      <form action="register-create-password" autocomplete="on">
+      <form action="/v1/one-off/do-you-know-nhs" method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
@@ -42,10 +42,18 @@
             <div class="nhsuk-hint"><p>For example, 15 3 1984</p></div>
           </legend>
 <div class="nhsuk-date-input" autocomplete="off" id="date-of-birth">
-  <div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-day--label" for="date-of-birth-day">Day</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" aria-labelledby="date-of-birth-day--label" name="date-of-birth-day" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-month--label" for="date-of-birth-month">Month</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" aria-labelledby="date-of-birth-month--label" name="date-of-birth-month" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-year--label" for="date-of-birth-year">Year</label><input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" aria-labelledby="date-of-birth-year--label" name="date-of-birth-year" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div></div>
+  <div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-day--label" for="date-of-birth-day">Day</label>
+    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" aria-labelledby="date-of-birth-day--label" name="date-of-birth-day" pattern="[0-9]*" inputmode="numeric" type="text" value="">
+
+  </div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-month--label" for="date-of-birth-month">Month</label>
+
+    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" aria-labelledby="date-of-birth-month--label" name="date-of-birth-month" pattern="[0-9]*" inputmode="numeric" type="text" value="">
+  </div></div><div class="nhsuk-date-input__item"><div class="nhsuk-form-group"><label class="nhsuk-label nhsuk-date-input__label" id="date-of-birth-year--label" for="date-of-birth-year">Year</label>
+
+    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" aria-labelledby="date-of-birth-year--label" name="date-of-birth-year" pattern="[0-9]*" inputmode="numeric" type="text" value=""></div></div></div>
 
 
-            <a href="do-you-know-nhs" data-redirect="register-create-password" class="nhsuk-button full-width" id="button--save">Continue</a>
+            <button class="nhsuk-button">Continue</button>
 
         </fieldset>
 

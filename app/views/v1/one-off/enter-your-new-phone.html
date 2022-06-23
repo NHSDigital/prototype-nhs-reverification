@@ -36,36 +36,17 @@
     <h1 class="nhsuk-heading-l">
       Enter your new mobile number
     </h1>
-
+<form action="/v1/one-off/check-your-mobile-2"  method="POST">
       <label class="nhsuk-label" for="input-with-hint-text">
         We will send a 6 digit security code.
       </label>
 
       <label _ngcontent-ekt-c45="" for="password-input" class="nhsuk-label nhsuk-u-margin-top-3">UK mobile number </label>
-      <input autocomplete="on" class="nhsuk-input nhsuk-input--width-20" data-toggle-password-field-confirm="" id="revealPassword" name="revealPassword" type="password" aria-describedby="password reveal">
+      <input class="nhsuk-input nhsuk-input--width-20" name="newphone">
 <br><br>
-      <div>
-        <a href="check-your-mobile-2">
-          <button class="nhsuk-button full-width" type="submit">
-            Continue
-          </button>
-        </a>
-      </div>
+<button class="nhsuk-button full-width">Continue</button>
 
-
-
-    <script>
-      function forgottenPasswordClickHandler(e) {
-        e.preventDefault();
-        var x = document.getElementById("loading");
-        if (x.style.display === "none") {
-          x.style.display = "inline-block";
-        } else {
-          x.style.display = "none";
-        }
-        setTimeout(() => window.location.href = e.target.href, 2000)
-      }
-    </script>
+</form>
 
   </div>
 </div>
