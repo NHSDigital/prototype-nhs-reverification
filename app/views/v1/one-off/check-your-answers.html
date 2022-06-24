@@ -40,7 +40,7 @@
                     Name
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    michael cattell
+                    {{ data['first-name'] }} {{ data['last-name'] }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="/find-nhs-number/what-is-your-name">
@@ -53,7 +53,7 @@
                     Date of birth
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    13 May 1982
+                    {{ data['date-of-birth-day'] }} {{ data['date-of-birth-month'] }} {{ data['date-of-birth-year'] }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="/find-nhs-number/what-is-your-date-of-birth">
