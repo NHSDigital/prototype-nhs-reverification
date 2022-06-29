@@ -7,6 +7,23 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
+
+
+  var name = req.session.data['details']
+   // Check whether the variable matches a condition
+  if (name == "Yes"){
+    res.redirect('/v1/one-off/what-is-your-nhs')
+  } else if (name == "No") {
+    res.redirect('/v1/one-off/what-is-your-dob')
+  }
+ })
+
+
+
+
+
+
 //P0 V1 //
 
 router.post('/v1/P0/stages-account-created', function (req,res) {
@@ -174,17 +191,7 @@ router.post('/v1/P9/POL/details-answer', function (req, res) {
   }
  })
 
- router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
-
-   var name = req.session.data['details']
-    // Check whether the variable matches a condition
-   if (name == "Yes"){
-     res.redirect('/v1/one-off/what-is-your-nhs')
-   } else if (name == "No") {
-     res.redirect('/v1/one-off/what-is-your-postcode')
-   }
-  })
 
 
 
