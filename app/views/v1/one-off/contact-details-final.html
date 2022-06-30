@@ -14,10 +14,6 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -37,60 +33,28 @@
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-              Contact details
+              Your details have been updated
             </h1>
           </legend>
 
-          <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+          <div class="nhsuk-u-margin-top-1">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <h3>Your details have been updated</h3>
-            <p>Your mobile phone number has been updated to <strong>{{ data['newphone'] }}</strong>.</p>
+            <p>Your mobile phone number has been updated to <strong>{{ data['newphone'] or '07432138394' }}</strong>.</p>
           </div>
 
-          <dl class="nhsuk-summary-list">
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Email address
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                ********lor@****l.com
-              </dd>
-
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="#">
-                  <!--Change<span class="nhsuk-u-visually-hidden"> email address</span>-->
-                </a>
-
-              </dd>
-
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Mobile phone number
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{ data['newphone'] }}
-              </dd>
-
-              <dd class="nhsuk-summary-list__actions">
-
-                <a href="enter-your-new-phone">
-                  <!--Change<span class="nhsuk-u-visually-hidden"> mobile number</span>-->
-                </a>
-
-              </dd>
-
-            </div>
-
-          </dl>
 
         </fieldset>
 
       </form>
-      <p>should we include some txt to say if there are more incorrect details please go to your GP?</p>
+      <div class="nhsuk-warning-callout">
+  <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      There may be a delay
+    </span>
+  </h3>
+  <p>Your GP practice will need to review and approve this change before it can be updated across other services.</p>
+</div>
 
     </div>
 

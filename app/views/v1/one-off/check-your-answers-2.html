@@ -14,10 +14,6 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -40,10 +36,10 @@
                     Name
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                      {{ data['first-name'] }} {{ data['last-name'] }}
+                      {{ data['first-name'] or 'Sarah' }} {{ data['last-name'] or 'Jones' }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
-                    <a href="/find-nhs-number/what-is-your-name">
+                    <a href="whats-your-name">
                         Change<span class="nhsuk-u-visually-hidden"> name</span>
                     </a>
                 </dd>
@@ -53,7 +49,7 @@
                     Your NHS number
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    {{ data['nhs-number'] }}
+                    {{ data['nhs-number'] or '485 777 3456'}}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="what-is-your-nhs">
