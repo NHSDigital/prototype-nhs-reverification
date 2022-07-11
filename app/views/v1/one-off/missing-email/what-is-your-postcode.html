@@ -19,6 +19,11 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+  {{ backLink({
+    "href": "what-is-your-dob",
+    "text": "Back to: What is your date of birth?",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -29,27 +34,21 @@
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-      <form action="/v1/one-off/do-you-know-nhs" method="post">
+      <form action="check-your-answers"  method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-              What is your name?
+              What is your home postcode?
             </h1>
-            <div class="nhsuk-hint"><p>Enter the exact name you used when you registered with your GP practice.</p></div>
+            <div class="nhsuk-hint"><p>You must enter the home postcode you registered with your GP surgery. For example EN1 1BE.</p>
+            </div>
           </legend>
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="first-name">
-              First name
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="first-name" name="first-name" value="{{ data['first-name'] }}" type="text">
-          </div>
-
-          <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="userEmail">
-              Last name
+              Postcode
             </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="last-name" name="last-name" value="{{ data['last-name'] }}" type="text">
+            <input class="nhsuk-input nhsuk-input--width-20" id="whatspostcode" name="whatspostcode" value="" type="">
           </div>
 
             <button class="nhsuk-button">Continue</button>
@@ -57,6 +56,7 @@
         </fieldset>
 
       </form>
+
 
     </div>
 

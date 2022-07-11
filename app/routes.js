@@ -3,25 +3,38 @@ const express = require('express');
 
 const router = express.Router();
 
-
-
 // Add your routes here - above the module.exports line
 
 router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
-
-  var name = req.session.data['details']
-   // Check whether the variable matches a condition
-  if (name == "Yes"){
-    res.redirect('/v1/one-off/what-is-your-nhs')
-  } else if (name == "No") {
-    res.redirect('/v1/one-off/what-is-your-dob')
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber == 'yes'){
+    res.redirect('/v1/one-off/missing-mobile/check-your-answers-2')
+  }else {
+    res.redirect('/v1/one-off/missing-mobile/what-is-your-dob')
   }
+})
+
+ router.post('/v1/one-off/do-you-know-nhsss', function (req, res) {
+
+   var NHSnumber = req.session.data['knowNHSNumber']
+   if (NHSnumber == 'yes'){
+     res.redirect('/v1/one-off/missing-email/check-your-email')
+   }else {
+     res.redirect('/v1/one-off/missing-email/what-is-your-dob')
+   }
  })
 
 
+  router.post('/v1/one-off/data-not-found/do-you-know-nhssss', function (req, res) {
 
-
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'yes'){
+      res.redirect('/v1/one-off/data-not-found/data-not-found')
+    }else {
+      res.redirect('/v1/one-off/missing-mobile/what-is-your-dob')
+    }
+  })
 
 
 //P0 V1 //

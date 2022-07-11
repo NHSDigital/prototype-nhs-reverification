@@ -1,0 +1,96 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row" id="Name">
+                <dt class="nhsuk-summary-list__key">
+                    Name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                      {{ data['first-name'] or 'Sarah' }} {{ data['last-name'] or 'Jones' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="whats-your-name">
+                        Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row" id="Postcode">
+                <dt class="nhsuk-summary-list__key">
+                    Your NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['nhs-number'] or '485 777 3456'}}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-nhs">
+                        Change<span class="nhsuk-u-visually-hidden"> Nhs number</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
+        <form method="post" action="/find-nhs-number/check-your-answers">
+            <button data-redirect="data-not-found" class="nhsuk-button full-width" id="button--save">
+              Continue
+            </button>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8OjDvKS9v_tDs58FBKan6qevlFq7cpDp92OXVwFh4OOjPVUVS78tRnPqN94j7Xag0fLHzyoJYqlwI6g-QEE_6JUIosaSQj97FOi3Lzo3-1lolgAuDdvDkPh-nCHOprNq5FD5VL2Z7CXMfT8cIzBjZFI"></form>
+    </div>
+</div>
+
+<script type="text/javascript">
+  submitSpinner()
+
+  function buttonClicked(target) {
+    target.setAttribute('disabled', 'disabled')
+    target.className += ' button--save'
+    setTimeout(function () {
+      window.location.href = target.dataset.redirect;
+    }, 2000)
+  }
+
+  function submitSpinner() {
+    var selects = document.getElementById('button--save')
+    selects.addEventListener('click', function (event) {
+      event.preventDefault()
+      if (selects.getAttribute('disabled') === 'disabled') {
+        console.log('already clicked')
+      } else {
+        event.preventDefault()
+        console.log(selects.getAttribute('disabled'))
+        buttonClicked(selects)
+      }
+    })
+  }
+</script>
+
+{% endblock %}
