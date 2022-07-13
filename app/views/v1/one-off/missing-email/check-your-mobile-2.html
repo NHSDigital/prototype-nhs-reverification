@@ -19,6 +19,11 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+  {{ backLink({
+    "href": "enter-your-new-phone",
+    "text": "Back to: Enter your new email address",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -33,9 +38,13 @@
       Check your email
     </h1>
 
-    <p>Enter the 6 digit security code we've sent to <strong>{{ data['newphone'] or '07463966681' }}</strong>.</p>
-<form action="auth-2" method="post" class="form">
-    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="">Send the security code again.</a> </p></div></details>
+    <p>Enter the 6 digit security code we've sent to <strong>{{ data['newphone'] or 'test@test.com' }}</strong>.</p>
+    <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
+
+    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="">Send the security code again</a> <br><br>If you do not have access to this email address, you will not be able to complete this change online. To update your details, please visit your GP.<br><br><a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP</a></p></div></details>
+
+<form action="contact-details-final" method="post" class="form">
+
 
     <div class="nhsuk-form-group">
 
@@ -45,7 +54,7 @@
         </label>
 
         <div class="nhsuk-hint" id="contact-hint">
-          The code is 6 numbers
+          The code is 6 digits
         </div>
 
         <input autocomplete="on" class="nhsuk-input nhsuk-input--width-20" data-toggle-password-field-confirm="" id="revealPassword" name="revealPassword" type="password" aria-describedby="password reveal">
@@ -54,9 +63,9 @@
 
     </div>
 
-        
 
-            <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> I do not have access to my mobile phone</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> If you do not have access to your phone, you can <a href="">change your phone number securely</a>.</p></div></details>
+
+            <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> I do not have access to my email</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> If you do not have access to your emails, you can <a href="">change your email address securely</a>.</p></div></details>
 
 
             <p>If the email address is incorrect, <a href="enter-your-new-phone">try adding it again.</a> </p>

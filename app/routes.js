@@ -9,9 +9,9 @@ router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
   var NHSnumber = req.session.data['knowNHSNumber']
   if (NHSnumber == 'yes'){
-    res.redirect('/v1/one-off/missing-mobile/check-your-answers-2')
-  }else {
     res.redirect('/v1/one-off/missing-mobile/what-is-your-dob')
+  }else {
+    res.redirect('/v1/one-off/missing-mobile/whats-your-name')
   }
 })
 
@@ -19,9 +19,9 @@ router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
    var NHSnumber = req.session.data['knowNHSNumber']
    if (NHSnumber == 'yes'){
-     res.redirect('/v1/one-off/missing-email/check-your-email')
-   }else {
      res.redirect('/v1/one-off/missing-email/what-is-your-dob')
+   }else {
+     res.redirect('/v1/one-off/missing-email/whats-your-name')
    }
  })
 
@@ -30,9 +30,9 @@ router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
     var NHSnumber = req.session.data['knowNHSNumber']
     if (NHSnumber == 'yes'){
-      res.redirect('/v1/one-off/data-not-found/data-not-found')
+      res.redirect('/v1/one-off/data-not-found/what-is-your-dob')
     }else {
-      res.redirect('/v1/one-off/missing-mobile/what-is-your-dob')
+      res.redirect('/v1/one-off/data-not-found/whats-your-name')
     }
   })
 
