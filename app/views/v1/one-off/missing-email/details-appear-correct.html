@@ -13,6 +13,8 @@
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
@@ -26,46 +28,32 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
+<form action="check-your-email" method="post" class="form">
 
-    <h1 class="nhsuk-heading-l">
-      Check your mobile phone
-    </h1>
+    <h1 class="nhsuk-heading-l">Your contact details appear to be valid</h1>
+    <form method="post" action="details-appear-correct">
+    <p>The mobile phone number and email address on this NHS record appear to be in a valid format.</p>
 
-    <p>Enter the 6 digit security code we've sent to <strong>{{ data['newphone'] or '07463966681'}}</strong>.</p>
-    <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
-<form action="contact-details-final" method="post" class="form">
+    <p>If you have recently updated your details, please allow up to 48 hours for the change to take effect.</p>
 
-    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="">Send the security code again</a> </p></div></details>
+    <p>To check the details on your NHS record, log into your account using the NHS website or the NHS App. </p>
 
-    <div class="nhsuk-form-group">
+    <p>If the details are incorrect, please contact your GP to update them.</p>
 
-      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-        <label class="nhsuk-label" for="example">
-          Security code
-        </label>
-
-        <div class="nhsuk-hint" id="contact-hint">
-          The code is 6 digits
-        </div>
-
-        <input autocomplete="on" class="nhsuk-input nhsuk-input--width-20" data-toggle-password-field-confirm="" id="revealPassword" name="revealPassword" type="password" aria-describedby="password reveal">
-
-      </fieldset>
-
-    </div>
-
-
-            <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> I do not have access to my mobile phone</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> If you do not have access to your phone, you can <a href="">change your phone number securely</a>.</p></div></details>
-
-
+    <p>If you are not registered with a GP, try our Find a GP service.</p>
+    <p><a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP</a></p>
 
       <div>
-        <a href="contact-details">
-          <button class="nhsuk-button full-width" type="submit">
+
+
+          <button class="nhsuk-button full-width" id="button--save">
             Continue
           </button>
-        </a>
+</form>
+
+
       </div>
+</form>
 
 
 

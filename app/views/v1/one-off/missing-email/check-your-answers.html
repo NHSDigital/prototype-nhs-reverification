@@ -28,8 +28,8 @@
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-        <h1 class="nhsuk-heading-l">Check your answers</h1>
-
+        <h1 class="nhsuk-heading-l">Your contact details appear to be valid</h1>
+        <form method="post" action="details-appear-correct">
         <dl class="nhsuk-summary-list">
 
 
@@ -76,39 +76,15 @@
         </dl>
 
 
-        <form method="post" action="/find-nhs-number/check-your-answers">
-          <button data-redirect="check-your-email" class="nhsuk-button full-width" id="button--save">
+
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
             Continue
           </button>
 
-        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8OjDvKS9v_tDs58FBKan6qevlFq7cpDp92OXVwFh4OOjPVUVS78tRnPqN94j7Xag0fLHzyoJYqlwI6g-QEE_6JUIosaSQj97FOi3Lzo3-1lolgAuDdvDkPh-nCHOprNq5FD5VL2Z7CXMfT8cIzBjZFI"></form>
     </div>
+        </form>
 </div>
 
-<script type="text/javascript">
-  submitSpinner()
 
-  function buttonClicked(target) {
-    target.setAttribute('disabled', 'disabled')
-    target.className += ' button--save'
-    setTimeout(function () {
-      window.location.href = target.dataset.redirect;
-    }, 2000)
-  }
-
-  function submitSpinner() {
-    var selects = document.getElementById('button--save')
-    selects.addEventListener('click', function (event) {
-      event.preventDefault()
-      if (selects.getAttribute('disabled') === 'disabled') {
-        console.log('already clicked')
-      } else {
-        event.preventDefault()
-        console.log(selects.getAttribute('disabled'))
-        buttonClicked(selects)
-      }
-    })
-  }
-</script>
 
 {% endblock %}
