@@ -28,17 +28,13 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-<form action="auth" method="post" class="form">
-    <h1 class="nhsuk-heading-l">
-      There are no contact details on your NHS record
-    </h1>
+<form action="check-your-email" method="post" class="form">
 
-    <p>We cannot find a mobile phone number or email address linked to your NHS record. <p>
-
-    <p>To update your details, please visit your GP.<p>
-
-    <p>If you are not registered with a GP, try our Find a GP service.<p>
-
+    <h1 class="nhsuk-heading-l">There are no contact details on your NHS record</h1>
+    <form method="post" action="details-appear-correct">
+      <p>We cannot find a mobile phone number or email address linked to your NHS record.</p>
+      <p>To update your details, please visit your GP.</p>
+      <p>If you are not registered with a GP, try our Find a GP service.</p>
       <div class="nhsuk-action-link">
 
         <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/find-a-gp">
@@ -53,11 +49,12 @@
 
       <div>
 
-        <button class="nhsuk-button full-width" type="submit" id="button--save">
-          Continue
-        </button>
+</form>
+
+
       </div>
 </form>
+
 
 
     <script>

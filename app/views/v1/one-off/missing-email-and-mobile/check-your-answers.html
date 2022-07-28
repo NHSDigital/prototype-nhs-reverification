@@ -28,8 +28,8 @@
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-        <h1 class="nhsuk-heading-l">Your contact details appear to be valid</h1>
-        <form method="post" action="check-your-email">
+        <h1 class="nhsuk-heading-l">Check your answers</h1>
+
         <dl class="nhsuk-summary-list">
 
 
@@ -76,15 +76,17 @@
         </dl>
 
 
-
-          <button class="nhsuk-button full-width" type="submit" id="button--save">
+        <form method="post" action="missing-both">
+          <button data-redirect="missing-both" class="nhsuk-button full-width" id="button--save">
             Continue
           </button>
 
+
     </div>
-        </form>
 </div>
 
+<script type="text/javascript">
 
+</script>
 
 {% endblock %}
