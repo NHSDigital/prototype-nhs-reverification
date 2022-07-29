@@ -56,6 +56,18 @@ router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
     }
   })
 
+  router.post('/v1/one-off/data-not-found/data-not-found-route', function (req, res) {
+
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'differentnhs'){
+      res.redirect('/v1/one-off/missing-mobile/do-you-know-nhs')
+    }else if (NHSnumber == 'searchname'){
+    res.redirect('/v1/one-off/missing-mobile/whats-your-name')
+    }else {
+      res.redirect('/v1/one-off/data-not-found/data-not-found')
+    }
+  })
+
 //P0 V1 //
 
 router.post('/v1/P0/stages-account-created', function (req,res) {
