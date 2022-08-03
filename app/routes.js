@@ -5,6 +5,8 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+// V1 ROUTES
+
 router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
 
   var NHSnumber = req.session.data['knowNHSNumber']
@@ -150,6 +152,160 @@ router.post('/v1/P5/confirm-details', function (req, res){
   var confirmDetails = req.session.data['checkDetails']
   if (confirmDetails == 'yes'){
     res.redirect('/v1/P5/stages-match-record')
+  }else if (confirmDetails == 'no'){
+    res.redirect('errors/wrong-details')
+  }else{
+    res.redirect('errors/partial-details-match')
+  }
+})
+
+// V2
+
+router.post('/v2/one-off/do-you-know-nhss', function (req, res) {
+
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber == 'yes'){
+    res.redirect('/v2/one-off/malformed-mobile/what-is-your-dob')
+  }else {
+    res.redirect('/v2/one-off/malformed-mobile/whats-your-name')
+  }
+})
+
+ router.post('/v2/one-off/do-you-know-nhsss', function (req, res) {
+
+   var NHSnumber = req.session.data['knowNHSNumber']
+   if (NHSnumber == 'yes'){
+     res.redirect('/v2/one-off/malformed-email/what-is-your-dob')
+   }else {
+     res.redirect('/v2/one-off/malformed-email/whats-your-name')
+   }
+ })
+
+
+  router.post('/v2/one-off/data-not-found/do-you-know-nhssss', function (req, res) {
+
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'yes'){
+      res.redirect('/v2/one-off/data-not-found/what-is-your-dob')
+    }else {
+      res.redirect('/v2/one-off/data-not-found/whats-your-name')
+    }
+  })
+
+  router.post('/v2/one-off/data-not-found/do-you-know-nhsssss', function (req, res) {
+
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'yes'){
+      res.redirect('/v2/one-off/details-are-valid/what-is-your-dob')
+    }else {
+      res.redirect('/v2/one-off/details-are-valid/whats-your-name')
+    }
+  })
+
+  router.post('/v2/one-off/data-not-found/do-you-know-nhssssss', function (req, res) {
+
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'yes'){
+      res.redirect('/v2/one-off/malformed-email-and-mobile/what-is-your-dob')
+    }else {
+      res.redirect('/v2/one-off/malformed-email-and-mobile/whats-your-name')
+    }
+  })
+
+  router.post('/v2/one-off/data-not-found/data-not-found-route', function (req, res) {
+
+    var NHSnumber = req.session.data['knowNHSNumber']
+    if (NHSnumber == 'differentnhs'){
+      res.redirect('/v2/one-off/malformed-mobile/do-you-know-nhs')
+    }else if (NHSnumber == 'searchname'){
+    res.redirect('/v2/one-off/malformed-mobile/whats-your-name')
+    }else {
+      res.redirect('/v2/one-off/data-not-found/data-not-found')
+    }
+  })
+
+//P0 V2 //
+
+router.post('/v2/P0/stages-account-created', function (req,res) {
+res.redirect('/v2/P5/know-your-nhs-number')
+})
+
+router.post('/app/start', function (req, res) {
+  var Research = req.session.data['testing']
+  if (Research == 'dayOne'){
+    res.redirect('/v2/P0/enter-email?verificationLevel=p9')
+  }else if (Research == 'dayTwo'){
+  res.redirect('/v2/P0/enter-email?verificationLevel=p0&p5=fail')
+  }else{
+  res.redirect('/v2/P0/enter-email')
+}
+})
+
+//P5 V2 //
+//Routing for NHS number
+router.post('/v2/P5/know-your-nhs-number', function (req, res) {
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber == 'yes'){
+    res.redirect('enter-dob?nhsno=true')
+  }else {
+    res.redirect('enter-name')
+  }
+})
+
+// split routing for NHS number vs full name journey
+router.post('/v2/P5/enter-dob', function (req, res){
+  var NHSnumber = req.session.data['NHSNumber']
+  //parameter for NHS number route
+  if (NHSnumber == 'true'){
+    res.redirect('enter-postcode?nhsno=true')
+  }else{
+    res.redirect('enter-postcode')
+  }
+})
+/*
+router.post('/v2/P5/enter-postcode', function (req, res){
+  var NHSnumber = req.session.data['NHSNumber']
+    //parameter for NHS number route
+  if (NHSnumber == 'true'){
+    res.redirect('auth?nhsno=true')
+  }else{
+    res.redirect('auth')
+  }
+})
+*/
+// p5 fail journeys
+router.post('/v2/p5/enter-postcode', function (req, res){
+  var P5Fail = req.session.data['p5fail']
+  if (P5Fail == 'true'){
+  res.redirect('auth-fail')
+}else{
+  res.redirect('auth')
+}
+})
+
+router.post('/v2/P5/errors/cannot-match', function (req, res){
+  var failOptions = req.session.data['cannotMatchRecord']
+  if (failOptions == 'useNHSno'){
+    res.redirect('/v2/P5/know-your-nhs-number?p5=fail')
+  }else if (failOptions == 'PYI'){
+    res.redirect('confirm-details-pyi')
+  }else if (failOptions == 'useFullName'){
+    res.redirect('/v2/P5/enter-name?p5=fail')
+  }else{
+    res.redirect('check-details')
+  }
+})
+
+//Avoids throwing us down the routing above
+router.post('/v2/P5/enter-name', function (req, res){
+  res.redirect('/v2/P5/enter-dob')
+})
+
+// Split routing from the P5 confirm details page
+router.post('/v2/P5/confirm-details', function (req, res){
+  var confirmDetails = req.session.data['checkDetails']
+  if (confirmDetails == 'yes'){
+    res.redirect('/v2/P5/stages-match-record')
   }else if (confirmDetails == 'no'){
     res.redirect('errors/wrong-details')
   }else{

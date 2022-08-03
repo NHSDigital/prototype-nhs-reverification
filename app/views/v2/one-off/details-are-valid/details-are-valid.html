@@ -1,0 +1,134 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+<form action="check-your-email" method="post" class="form">
+
+    <h1 class="nhsuk-heading-l">Your contact details appear to be valid</h1>
+    <form method="post" action="details-appear-correct">
+    <p>The mobile phone number and email address on your NHS record appear to be in a valid format.</p>
+
+    <p>If you have recently updated your details, please allow up to 48 hours for the change to take effect.</p>
+
+    <p>To check the details on your NHS record, log into your account using the <a href="https://access.login.nhs.uk/enter-email">NHS website</a> or the NHS App. </p>
+
+    <p>If the details are incorrect, please contact your GP to update them.</p>
+
+    <p>If you are not registered with a GP, try our Find a GP service.</p>
+    <p><section>
+
+
+
+
+
+
+
+
+<div class="nhsuk-action-link">
+
+  <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/find-a-gp">
+
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Find a GP</span>
+  </a>
+</div>
+
+
+        
+  </section>
+
+
+      <div>
+</form>
+
+
+      </div>
+</form>
+
+
+
+    <script>
+      function forgottenPasswordClickHandler(e) {
+        e.preventDefault();
+        var x = document.getElementById("loading");
+        if (x.style.display === "none") {
+          x.style.display = "inline-block";
+        } else {
+          x.style.display = "none";
+        }
+        setTimeout(() => window.location.href = e.target.href, 2000)
+      }
+    </script>
+
+  </div>
+</div>
+
+
+
+  <style>
+    .panel-link__link {
+        background-color: #ffffff;
+        background-image: url(https://nhsuk-transactions-prototype.azurewebsites.net/images/icon_arrow_left.svg);
+        background-position: right 1em center;
+        background-repeat: no-repeat;
+        color: #005eb8;
+        display: block;
+        padding: 10px 2em 10px 1em;
+        text-decoration: none;
+    }
+
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        border-top: 1px #d8dde0 solid;
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+
+</style>
+{% endblock %}

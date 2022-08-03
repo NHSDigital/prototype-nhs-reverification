@@ -1,0 +1,84 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row" id="Postcode">
+                <dt class="nhsuk-summary-list__key">
+                    NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['nhs-number'] or '485 777 3456'}}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-nhs">
+                        Change<span class="nhsuk-u-visually-hidden"> Nhs number</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row" id="DateOfBirth">
+                <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or '05' }} {{ data['date-of-birth-year'] or '1988' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-dob">
+                        Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row" id="Postcode">
+                <dt class="nhsuk-summary-list__key">
+                    Postcode
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['whatspostcode'] or 'LS11 9UI' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-postcode">
+                        Change<span class="nhsuk-u-visually-hidden"> postcode</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
+        <form method="post" action="check-your-email">
+            <button data-redirect="check-your-email" class="nhsuk-button full-width" id="button--save">
+              Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

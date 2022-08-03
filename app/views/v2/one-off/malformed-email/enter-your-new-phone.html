@@ -1,0 +1,85 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{{ backLink({
+  "href": "contact-details",
+  "text": "Back to: Contact details",
+  "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+
+    <h1 class="nhsuk-heading-l">
+      Enter your new email address
+    </h1>
+
+  <p>
+    We will send a 6 digit security code.
+  </p>
+
+
+<form action="/v2/one-off/malformed-email/check-your-mobile-2"  method="POST">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="contactMobileNumber">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-u-margin-bottom-3" id="contactMobileNumber" name="newphone" value="" type="">
+
+        <!-- Conditional reveal radio button -->
+
+        <div class="nhsuk-form-group">
+
+        </div> <!-- end nhsuk-form-group -->
+
+        <button class="nhsuk-button full-width nhsuk-u-margin-top-4">
+          Continue
+        </button>
+
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}

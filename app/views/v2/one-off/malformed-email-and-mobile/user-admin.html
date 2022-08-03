@@ -1,0 +1,291 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layouts/layout-accounts.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-width-container ">
+
+          <main class="nhsuk-main-wrapper nhs-app-thin" id="maincontent" role="main">
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">Home</h1>
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhs-app-summary-list-inline">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name:
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Alex Taylor
+      </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth:
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        20 September 1982
+      </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        NHS number:
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        123 456 7890
+      </dd>
+
+    </div>
+
+</dl>
+
+
+
+
+
+
+
+          <div class="nhs-app-panel-heading">
+            <h2 class="nhsuk-heading-m">Popular services</h2>
+          </div>
+
+        <ul class="panel-link">
+
+
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="/nhs-app/your-health/covid-status/start-page">
+              <h2 class="panel-link__heading nhsuk-heading-s">Get your NHS COVID Pass</h2>
+              <p class="panel-link__content">View and share your COVID Pass for places in England that have chosen to use this service and for travel abroad</p>
+            </a>
+          </li>
+
+
+          <li class="panel-link__item">
+            <a class="panel-link__link" href="">
+              <h2 class="panel-link__heading nhsuk-heading-s">View your messages</h2>
+            </a>
+          </li>
+
+                  <li class="panel-link__item">
+                    <a class="panel-link__link" href="">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Access services for someone else</h2>
+                    </a>
+                  </li>
+
+
+
+                  <li class="panel-link__item">
+                      <a class="panel-link__link" href="/nhs-app/your-health/gp-record/warning">
+                        <h2 class="panel-link__heading nhsuk-heading-s">View your GP health record</h2>
+                      </a>
+                  </li>
+
+                  <li class="panel-link__item">
+                    <a class="panel-link__link" href="/nhs-app/contact-details/contact-details">
+                      <h2 class="panel-link__heading nhsuk-heading-s">Update your contact details</h2>
+                    </a>
+                </li>
+
+
+                <li class="panel-link__item">
+
+                  <a class="panel-link__link" href="/nhs-app/prescriptions/not-nominated">
+
+                    <h2 class="panel-link__heading nhsuk-heading-s">Order a repeat prescription</h2>
+                  </a>
+                </li>
+            </ul>
+
+
+    </div>
+  </div>
+
+
+          </main>
+        </div>
+
+
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+
+    <h1 class="nhsuk-heading-l">
+      Check your mobile phone
+    </h1>
+
+    <p>Enter the 6 digit security code we've sent to •••••••6691.</p>
+
+    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="">Send the security code again.</a> </p></div></details>
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <label class="nhsuk-label" for="example">
+          Security code
+        </label>
+
+        <div class="nhsuk-hint" id="contact-hint">
+          The code is 6 numbers
+        </div>
+
+        <input autocomplete="on" class="nhsuk-input nhsuk-input--width-20" data-toggle-password-field-confirm="" id="revealPassword" name="revealPassword" type="password" aria-describedby="password reveal">
+
+        <div class="nhsuk-checkboxes">
+<br>
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+              Remember this device and stop sending security codes
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+
+    </div>
+
+        <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> What does remember this device mean?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.<br><br>
+
+To keep your NHS login secure, you should only do this on your own personal or trusted devices.<br><br>
+
+We may ask if you still want us to remember this device in the future. </p></div></details>
+
+            <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> I do not have access to my mobile phone</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> If you do not have access to your phone, you can <a href="">change your phone number securely</a>.</p></div></details>
+
+
+
+      <div>
+        <a href="login-enter-OTP">
+          <button class="nhsuk-button full-width" type="submit">
+            Continue
+          </button>
+        </a>
+      </div>
+
+
+
+    <script>
+      function forgottenPasswordClickHandler(e) {
+        e.preventDefault();
+        var x = document.getElementById("loading");
+        if (x.style.display === "none") {
+          x.style.display = "inline-block";
+        } else {
+          x.style.display = "none";
+        }
+        setTimeout(() => window.location.href = e.target.href, 2000)
+      }
+    </script>
+
+  </div>
+</div>
+
+
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+
+  .panel-link__link {
+      background-color: #ffffff;
+      background-image: url(https://nhsuk-transactions-prototype.azurewebsites.net/images/icon_arrow_left.svg);
+      background-position: right 1em center;
+      background-repeat: no-repeat;
+      color: #005eb8;
+      display: block;
+      padding: 10px 2em 10px 1em;
+      text-decoration: none;
+  }
+
+  @media (max-width: 48.0525em) {
+  .panel-link {
+      margin: 0 -1em 1em;
+  }
+  }
+  .panel-link {
+      border-top: 1px #d8dde0 solid;
+      font-size: 1em;
+      list-style: none;
+      margin-bottom: 1em;
+      padding-left: 0;
+  }
+  @media (max-width: 48.0525em) {
+  .panel-link {
+      margin: 0 -1em 1em;
+  }
+  }
+  .panel-link {
+      font-size: 1em;
+      list-style: none;
+      margin-bottom: 1em;
+      padding-left: 0;
+  }
+  .panel-link__link .panel-link__heading {
+      margin: 0;
+      padding-bottom: 6px;
+  }
+  .panel-link__link .panel-link__heading {
+      margin: 0;
+      padding-top: 4px;
+      padding-bottom: 4px;
+  }
+  .panel-link__link .panel-link__content {
+    color: #212b32;
+    margin-bottom: 0;
+}
+.panel-link__link .panel-link__content {
+    color: #212b32;
+    margin-bottom: 0;
+    padding: 4px 0px 4px 0px;
+}
+</style>
+
+
+
+{% endblock %}
