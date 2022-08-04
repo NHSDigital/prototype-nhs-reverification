@@ -19,6 +19,11 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+{{ backLink({
+  "href": "what-is-your-postcode",
+  "text": "Go back",
+  "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -49,7 +54,7 @@
                     Date of birth
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or '05' }} {{ data['date-of-birth-year'] or '1988' }}
+                    {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or '5' }} {{ data['date-of-birth-year'] or '1988' }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="what-is-your-dob">
