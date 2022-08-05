@@ -38,19 +38,26 @@
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-              What is your NHS number?
+              What is your name?
             </h1>
-            <div class="nhsuk-hint"><p>Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.</p></div>
+            <div class="nhsuk-hint"><p>Enter the exact name you used when you registered with your GP practice.</p></div>
           </legend>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="first-name">
-              Your NHS number
+              First name
             </label>
-            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="first-name"  name="nhs-number" type="text">
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="first-name" name="first-name" value="{{ data['first-name'] }}" type="text">
           </div>
 
-            <a href="check-your-answers-try-nhs" class="nhsuk-button">Continue</a>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="userEmail">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="last-name" name="last-name" value="{{ data['last-name'] }}" type="text">
+          </div>
+
+            <a href="check-your-answers-try-name" class="nhsuk-button">Continue</a>
 
         </fieldset>
 

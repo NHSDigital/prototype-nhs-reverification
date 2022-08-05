@@ -64,7 +64,7 @@ router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
     if (NHSnumber == 'differentnhs'){
       res.redirect('/v1/one-off/data-not-found/do-you-know-nhs-single')
     }else if (NHSnumber == 'searchname'){
-    res.redirect('/v1/one-off/missing-mobile/whats-your-name')
+    res.redirect('/v1/one-off/data-not-found/whats-your-name-single')
     }else {
       res.redirect('/v1/one-off/data-not-found/data-not-found')
     }
