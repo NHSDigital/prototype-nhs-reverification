@@ -14,15 +14,16 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
 {% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+  {{ backLink({
+    "href": "/v2/one-off/malformed-mobile/P0/enter-your-email-address",
+      "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
 {% endblock %}
 
 <!-- For adding page content -->
@@ -42,7 +43,7 @@
 
           <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>We found an NHS login linked to <strong>{{ data['userEmail'] or 'sarah.jones@gmail.com' }}.</strong><p>
+            <p>We found an NHS login linked to <strong>{{ data['userEmail'] or 'email@email.comm' }}.</strong><p>
 
             <p>We are showing you this because you are accessing <srong>your NHS account</strong> for the first time on this device, or you have not logged in to this service for a while.</p>
 

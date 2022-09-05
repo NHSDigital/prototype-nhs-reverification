@@ -510,17 +510,17 @@ router.post('/v1/P9/PYI/demographics/nhs-number-automated-answer', function (req
 
  //V2 //
 //Routing for Email address
-router.post('/v2/one-off/malformed-mobile/login', function (req, res) {
-  var {{ data['userEmail'] }} = req.session.data['{{ data.userEmail }}']
-  if ({{ data['userEmail'] }} == 'p0@gmail.com'){
-    res.redirect('/v2/one-off/malformed-mobile/P0/we-found-your-login')
-  }
-  if ({{ data['userEmail'] }} == 'p5@gmail.com') {
-    res.redirect('/v2/one-off/malformed-mobile/P5/we-found-your-login')
-  }
-  if ({{ data['userEmail'] }} == 'p9@gmail.com') {
-    res.redirect('/v2/one-off/malformed-mobile/P9/we-found-your-login')
-  }
-})
+// router.post('/v2/one-off/malformed-mobile/login', function (req, res) {
+//   var {{ data['userEmail'] }} = req.session.data['{{ data.userEmail }}']
+//   if ({{ data['userEmail'] }} == 'p0@gmail.com'){
+//     res.redirect('/v2/one-off/malformed-mobile/P0/we-found-your-login')
+//   }
+//   if ({{ data['userEmail'] }} == 'p5@gmail.com') {
+//     res.redirect('/v2/one-off/malformed-mobile/P5/we-found-your-login')
+//   }
+//   if ({{ data['userEmail'] }} == 'p9@gmail.com') {
+//     res.redirect('/v2/one-off/malformed-mobile/P9/we-found-your-login')
+//   }
+// })
 
       module.exports = router;
