@@ -31,16 +31,23 @@
 {% block content %}
 
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
-
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-0">
 
     <h1 class="nhsuk-heading-l">
       Check your mobile phone
     </h1>
 
+    {% if data.resendOTP === 'true' %}  
+    <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>You have been sent a new security code.</p>
+    </div>
+    {% endif %}
+    
     <p>Enter the 6 digit security code we've sent to •••••••6691.</p>
 
-    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="">Send the security code again.</a> </p></div></details>
+    <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br>
+      <a href="check-your-mobile?resendOTP=true">Send the security code again.</a> </p></div></details>
 
     <div class="nhsuk-form-group">
 
