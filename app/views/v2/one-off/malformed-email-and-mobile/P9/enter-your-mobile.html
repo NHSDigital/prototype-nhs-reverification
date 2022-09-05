@@ -1,0 +1,56 @@
+{% extends 'layouts/layout.html' %}
+{% block pageTitle %}
+  Enter your mobile number
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="check-your-mobile" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Enter your mobile phone number
+            </h1>
+          </legend>
+          <p class="nhsuk-body">
+            We will send you another 6 digit security code, this time to your mobile phone, to confirm your number.
+          </p>
+          <p class="nhsuk-body">
+            It will be quicker to set up your NHS login if the mobile phone number you enter is the same one your GP surgery has for you.
+          </p>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="phoneNumberUK">
+              UK mobile phone number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="phoneNumberUK" name="phoneNumberUK" type="text" inputmode="numeric" maxlength="15">
+          </div>
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="phoneNumberIntlHint">
+              <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="phoneNumberIntl" name="phoneNumberIntl" type="checkbox" value="text" aria-controls="phoneNumberIntlCheckbox" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="phoneNumberIntl">I do not have a UK mobile phone number</label>
+                </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="phoneNumberIntlCheckbox">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="mobile">International mobile phone number</label>
+                    <span class="nhsuk-hint nhsuk-checkboxes__conditional__hint" id="phoneNumberIntlHint">
+                      Please enter + and then your country code before your mobile phone number. For example, <strong>+353</strong>7777666555
+                    </span>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text" value="" aria-describedby="phoneNumberIntlHint">
+                  </div> <!-- end nhsuk-form-group -->
+                </div> <!-- end nhsuk-checkboxes__conditional -->
+              </div> <!-- end nhsuk-checkboxes -->
+            </fieldset> <!-- nhsuk-fieldset -->
+          </div> <!-- end nhsuk-form-group -->
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+        </fieldset>
+      </form>
+      {% if data['devMode'] %}
+      {% include "includes/devmode-enter-email.html" %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

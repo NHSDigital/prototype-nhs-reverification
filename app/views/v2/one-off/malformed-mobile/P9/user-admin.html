@@ -1,0 +1,63 @@
+{% extends 'layouts/layout-app.html' %}
+{% block pageTitle %}
+The NHS App
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">Home</h1>
+      <h2>Welcome, {{ data['userNameFirst'] or 'Sarah' }} {{ data['userNameLast'] or 'Jones' }}</h2>
+      <p>
+        <strong>Date of birth:</strong>
+        {{ data['userDOBDay'] or '20' }} {{ data['userDOBMonth'] or 'May' }} {{ data['userDOBYear'] or '1988' }}
+      </p>
+      <ul class="list-menu">
+        <li>
+          <a href="#" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 8px 16px">
+            <div>
+              <div style="font-size: large;">NHS COVID Pass</div>
+              <div style="padding: 0 0; height: max-content;">
+                <p style="font-size: medium;">
+                  View and share your COVID Pass for places in England that has choosen to use this service or for travel abroad
+                </p>
+              </div>
+            </div>
+            
+          </a>
+        </li>
+        <li>
+          <a href="#">View your unread messages</a>
+        </li>
+        <li>
+          <a href="#">Access services for someone else</a>
+        </li>
+        <li>
+          <a href="#">View your GP health record</a>
+        </li>
+        <li>
+          <a href="#">Order a prescription</a>
+        </li>
+      </ul>
+      <!--
+      <div class=“instructions nhsuk-u-padding-4 nhsuk-u-margin-bottom-8”>
+        <h3 class=“nhsuk-heading-l”>We're checking your information</h3>
+        <p>This can take up to 2 hours.</p>
+        <p>We'll email you to tell if your information passed our checks or not.</p>
+        <p>At buys times, it may take longer.</p>
+      </div>-->
+    </div>
+  </div>
+
+  
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
