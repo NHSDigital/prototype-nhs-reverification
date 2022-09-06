@@ -20,7 +20,7 @@
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
   {{ backLink({
-    "href": "/v2/one-off/malformed-mobile/P0/enter-your-mobile",
+    "href": "/v2/P9/enter-your-mobile",
       "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -31,7 +31,8 @@
 {% block content %}
 
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-0">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
 
     <h1 class="nhsuk-heading-l">
       Check your mobile phone
@@ -43,7 +44,7 @@
       <p>You have been sent a new security code.</p>
     </div>
     {% endif %}
-    
+
     <p>Enter the 6 digit security code we've sent to •••••••6691.</p>
 
     <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details"><summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false"><span class="nhsuk-details__summary-text"> Not received your security code?</span></summary><div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true"><p> When we are really busy, it may take a bit longer for your code to arrive. <br><br>
@@ -63,7 +64,7 @@
         <input autocomplete="on" class="nhsuk-input nhsuk-input--width-20" data-toggle-password-field-confirm="" id="revealPassword" name="revealPassword" type="password" aria-describedby="password reveal">
 
         <div class="nhsuk-checkboxes">
-        <br>
+      <br>
           <div class="nhsuk-checkboxes__item">
             <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
             <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
@@ -87,7 +88,7 @@
 
 
       <div>
-        <a href="/v2/one-off/malformed-mobile/P0/auth2">
+        <a href="/v2/P9/auth2">
           <button class="nhsuk-button full-width" type="submit">
             Continue
           </button>
