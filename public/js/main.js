@@ -29,7 +29,8 @@ function setUpButton(button, input) {
 }
 
 setUpButton('[data-toggle-password]', '[data-toggle-password-field]');
-setUpButton('[data-toggle-password-confirm]', '[data-toggle-password-field-confirm]'); //toggle DevMode on and off
+setUpButton('[data-toggle-password-confirm]', '[data-toggle-password-field-confirm]');
+setUpButton('[data-toggle-password-confirm-2]', '[data-toggle-password-field-confirm-2]'); //toggle DevMode on and off
 
 function toggleDevMode() {
   const devModeButton = document.querySelector('#nhsuk-footer ul li a[href*="#"]');
