@@ -33,28 +33,64 @@
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-              Your details have been updated
+              Contact details
             </h1>
+            <div class="nhsuk-hint"><p>These are the details your GP and other NHS services use to contact you.</p>
+            </div>
           </legend>
 
-          <div class="nhsuk-u-margin-top-1">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>Your mobile phone number has been updated to <strong>{{ data['newphone'] or '07463966681'}}</strong>.</p>
-          </div>
+          <dl class="nhsuk-summary-list">
 
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                ********lor@****l.com
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="#">
+                  <!--Change<span class="nhsuk-u-visually-hidden"> email address</span>-->
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Mobile phone number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+
+                <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
+                <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="nhsuk-warning-text__text">
+                  <span class="nhsuk-warning-text__assistive"></span>
+                  Your mobile phone number is in an incorrect format
+                </strong>
+              </div>
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="/v3/malformed-mobile/enter-your-new-phone">
+                  Add a new mobile phone number<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+
+          </dl>
 
         </fieldset>
 
       </form>
-      <div class="nhsuk-warning-callout">
-  <h3 class="nhsuk-warning-callout__label">
-    <span role="text">
-      <span class="nhsuk-u-visually-hidden">Important: </span>
-      There may be a delay
-    </span>
-  </h3>
-  <p>Your GP practice will need to review and approve this change before it can be updated across other services.</p>
-</div>
+
 
     </div>
 
@@ -115,6 +151,5 @@
     text-align: left;
 }
 </style>
-
 
 {% endblock %}

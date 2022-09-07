@@ -1,0 +1,93 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Access your NHS services
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        Log in to your NHS account to access services online on your computer, tablet or mobile phone. You do not need to download anything.
+      </p>
+
+      <p>Log in to your account to:</p>
+              <ul>
+                <li>get your NHS COVID Pass</li>
+                <li>order repeat prescriptions</li>
+                <li>book and manage appointments</li>
+                <li>get health information and advice</li>
+                <li>view your health record securely</li>
+                <li>view your NHS number</li>
+              </ul>
+
+              <h2>Who can have an NHS account</h2>
+
+              <p>You can have an account if you are:</p>
+
+              <ul>
+                <li>registered with a GP surgery in England</li>
+                <li>aged 13 or over</li>
+              </ul>
+
+              <p><a href="">Find out more about who can have an NHS account</a></p>
+
+
+
+<a href="/v3/malformed-mobile/enter-your-email-address" data-v-e274948a="" data-v-60420a25="" id="viewInstructionsButton" button-classes="nhsuk-login,nhsuk-body,nhsuk-button," tabindex="0" aria-label="Continue with NHS login" class="Login_continueWithNhsLogin_-t-uU" style="margin: 0px;"> Continue with NHS login </a>
+
+
+      <!-- End of content -->
+
+    </div>
+
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}
