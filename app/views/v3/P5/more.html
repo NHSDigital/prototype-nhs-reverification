@@ -2,78 +2,46 @@
 {% block pageTitle %}
 The NHS App
 {% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v3/P5/user-admin">Home</a></li>
+      </ol>
+    </div>
+  </nav>
+{% endblock %}
+
 {% block content %}
+
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <br>
       
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2">Home</h1>
-      <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Name:
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['first-name'] or 'Sarah' }} {{ data['last-name'] or 'Jones' }}
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Date of birth:
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or '05' }} {{ data['date-of-birth-year'] or '1988' }}
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            NHS number:
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['nhs-number'] or '485 777 3456'}}
-          </dd>
-        </div>
-      </dl>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="padding: 0px 0px 10px 0px;">More</h1>
       
-      <h2 class="app-box-small app-box--heading">Popular services</h2>
       <ul class="app-boxes">
-        <li class="app-box">
-          <a href="#">
-              <h3 class="app-box-title">NHS COVID Pass</h3>
-              <p class="app-box-description">
-                View and download your COVID Pass for travel abroad
-              </p>
-          </a>
-        </li>
-        <li class="app-box">
-          <a href="#" >
-            <h3 class="app-box-title">View your messages</h3>
-          </a>
-        </li>
         <li class="app-box">
           <a href="#">
             <h3 class="app-box-title">Linked profiles</h3>
           </a>
         </li>
         <li class="app-box">
-          <a href="#">
-            <h3 class="app-box-title">View your GP health record</h3>
+          <a href="/v3/P5/account-and-settings">
+            <h3 class="app-box-title">Account and settings</h3>
           </a>
         </li>
         <li class="app-box">
           <a href="#">
-            <h3 class="app-box-title">Order a prescription</h3>
+            <h3 class="app-box-title">Help and support</h3>
           </a>
         </li>
       </ul>
-      <!--
-      <div class=“instructions nhsuk-u-padding-4 nhsuk-u-margin-bottom-8”>
-        <h3 class=“nhsuk-heading-l”>We're checking your information</h3>
-        <p>This can take up to 2 hours.</p>
-        <p>We'll email you to tell if your information passed our checks or not.</p>
-        <p>At buys times, it may take longer.</p>
-      </div>-->
-
+    
 
       <!-- Styles for cards -->
       
