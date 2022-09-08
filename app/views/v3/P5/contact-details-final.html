@@ -26,38 +26,36 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
-
-      <form action="register-create-password" autocomplete="on">
+      <form action="account-and-settings" autocomplete="on">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <span _ngcontent-kcp-c41="" class="nhsuk-hint nhsuk-u-margin-bottom-2">Change phone number on NHS record</span>
             <h1 class="nhsuk-heading-l">
-              Your details have been updated
+              We have saved your contact details to your NHS record
             </h1>
           </legend>
-
           <div class="nhsuk-u-margin-top-1">
             <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>Your mobile phone number has been updated to <strong>{{ data['newphone'] or '07463966681'}}</strong>.</p>
+            <p>The mobile phone number you want to use is <strong> 07123445131</strong>.</p>
           </div>
-
-
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                There may be a delay
+              </span>
+            </h3>
+            <p class="notbold">This is because some NHS services, such as your GP,  may not see your request to update your mobile phone number straight away.</p>
+            <p class="notbold">If you're waiting for an important phone call from an NHS service you can contact them directly to update your mobile phone number.</p>
+          </div>
+          <button href="/v3/P5/account-and-settings" class="nhsuk-button full-width" type="submit" id="button--save">
+            Go back to settings
+          </button>
+        
         </fieldset>
-
       </form>
-      <div class="nhsuk-warning-callout">
-  <h3 class="nhsuk-warning-callout__label">
-    <span role="text">
-      <span class="nhsuk-u-visually-hidden">Important: </span>
-      There may be a delay
-    </span>
-  </h3>
-  <p>Your GP practice will need to review and approve this change before it can be updated across other services.</p>
-</div>
-
     </div>
-
   </div>
 
 <style>
@@ -114,6 +112,10 @@
     padding-left: 45px;
     text-align: left;
 }
+
+.notbold {
+    font-weight: normal;
+  }
 </style>
 
 

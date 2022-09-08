@@ -36,6 +36,7 @@
       <form action="confirm-changes"  method="post">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
+            <span _ngcontent-kcp-c41="" class="nhsuk-hint nhsuk-u-margin-bottom-2">Change phone number on NHS record</span>
             <h1 class="nhsuk-heading-l">
               Which mobile phone number should the NHS use to contact you?
             </h1>
@@ -43,19 +44,23 @@
           <p class="nhsuk-body">
             We will remove the other mobile number from your NHS record.
           </p>
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                07123445131
-              </label>
-            </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                0898df23465
-              </label>
-            </div>
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    07123445131
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    0898df23465
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
           <button class="nhsuk-button full-width" type="submit" id="button--save">
             Continue
