@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Content page example - NHS.UK prototype kit
+  Choose your mobile
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -20,8 +20,8 @@
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
   {{ backLink({
-    "href": "/v3/P5/check-your-email-address",
-      "text": "Go back",
+    "href": "/v3/P5/contact-details-nhs-record",
+      "text": "Back to: Contact details on your NHS record",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
 {% endblock %}
@@ -40,10 +40,10 @@
             <h1 class="nhsuk-heading-l">
               Which mobile phone number should the NHS use to contact you?
             </h1>
+            <p class="nhsuk-body">
+              We will remove the other mobile number from your NHS record.
+            </p>
           </legend>
-          <p class="nhsuk-body">
-            We will remove the other mobile number from your NHS record.
-          </p>
           <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset">
               <div class="nhsuk-radios">

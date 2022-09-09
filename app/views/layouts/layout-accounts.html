@@ -36,12 +36,12 @@
         <div class="nhsuk-header__transactional-service-name">
           <a class="nhsuk-header__transactional-service-name--link" href="/nhs-app/home"></a>
         </div>
-        <div class="nhsuk-header__right-nav">
-          <span><a class="external" href="/help-and-support/help-and-support-hub" target="_blank">Help and support</a></span>
-          <strong>&nbsp;|&nbsp;</strong>
-          <span><a href="/nhs-app/more/hub">Menu</a></span>
-          <strong>&nbsp;|&nbsp;</strong>
-          <span><a href="/nhs-app/more/logged-out">Log out</a></span>
+        <div class="nhsuk-header__right-nav" style="text-align: right;">
+          <span><a class="nhsuk-header__navigation-link header__right-nav-item" class="external" href="/help-and-support/help-and-support-hub" target="_blank" style="color: white;">Help and support</a></span>
+          <strong class="header__right-nav-item" style="color: white;">&nbsp;|&nbsp;</strong>
+          <span><a class="nhsuk-header__navigation-link header__right-nav-item" href="/v3/P5/more" style="color: white;">More</a></span> 
+          <strong class="header__right-nav-item" style="color: white;">&nbsp;|&nbsp;</strong>
+          <span><a class="nhsuk-header__navigation-link header__right-nav-item" href="/nhs-app/more/logged-out" style="color: white;">Log out</a></span>
         </div>
         <div class="nhsuk-header__content" id="content-header">
           <div class="nhsuk-header__menu nhsuk-header__menu--only">
@@ -89,29 +89,17 @@
                   <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
                 </svg>
               </a>
-            </li>
-            <li class="nhsuk-header__navigation-item nhsuk-header-menu-services">
-              <a class="nhsuk-header__navigation-link" href="/help-and-support/help-and-support-hub" target="_blank"> Help and support <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                </svg>
-              </a>
-            </li>
-            <li class="nhsuk-header__navigation-item nhsuk-header-menu-services">
-              <a class="nhsuk-header__navigation-link" href="/nhs-app/more/hub"> Menu <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                </svg>
-              </a>
-            </li>
-            <li class="nhsuk-header__navigation-item nhsuk-header-menu-services">
-              <a class="nhsuk-header__navigation-link" href="/nhs-app/more/logged-out"> Log out <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                </svg>
-              </a>
-            </li>
           </ul>
         </div>
       </nav>
     </header>
+
+    <style>
+    .header__right-nav-item {
+      display: inline-block
+    }
+
+    </style>
 
 
 
