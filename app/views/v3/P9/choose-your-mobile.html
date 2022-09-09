@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Enter your email address
+  Choose your mobile
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -18,6 +18,13 @@
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "/v3/P9/contact-details-nhs-record",
+      "text": "Back to: Contact details on your NHS record",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
@@ -26,42 +33,44 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
-
-      <form action="we-found-your-login" autocomplete="on">
+      <form action="confirm-changes"  method="post">
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <legend class="nhsuk-fieldset__legend">
+            <span _ngcontent-kcp-c41="" class="nhsuk-hint nhsuk-u-margin-bottom-2">Change phone number on NHS record</span>
             <h1 class="nhsuk-heading-l">
-              Enter your email address
+              Which mobile phone number should the NHS use to contact you?
             </h1>
+            <p class="nhsuk-body">
+              We will remove the other mobile number from your NHS record.
+            </p>
           </legend>
-
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="userEmail">
-              Email address
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="userEmail" name="userEmail" value="{{ data['userEmail'] }}" type="text" autocomplete="on">
+            <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    07123445131
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    0898df23465
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
-
           <button class="nhsuk-button full-width" type="submit" id="button--save">
             Continue
           </button>
-
-
-          <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <h3>What is NHS login?</h3>
-            <p>You can use your NHS login to access health websites and apps that have the NHS login button. If you do not have an NHS login, enter your email address to set one up.</p>
-          </div>
+          <p class="nhsuk-body notbold">
+            <a href="#">I do not want to change my mobile phone number</a>
+          </p>
         </fieldset>
-        <div class="nhsuk-warning-callout  nhsuk-u-margin-top-3">
-          <h3 class="nhsuk-warning-callout__label">Coronavirus (COVID-19)</h3>
-          <p>For health information and advice, read <a href="#" class="nhsuk-link">NHS guidance about Coronavirus</a></p>
-        </div>
       </form>
-
-
     </div>
-
   </div>
 
   <style>

@@ -1,13 +1,13 @@
 {% extends 'layouts/layout.html' %}
 
 {% block pageTitle %}
-  Checking your details
+  Saving your details
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
       <div class="nhsuk-width-container">
-         <h1 class="nhsuk-heading-l">Checking your details</h1>
+         <h1 class="nhsuk-heading-l">Saving your details</h1>
 
       <form action="app/auth" method="post">
         <section class="loading-container" id="gp-connect-0" style="display:block; min-height: 16em;">
@@ -34,7 +34,7 @@
 
 <script>
     setTimeout(function(){
-      window.location.href='/v3/P9/check-your-mobile';
+      window.location.href='/v3/P9/contact-details-final';
   }, 2500);
   
 </script>

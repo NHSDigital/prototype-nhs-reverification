@@ -1,4 +1,4 @@
-{% extends 'layouts/layout-accounts.html' %}
+{% extends 'layouts/layout-accounts-p5.html' %}
 {% block pageTitle %}
 The NHS App
 {% endblock %}
@@ -24,14 +24,6 @@ The NHS App
             {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or '05' }} {{ data['date-of-birth-year'] or '1988' }}
           </dd>
         </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            NHS number:
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['nhs-number'] or '485 777 3456'}}
-          </dd>
-        </div>
       </dl>
       
       <h2 class="app-box-small app-box--heading">Popular services</h2>
@@ -47,21 +39,6 @@ The NHS App
         <li class="app-box">
           <a href="#" >
             <h3 class="app-box-title">View your messages</h3>
-          </a>
-        </li>
-        <li class="app-box">
-          <a href="#">
-            <h3 class="app-box-title">Linked profiles</h3>
-          </a>
-        </li>
-        <li class="app-box">
-          <a href="#">
-            <h3 class="app-box-title">View your GP health record</h3>
-          </a>
-        </li>
-        <li class="app-box">
-          <a href="#">
-            <h3 class="app-box-title">Order a prescription</h3>
           </a>
         </li>
       </ul>

@@ -1,6 +1,6 @@
-{% extends 'layouts/layout-accounts-p5.html' %}
+{% extends 'layouts/layout-accounts-p9.html' %}
 {% block pageTitle %}
-The NHS App
+Account and settings
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -9,7 +9,8 @@ The NHS App
   <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
-        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v3/P5/user-admin">Home</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v3/P9/user-admin">Home</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/v3/P9/more">More</a></li>
       </ol>
     </div>
   </nav>
@@ -21,22 +22,17 @@ The NHS App
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="padding: 0px 0px 10px 0px;">More</h1>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="padding: 0px 0px 10px 0px;">Account and settings</h1>
       
       <ul class="app-boxes">
         <li class="app-box">
-          <a href="#">
-            <h3 class="app-box-title">Linked profiles</h3>
-          </a>
-        </li>
-        <li class="app-box">
-          <a href="/v3/P5/account-and-settings">
-            <h3 class="app-box-title">Account and settings</h3>
+          <a href="/v3/P9/manage-nhs-account">
+            <h3 class="app-box-title">Manage NHS account</h3>
           </a>
         </li>
         <li class="app-box">
           <a href="#">
-            <h3 class="app-box-title">Help and support</h3>
+            <h3 class="app-box-title">Legal and cookies</h3>
           </a>
         </li>
       </ul>

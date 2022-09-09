@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Enter your email address
+  Contact details on your NHS record
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -18,6 +18,13 @@
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "/v3/P9/manage-nhs-account",
+      "text": "Back to: Manage your NHS account",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
@@ -26,42 +33,35 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
-
-      <form action="we-found-your-login" autocomplete="on">
+      <form action="auth3"  method="post">
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Enter your email address
+              Contact details on your NHS record
             </h1>
           </legend>
+          <p class="nhsuk-body">
+            These are the details your GP and other NHS services use to contact you. These may be different from your <a href="#">login details</a>.
+          </p>
+          <p class="nhsuk-body">
+          <strong>Email address</strong><br>
+          email@email.com
+          </p>
+          <hr>
+          <p class="nhsuk-body">
+            <strong>Mobile phone number</strong>
+            <div style="display: flex; align-items: center;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Exclamation_sign_font_awesome.svg" width="32" style="margin-right: 8px;">
+              <strong style="padding-top: 4px;">You have more than one mobile phone number on your NHS record</strong>
+            </div>
+          </p>
+          <p class="nhsuk-body notbold">
+            <a href="/v3/P9/contact-details">Choose which phone number you want to keep on your NHS record</a>
+          </p>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="userEmail">
-              Email address
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="userEmail" name="userEmail" value="{{ data['userEmail'] }}" type="text" autocomplete="on">
-          </div>
-
-          <button class="nhsuk-button full-width" type="submit" id="button--save">
-            Continue
-          </button>
-
-
-          <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <h3>What is NHS login?</h3>
-            <p>You can use your NHS login to access health websites and apps that have the NHS login button. If you do not have an NHS login, enter your email address to set one up.</p>
-          </div>
         </fieldset>
-        <div class="nhsuk-warning-callout  nhsuk-u-margin-top-3">
-          <h3 class="nhsuk-warning-callout__label">Coronavirus (COVID-19)</h3>
-          <p>For health information and advice, read <a href="#" class="nhsuk-link">NHS guidance about Coronavirus</a></p>
-        </div>
       </form>
-
-
     </div>
-
   </div>
 
   <style>
