@@ -9,31 +9,31 @@ The NHS App
     <div class="nhsuk-grid-column-two-thirds">
       <br>
  
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="padding: 0px 0px 10px 0px;">Manage your NHS account</h1>
-      <svg _ngcontent-uoa-c36="" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true" class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50 nhsuk-u-margin-right-2">
-          <path _ngcontent-uoa-c36="" d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z" class="user-icon">
-          </path>
-          <circle _ngcontent-uoa-c36="" cx="16" cy="9" r="3" class="user-icon"></circle>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-2" style="padding: 16px 0px 40px 0px;">Manage your NHS account</h1>
+      <div style="display: flex; align-items: center; margin-bottom: 32px;">
+        <svg _ngcontent-uoa-c36="" xmlns="http://www.w3.org/2000/svg" viewBox="6 0 20 24" width="32" aria-hidden="true" class="nhsuk-icon nhsuk-icon__user nhsuk-icon--size-50 nhsuk-u-margin-right-2">
+            <path _ngcontent-uoa-c36="" d="M16,2a10,10,0,0,0-1.09,19.93H15A6,6,0,0,0,16,22a6,6,0,0,0,1-.06h.05A10,10,0,0,0,16,2Zm5.4,15.88a6.45,6.45,0,0,0,.14-.88,5.3,5.3,0,0,0-2.4-4.14,4.89,4.89,0,0,1-6.28,0A5.3,5.3,0,0,0,10.46,17a6.45,6.45,0,0,0,.14.88,8,8,0,1,1,10.8,0Z" class="user-icon">
+            </path>
+            <circle _ngcontent-uoa-c36="" cx="16" cy="9" r="3" class="user-icon"></circle>
         </svg>
-      <ul class="account-name-link" style="float: right; display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 8px 16px">
-        <h2 class="nshuk-heading-m" style="font-size: 24px; margin: 0px 0px 24px 0px">
+        <h2 class="nshuk-heading-m" style="font-size: 24px; margin: 0">
           Sarah Jones
         </h2>
-      </ul>
+      </div>
       <p>You can change the details you use for NHS login, or the contact details on your NHS record.</p>
       <ul class="app-boxes">
         <li class="app-box">
           <a href="#">
-            <h3 class="app-box-title"><u>Your NHS login details</u></h3>
-            <p class="app-box-description">
+            <h3 class="app-box-title" style="padding: 12px 12px 8px 12px;"><u>Your NHS login details</u></h3>
+            <p class="app-box-description" style="padding: 0px 12px 12px 12px;">
               NHS login allows you to access lots of different health and care websites and apps with just one set of login details.
             </p>
           </a>
         </li>
-        <li class="app-box">
+        <li class="app-box" style="margin-top: 48px;">
           <a href="/v3/P5/contact-details-nhs-record">
-            <h3 class="app-box-title"><u>Contact details on your NHS record</u></h3>
-            <p class="app-box-description">
+            <h3 class="app-box-title" style="padding: 12px 12px 8px 12px;"><u>Contact details on your NHS record</u></h3>
+            <p class="app-box-description" style="padding: 0px 12px 12px 12px;">
               This is what your GP and other NHS services have on record for you.
             </p>
           </a>
@@ -49,9 +49,13 @@ The NHS App
           background: white;
           padding: 22px 16px 22px 16px;
           font-size: 22px;
-          border-top: 0.5px solid 	#d8dde0;
-          border-bottom: 0.5px solid 		#d8dde0;
-          margin: 4px 0px 4px 0px;
+          border: 0.5px solid 	#d8dde0;
+          border-bottom-width: 4px;
+          margin: 4px 0px;
+          cursor: pointer;
+        }
+        .app-box:hover {
+          border-color: 	#aeb7bd;
         }
         .app-box-small {
           position: relative;
@@ -78,7 +82,7 @@ The NHS App
           text-decoration: none;
         }
         .app-box-title {
-          font-size: 22px;
+          font-size: 26px;
           margin: 0;
         }
         .app-box-description {
