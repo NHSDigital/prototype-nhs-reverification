@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+
 // V1 ROUTES
 
 router.post('/v1/one-off/do-you-know-nhss', function (req, res) {
@@ -507,6 +508,18 @@ router.post('/v1/P9/PYI/demographics/nhs-number-automated-answer', function (req
     res.redirect('/v1/P9/PYI/demographics/nhs-number-automated?error=nothing-selected')
   }
  })
+
+
+ // V3 ROUTES
+router.post('/v3/malformed-mobile/do-you-know-nhss', function (req, res) {
+
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber == 'yes'){
+    res.redirect('/v3/malformed-mobile/what-is-your-dob')
+  }else {
+    res.redirect('/v3/malformed-mobile/whats-your-name')
+  }
+})
 
 
  //V2 //
