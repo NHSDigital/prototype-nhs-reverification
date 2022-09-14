@@ -20,7 +20,7 @@
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
   {{ backLink({
-    "href": "/v3/P9/manage-nhs-account",
+    "href": "/v3/P5/manage-nhs-account",
       "text": "Back to: Manage your NHS account",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -41,14 +41,33 @@
             </h1>
           </legend>
           <p class="nhsuk-body">
-            These are the details your GP and other NHS services use to contact you. These may be different from your <a href="#">login details</a>.
+            These are the details your GP and other NHS services use to contact you. These may be different from your login details.
           </p>
-          <p class="nhsuk-body">
-          <strong>Email address</strong><br>
-          email@email.com
-          </p>
-          <hr>
-          <p class="nhsuk-body">
+
+
+          <dl class="nhsuk-summary-list" style="margin-bottom: 10px;">
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Email address
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          sarahemaillor@gmail.com
+                        </dd>
+
+                        <dd class="nhsuk-summary-list__actions">
+
+                          <a href="#">
+                            <!--Change<span class="nhsuk-u-visually-hidden"> email address</span>-->
+                          </a>
+
+                        </dd>
+
+                      </div>
+
+                    </dl>
+
+          <p class="nhsuk-body" style="margin-bottom: 14px;">
             <strong>Mobile phone number</strong>
             <div style="display: flex; align-items: center;">
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Exclamation_sign_font_awesome.svg" width="32" style="margin-right: 8px;">
@@ -56,7 +75,7 @@
             </div>
           </p>
           <p class="nhsuk-body notbold">
-            <a href="/v3/P9/contact-details">Choose which phone number you want to keep on your NHS record</a>
+            <a href="/v3/P5/contact-details">Choose which phone number you want to keep on your NHS record</a>
           </p>
 
         </fieldset>
