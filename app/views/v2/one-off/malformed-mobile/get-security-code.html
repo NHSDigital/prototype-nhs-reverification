@@ -1,0 +1,109 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+<form action="check-your-email" method="post" class="form">
+    <h1 class="nhsuk-heading-l">
+      Get a security code
+    </h1>
+
+    <p>We have found an NHS record with the information you have provided.</p>
+
+<p>To continue, we will send you a 6 digit security code.
+
+<p>You need to use this code within 1 hour or it will expire.
+
+<p>The security code will be sent to: <strong>********lor@****l.com</strong> </p>
+
+
+      <div>
+
+        <button class="nhsuk-button full-width" type="submit" id="button--save">
+          Continue
+        </button>
+      </div>
+</form>
+
+
+    <script>
+      function forgottenPasswordClickHandler(e) {
+        e.preventDefault();
+        var x = document.getElementById("loading");
+        if (x.style.display === "none") {
+          x.style.display = "inline-block";
+        } else {
+          x.style.display = "none";
+        }
+        setTimeout(() => window.location.href = e.target.href, 2000)
+      }
+    </script>
+
+  </div>
+</div>
+
+
+
+  <style>
+    .panel-link__link {
+        background-color: #ffffff;
+        background-image: url(https://nhsuk-transactions-prototype.azurewebsites.net/images/icon_arrow_left.svg);
+        background-position: right 1em center;
+        background-repeat: no-repeat;
+        color: #005eb8;
+        display: block;
+        padding: 10px 2em 10px 1em;
+        text-decoration: none;
+    }
+
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        border-top: 1px #d8dde0 solid;
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+
+</style>
+{% endblock %}
