@@ -1,0 +1,81 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "what-is-your-postcode-no",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="we-found-your-login" autocomplete="on">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              Contact your GP
+            </h1>
+          </legend>
+
+          <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+
+            <p>We were unable to match your details to an NHS record.</p>
+<p>To check and update your details, please contact your GP.</p>
+<p>If you are not registered with a GP, try our Find a GP service.</p>
+            <div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/find-a-gp">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Find a GP</span>
+  </a>
+</div>
+          </div>
+        </fieldset>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}

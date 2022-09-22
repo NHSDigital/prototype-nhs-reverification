@@ -1,0 +1,100 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layouts/layout-app-2.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Contact details on your NHS record
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "/v3/P5/manage-nhs-account",
+      "text": "Back to: Manage your NHS account",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+      <form action="auth3"  method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Contact details on your NHS record
+            </h1>
+          </legend>
+          <p class="nhsuk-body">
+            These are the details your GP and other NHS services use to contact you. These may be different from your login details.
+          </p>
+
+
+          <dl class="nhsuk-summary-list" style="margin-bottom: 10px;">
+
+                      <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                          Email address
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                          ********lor@****l.com
+                        </dd>
+
+                        <dd class="nhsuk-summary-list__actions">
+
+                          <a href="#">
+                            <!--Change<span class="nhsuk-u-visually-hidden"> email address</span>-->
+                          </a>
+
+                        </dd>
+
+                      </div>
+
+                    </dl>
+
+          <p class="nhsuk-body" style="margin-bottom: 14px;">
+            <strong>Mobile phone number</strong>
+            <div style="display: flex; align-items: center;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Exclamation_sign_font_awesome.svg" width="32" style="margin-right: 8px;">
+              <strong style="padding-top: 4px;">You have more than one mobile phone number on your NHS record</strong>
+            </div>
+          </p>
+          <p class="nhsuk-body notbold">
+            <a href="/v3/P5/contact-details">Choose which phone number you want to keep on your NHS record</a>
+          </p>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}
