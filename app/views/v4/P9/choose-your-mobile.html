@@ -1,0 +1,90 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layouts/layout-app-2.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Choose your mobile
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "/v4/P9/contact-details-nhs-record",
+      "text": "Back to: Contact details on your NHS record",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+      <form action="check-your-mobile-2"  method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <span _ngcontent-kcp-c41="" class="nhsuk-hint nhsuk-u-margin-bottom-2">Change phone number on NHS record</span>
+            <h1 class="nhsuk-heading-l">
+              Which mobile phone number should the NHS use to contact you?
+            </h1>
+            <p class="nhsuk-body">
+              We will remove the other mobile number from your NHS record.
+            </p>
+          </legend>
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    07123445131
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    0898df23465
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+          <p class="nhsuk-body notbold">
+            <a href="#">I do not want to change my mobile phone number</a>
+          </p>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}

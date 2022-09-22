@@ -521,6 +521,17 @@ router.post('/v3/malformed-mobile/do-you-know-nhss', function (req, res) {
   }
 })
 
+// V4 ROUTES
+router.post('/v4/malformed-mobile/do-you-know-nhss', function (req, res) {
+
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber == 'yes'){
+    res.redirect('/v4/malformed-mobile/what-is-your-dob')
+  }else {
+    res.redirect('/v4/malformed-mobile/whats-your-name')
+  }
+})
+
 
  //V2 //
 //Routing for Email address

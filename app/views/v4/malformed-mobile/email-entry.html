@@ -1,0 +1,62 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layouts/template-email.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="page-section email-width">
+
+        <div class="nhsuk-width-container">
+          <main class="nhsuk-main-wrapper email-content" id="maincontent" role="main" style="padding-top: 0;">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p></p><h1 class="nhsuk-fieldset__legend--l">
+        We need you to add a mobile phone number to your NHS record.
+      </h1>
+      <p>We will use this number to get in touch about screening, vaccinations or other appointment reminders, for example.</p>
+      <p>Even if you have a mobile number on your NHS login, we need you to add one to your NHS record too.</p>
+      <p>Add the mobile number you use most often, even if it's registered in another country.</p>
+      <p>To add your mobile number using our dedicated web service:</p>
+
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Go to <a href="/v4/malformed-mobile/index">LINK</a></li>
+        <li>Add more steps..</li>
+      </ol>
+
+      <p>NHS Digital - Improving lives with data and technology</p>
+
+      <p>Please do not reply to this email. This mailbox is not monitored.</p>
+
+    </div>
+  </div>
+
+
+          </main>
+        </div>
+
+
+    </div>
+
+{% endblock %}

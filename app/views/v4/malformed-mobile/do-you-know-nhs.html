@@ -1,0 +1,105 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Do you know your NHS number?
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/v4/malformed-mobile/do-you-know-nhss"  method="POST">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Do you know your NHS number?
+            </h1>
+          </legend>
+          <p class="nhsuk-body">
+            Telling us your NHS number will give us the best chance of matching you to your NHS record.
+          </p>
+          <p class="nhsuk-body">
+            You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name instead.
+          </p>
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                How to find your NHS number
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="">An NHS number is a 10 digit number, like 485 777 3456.</p>
+              <p class="nhsuk-body">
+                You can find it:
+                <ul>
+                  <li>
+                    on any letter the NHS has sent you
+                  </li>
+                  <li>
+                    on a prescription
+                  </li>
+                  <li>
+                    by logging in to a GP surgery online service
+                  </li>
+                  <li>
+                    on a vaccination letter
+                  </li>
+                </ul>
+                Ask your GP surgery for help if you cannot find your NHS number.
+              </p>
+            </div>
+          </details>
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="knowNHSNumber-yes" name="knowNHSNumber" type="radio" value="yes" aria-controls="conditional-nhs-number-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="knowNHSNumber-yes">
+                  Yes, I know my NHS number
+                </label>
+              </div>
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-nhs-number-1">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="enterNHSNumber">
+                        NHS number
+                      </label>
+                      <div class="nhsuk-hint" id="NHSNumberHint">
+                        Example: 485 777 3456
+                      </div>
+                      <input class="nhsuk-input nhsuk-input--width-20" id="userEmail" name="nhs-number" value="{{ data['nhs-number'] }}">
+                    </div>
+                  </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="knowNHSNumber-no" name="knowNHSNumber" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="knowNHSNumber-no">
+                  No, continue with my full name
+                </label>
+              </div>
+
+            </div>
+
+            </fieldset> <!-- nhsuk-fieldset -->
+          </div> <!-- end nhsuk-form-group -->
+
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+
+        </fieldset>
+      </form>
+
+
+
+
+      {% if data['devMode'] %}
+      {% include "includes/devmode-enter-email.html" %}
+      {% endif %}
+
+    </div>
+  </div>
+
+
+{% endblock %}

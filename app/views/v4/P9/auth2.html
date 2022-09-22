@@ -1,0 +1,43 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Checking your details
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+      <div class="nhsuk-width-container">
+         <h1 class="nhsuk-heading-l">Checking your details</h1>
+
+      <form action="app/auth" method="post">
+        <section class="loading-container" id="gp-connect-0" style="display:block; min-height: 16em;">
+
+          <div class="bar_container">
+            <div id="main_container">
+              <div id="pbar" class="progress-spinner" data-percent="0">
+                <img src="/images/loader-spinner.svg" width="200px" height="200px" id="spinner" class=""/>
+                <div class="ppc-loading">
+                  <div class="pcc-percents-wrapper">
+                    <span id="spinner-status" class="nhsuk-body">Loading</span><span aria-hidden="true">...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </form>
+
+  </div>
+</div>
+
+
+<script>
+    setTimeout(function(){
+      window.location.href='/v4/P9/user-admin';
+  }, 2500);
+  
+</script>
+
+
+{% endblock %}
