@@ -521,31 +521,32 @@ router.post('/v3/malformed-mobile/do-you-know-nhss', function (req, res) {
   }
 })
 
+
 // V4 ROUTES
+
+// NHS number
 router.post('/v4/malformed-mobile/do-you-know-nhss', function (req, res) {
 
   var NHSnumber = req.session.data['knowNHSNumber']
   if (NHSnumber == 'yes'){
-    res.redirect('/v4/malformed-mobile/what-is-your-dob')
+    res.redirect('/v4/malformed-mobile/what-is-your-dob') 
   }else {
     res.redirect('/v4/malformed-mobile/whats-your-name')
   }
 })
 
+// Email address
+router.get('/v4/P0/enter-your-email-address-answer', function (req, res) {
 
- //V2 //
-//Routing for Email address
-// router.post('/v2/one-off/malformed-mobile/login', function (req, res) {
-//   var {{ data['userEmail'] }} = req.session.data['{{ data.userEmail }}']
-//   if ({{ data['userEmail'] }} == 'p0@gmail.com'){
-//     res.redirect('/v2/one-off/malformed-mobile/P0/we-found-your-login')
-//   }
-//   if ({{ data['userEmail'] }} == 'p5@gmail.com') {
-//     res.redirect('/v2/one-off/malformed-mobile/P5/we-found-your-login')
-//   }
-//   if ({{ data['userEmail'] }} == 'p9@gmail.com') {
-//     res.redirect('/v2/one-off/malformed-mobile/P9/we-found-your-login')
-//   }
-// })
+  var userEmail = req.session.data['userEmail']
+  if (userEmail == 'yes@email.com'){
+    res.redirect('/v4/P0/we-found-your-login')
+  }else {
+    res.redirect('/v4/P0/login-not-found')
+  }
+})
+
+
+
 
       module.exports = router;
