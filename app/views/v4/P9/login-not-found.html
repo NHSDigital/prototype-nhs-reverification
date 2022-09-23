@@ -1,0 +1,84 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "/v4/P9/enter-your-email-address",
+      "text": "Back to: Enter your email address",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="/v4/malformed-mobile/do-you-know-nhs" class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-heading-l">
+            We can not find your NHS login
+          </h1>
+        </legend>
+
+        <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>We were unable to find a NHS login linked to <strong>{{ data['userEmail'] or 'email@email.com' }}.</strong></p> 
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Not entered the correct email address?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>If you have entered an incorrect email address, <a href="/v4/P9/enter-your-email-address">you can try again by entering your email address</a>.</p>
+            </div>
+          </details>
+          <p>Try to update your contact details with this one-off service.</p>
+        
+          <a href="/v4/malformed-mobile/do-you-know-nhs" data-redirect="register-create-password" class="nhsuk-button full-width" id="button--save">Continue</a>
+        </div>
+  
+      </form>
+
+    </div>
+
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+
+{% endblock %}

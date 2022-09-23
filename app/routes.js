@@ -536,6 +536,8 @@ router.post('/v4/malformed-mobile/do-you-know-nhss', function (req, res) {
 })
 
 // Email address
+
+// P0
 router.get('/v4/P0/enter-your-email-address-answer', function (req, res) {
 
   var userEmail = req.session.data['userEmail']
@@ -546,6 +548,27 @@ router.get('/v4/P0/enter-your-email-address-answer', function (req, res) {
   }
 })
 
+// P5
+router.get('/v4/P5/enter-your-email-address-answer', function (req, res) {
+
+  var userEmail = req.session.data['userEmail']
+  if (userEmail == 'yes@email.com'){
+    res.redirect('/v4/P5/we-found-your-login')
+  }else {
+    res.redirect('/v4/P5/login-not-found')
+  }
+})
+
+// P9
+router.get('/v4/P9/enter-your-email-address-answer', function (req, res) {
+
+  var userEmail = req.session.data['userEmail']
+  if (userEmail == 'yes@email.com'){
+    res.redirect('/v4/P9/we-found-your-login')
+  }else {
+    res.redirect('/v4/P9/login-not-found')
+  }
+})
 
 
 
