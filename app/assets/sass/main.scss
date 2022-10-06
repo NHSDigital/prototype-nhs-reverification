@@ -23,11 +23,11 @@
     @include mq($from: mobile) {
       width: 100%;
     }
-  
+
     @include mq($from: tablet) {
       width: auto;
     }
-  
+
     @include mq($from: desktop) {
       width: auto;
     }
@@ -61,5 +61,3 @@ label.nhsuk-button input[accept*="video/*"] {
 .nhsuk-footer.u-hide {
   display: none;
 }
-
-
