@@ -1,0 +1,148 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+            <form action="feedback-confirmation" method="post" autocomplete="off">
+
+              <h1>
+                Provide feedback to improve the service
+              </h1>
+
+              <!-- Add content here -->
+              <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+              <p class="nhsuk-lede-text">
+                Your feedback can help us improve the Add or correct your contact details service.
+              </p>
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>If you think it's a life threatening emergency:</p>
+                <ul>
+                  <li>call 999</li>
+                </ul>
+                <p>If you do not think it's an emergency:</p>
+                <ul>
+                  <li>call 111 or <a href="https://111.nhs.uk/">go to 111 online</a></li>
+                  <li>call 111 or <a href="">speak to a pharmacist, GP or dentist</a></li>
+                  <li>search the <a href="https://www.nhs.uk/conditions/">NHS website health A-Z</a>for more advice about your condition</li>
+                </ul>
+              </div>
+
+              <div class="nhsuk-hint" id="contact-hint">
+                <p>The NHS website team does not access to individual patient information. If you have any questions or concerns about your patient record, please contact your current GP surgery.</p>
+              </div>
+
+
+
+
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example-longer">
+        Describe what happened on the page
+      </label>
+      <div class="nhsuk-hint" id="example-longer-hint">
+        Do not include confidential or medical information in your message. For example, your NHS number, date of birth, medical diagnosis or medical history.
+      </div>
+      <textarea class="nhsuk-textarea" id="example-longer" name="example-longer" rows=" 10 " aria-describedby="example-longer-hint"></textarea>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button class="nhsuk-button" type="submit">
+      Send feedback
+    </button>
+
+
+
+
+            </form>
+
+
+
+          </div>
+
+  </div>
+</div>
+
+
+
+  <style>
+    .panel-link__link {
+        background-color: #ffffff;
+        background-image: url(https://nhsuk-transactions-prototype.azurewebsites.net/images/icon_arrow_left.svg);
+        background-position: right 1em center;
+        background-repeat: no-repeat;
+        color: #005eb8;
+        display: block;
+        padding: 10px 2em 10px 1em;
+        text-decoration: none;
+    }
+
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        border-top: 1px #d8dde0 solid;
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+    @media (max-width: 48.0525em) {
+    .panel-link {
+        margin: 0 -1em 1em;
+    }
+    }
+    .panel-link {
+        font-size: 1em;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 0;
+    }
+
+</style>
+{% endblock %}
