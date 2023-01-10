@@ -17,13 +17,30 @@ You must protect user privacy at all times, even when using prototypes. Prototyp
 - <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs/install/simple">Install guide (non technical)</a>
 - <a href="http://nhsuk-prototype-kit.azurewebsites.net/docs/install/advanced">Developer friendly install guide (technical)</a>
 
+### Testing
+There is currently no automated testing included with this product.
+
 ## Contribute
 
 If you want to contribute to the NHS.UK prototype kit, by reporting bugs, fixing bugs, suggesting new features or writing documentation, then read our [contributing guidelines](CONTRIBUTING.md).
 
-## Development enviroment
+## Development environment
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/nhsuk/nhsuk-prototype-kit)
+
+## Versioning and deploying the prototype kit
+
+> The below is only for maintainers of the prototype kit source code - these instructions aren't relevant if you're building your own protoype using the kit.
+
+- Merge required changes via PR into `main` branch
+  - Ensure the version number in `package.json` and `CHANGELOG.md` match, with a summary of the changes included in the changelog
+- Pull down merged `main` branch to your local repository
+- Create a tag with the version number from the latest commit on `main`
+  - If the latest version you're looking to push is version "1.2.3", you can do this on the command line with
+    - `git tag v1.2.3`
+    - `git push --tags`
+- [Github actions](https://github.com/nhsuk/nhsuk-prototype-kit/actions/workflows/release.yml) will spring to life and create a release which will be visible on the [releases tab](https://github.com/nhsuk/nhsuk-prototype-kit/releases) of the repository.
+- Finally, edit the description of the release to match the content entered into the changelog.
 
 ## Support
 
