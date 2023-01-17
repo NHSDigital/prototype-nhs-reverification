@@ -5,59 +5,240 @@
 @import 'components/list-border';
 @import 'components/related-nav';
 @import 'components/spinner';
-@import 'components/steps';
 @import 'components/button-spinner';
-@import 'components/hr-thick';
-@import 'components/panel-confirmation';
-
-// Components to override the NHS.UK frontend library
-@import 'overrides/card';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
 
-// login flow styling
+.proto-action {
+  position: fixed;
+  right: 0;
+  bottom: 60px;
+  width: 114px;
+  height: 35px;
+  background-color: #ffeb3b;
+  box-shadow: -7px -7px 12px -7px rgba(0, 0, 0, 0.85);
+}
+.proto-action a {
+  text-decoration: none;
+  display: block;
+}
 
-.nhsuk-button.full-width {
-    @include mq($from: mobile) {
-      width: 100%;
-    }
+.proto-action-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.3em;
+  font-weight: bold;
+}
 
-    @include mq($from: tablet) {
-      width: auto;
-    }
+.proto-action.big {
+  width: 35%;
+  height: 7%;
+}
 
-    @include mq($from: desktop) {
-      width: auto;
-    }
+.proto-action.big a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .proto-action.big {
+    width: 16%;
+    height: 6%;
   }
+}
+.link-styled-button {
+  border: none;
+  color: #1d70b8;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 300;
+  text-decoration: underline;
+  position: relative;
+  padding: 0;
+}
 
-// Inline password reveal
+.link-styled-button:hover {
+  text-decoration: none;
+}
 
-.nhsuk-form-group.form-group-password-toggle {
+.link-styled-button:active,
+.link-styled-button:focus {
+  background-color: #ffdd00;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.link-styled-button:active::after,
+.link-styled-button:focus::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  position: absolute;
+}
+
+.white-text {
+  color: #ffffff;
+}
+
+.border-bottom-white {
+  border-bottom: 1px solid #ffffff;
+}
+
+@media (max-width: 40.0625em) {
+  .border-bottom-white.desktop-only {
+    border-bottom: none;
+  }
+  .nhsuk-footer__list-item.desktop-only,
+  .nhsuk-header__transactional-service-name.desktop-only {
+    display: none;
+  }
+}
+.nhsuk-card__link.stackable {
+  margin-right: 30px;
+}
+
+@media (max-width: 40.0625em) {
+  .nhsuk-card__link.stackable {
+    display: block;
+    margin-right: 0;
+  }
+}
+.nhsuk-list.spaced > li {
+  margin-bottom: 1em;
+  background: #fff;
+  border: 1px solid #d8dde0;
+  position: relative;
+  border: none;
+  padding: 1em;
+}
+
+.nhsuk-list.spaced > li li {
+  padding: 0 0 0em 1em;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-card__link.stackable {
+    width: 100%;
+  }
+}
+.nhsuk-list.spaced a {
+  word-break: break-all;
+}
+
+.bulleted-summary-list,
+.bulleted-summary-list h3 {
   position: relative;
 }
 
-.inline-password-toggle {
+@media (min-width: 40.0625em) {
+  .bulleted-summary-list {
+    padding-left: 4em;
+  }
+  .bulleted-summary-list:before {
+    height: 100%;
+    width: 2px;
+    content: "";
+    background-color: #005eb8;
+    position: absolute;
+    left: 0.75em;
+    bottom: 0;
+  }
+  .bulleted-summary-list h3:before {
+    height: 20px;
+    width: 20px;
+    content: "";
+    background-color: #005eb8;
+    border-radius: 50%;
+    position: absolute;
+    left: -2.55em;
+    bottom: 0.5rem;
+  }
+  .bulleted-summary-list:after {
+    height: 5px;
+    width: 20px;
+    content: "";
+    background-color: #005eb8;
+    position: absolute;
+    left: 0.2em;
+    bottom: 0;
+  }
+}
+
+
+.informative-tab-green {
+  text-transform: uppercase;
+  font-size: 12px;
+  background: #009639;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 !important;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+
+/* Warning text */
+
+@media (min-width: 768px) {
+  .nhsuk-warning-text__icon {
+    margin-top: -5px;
+  }
+}
+.nhsuk-warning-text__icon {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background: #0b0c0c;
+  border-radius: 50%;
+  border: 3px solid #0b0c0c;
+  color: #fff;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  left: 0;
+  line-height: 29px;
+  margin-top: -7px;
+  min-height: 29px;
   position: absolute;
-  top: 35px;
-  right: 180px;
+  text-align: center;
+  user-select: none;
+  width: 35px;
 }
 
-// This is the part that actually hides the 'Choose file' text box for camera inputs
-label.nhsuk-button input[accept*="image/*"],
-label.nhsuk-button input[accept*="video/*"] {
-  display: none;
+.nhsuk-warning-text {
+  position: relative;
+  padding: 10px 0;
 }
 
-
-// iprove shrink header and footer
-.nhsuk-header.u-hide {
-  height: 0;
-  transition: all ease 0.5s;
+@media (min-width: 40.0625em) {
+  .nhsuk-u-margin-bottom-3 {
+    margin-bottom: 16px !important;
+  }
 }
 
-.nhsuk-footer.u-hide {
-  display: none;
+@media (min-width: 768px) {
+  .nhsuk-warning-text__text {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.3;
+  }
+}
+.nhsuk-warning-text__text {
+  color: #0b0c0c;
+  display: block;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding-left: 45px;
+  text-align: left;
 }

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your mobile phone
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "enter-your-new-phone",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="contact-details-final" method="post" class="form">
+      <h1 class="nhsuk-heading-l">
+        Check your mobile phone
+      </h1>
+
+      <p>Enter the 6 digit security code we have sent to <strong>{{ data['newMobileNumber'] or '07463966681'}}</strong> to confirm this is your phone number.</p>
+      <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
+
+      <details nhsuk-polyfilled="true" id="nhsuk-details" class="nhsuk-details">
+        <summary role="button" aria-controls="nhsuk-details__text" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
+          <span class="nhsuk-details__summary-text"> Not received your security code?</span>
+        </summary>
+        <div id="nhsuk-details__text" class="nhsuk-details__text" aria-hidden="true">
+          <p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="#" onclick="return false;">Send the security code again</a></p>
+        </div>
+      </details>
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <label class="nhsuk-label" for="sms-verify-otp">
+            Security code
+          </label>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            The code is 6 digits
+          </div>
+
+          <input class="nhsuk-input nhsuk-input--width-5" inputmode="numeric" spellcheck="false"  id="sms-verify-otp" name="sms-verify-otp" type="text" autocomplete="one-time-code">
+
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button full-width" type="submit" id="button--save">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

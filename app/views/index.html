@@ -2,11 +2,11 @@
 
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-<!-- Extends the layout from /views/layouts/layout.html -->
-{% extends 'layouts/layout.html' %}
-<!--
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
   In /views/layout.html you can:
-    - change the header and footer
+    - change the header and footer 
     - add custom CSS and JavaScript
 -->
 
@@ -29,137 +29,46 @@ Add or correct your contact details
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
+      <h1>NHS Reverification prototypes</h1>
 
-      <h1>
-        NHS Reverification prototype
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Running on prototype kit version {{version}}</span>
-        <span class="nhsuk-caption-m nhsuk-caption--bottom" style="font-size:12px;">Maintained by <b>Mikey Cattell</b> and <b>Dani Steen</b></span>
-      </h1>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <hr>
-      <h3 class="nhsuk-heading-l">Web Journey(only)</h3>
-      <h4>Missing data</h4>
-      <ul>
-        <li><a href="/v1/one-off/missing-mobile/index">Missing mobile phone</a> - awaiting testing</li>
-        - <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1657184287007/811233aa10297003cd39baffe9dfd33266a5195c?wid=0-1659696087075">Mural link</a><br><br>
-        <li><a href="/v1/one-off/missing-email/index">Missing email address</a> - awaiting testing</li>
-        - <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1657184287007/811233aa10297003cd39baffe9dfd33266a5195c?wid=0-1659696092459">Mural link</a>
-      </ul>
-      <h4>Malformed data</h4>
-      <ul>
-        <li><a href="/v2/one-off/malformed-mobile/index">Malformed mobile phone</a> - awaiting testing</li>
-        <li><a href="/v2/one-off/malformed-email/index">Malformed email address</a> - awaiting testing</li>
-      </ul>
-      <div style="background: white; padding: 20px;">
-      <h4>Scenarios</h4>
-      <ul>
-        <li><a href="/v1/one-off/details-are-valid/index">Your contact details appear to be valid</a> - awaiting testing</li>
-        - <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1657184287007/811233aa10297003cd39baffe9dfd33266a5195c?wid=0-1659698816108">Mural link</a><br><br>
-        <li><a href="/v1/one-off/missing-email-and-mobile/index">There are no contact details on your NHS record</a> - awaiting testing</li>
-        - <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1657184287007/811233aa10297003cd39baffe9dfd33266a5195c?wid=0-1659698809727">Mural link</a><br><br>
-        <li><a href="/v1/one-off/data-not-found/index">We cannot find your details</a> - awaiting testing</li>
-        - <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1657184287007/811233aa10297003cd39baffe9dfd33266a5195c?wid=0-1659698855927">Mural link</a><br><br>
-      </ul>
-
-      <h4>Specific end pages - needs content check</h4>
-      <ul>
-        <li><a href="/end-pages/bothdetailsaremalformed">Both details are malformed - end page</a></li>
-        <li><a href="/end-pages/datanotfound">Data not found/Contact your GP - end page</a></li>
-        <li><a href="/end-pages/detailsappearcorrect">Details appear correct - end page</a></li>
-        <li><a href="/end-pages/genericerrorpage">Generic error page - Something went wrong</a></li>
-        <li><a href="/end-pages/nodetailslinked">No details linked to NHS record - end page</a></li>
-        <li><a href="/end-pages/somethingwentwrong">Something went wrong (in sending code) - error page</a></li>
-        <li><a href="/end-pages/wecannotfindyourdetails">We cannot find your details - error page</a></li>
-        <li><a href="/end-pages/youcannotcontinue-askedforsecuritycode">You cannot continue (asked for security code) - error page</a></li>
-        <li><a href="/end-pages/youcannotcontinue-enteredwrongsecuritycode">You cannot continue (entered wrong security code) - error page</a></li>
-      </ul>
-      </div>
-
-      <hr>
-      <h3 class="nhsuk-heading-m">Experiments - Linked to NHS login</h3>
-      <h4>Malformed data (very early build)</h4>
-      <ul>
-        <li><p><a href="/v3/P0/index">P0</a> (very early build)</p></li>
-      </ul>
-      <ul>
-        <li><a href="/v3/P5/index">P5</a></li>
-      </ul>
-      <ul>
-        <li><a href="/v3/P9/index">P9</a></li>
-      </ul>
-
-<h3 class="nhsuk-heading-m">Feedback functionality</h3>
-      <ul>
-        <li><a href="/v3/malformed-mobile/check-your-mobile">Text link (underneath main content)</a></li>
-      </ul>
-
-      <hr>
-      <h3>Notes:</h3>
-      <p>Link to <a href="https://app.mural.co/invitation/mural/nhsdigital8118/1657184287007?sender=ue15233f4ad43bd33626e9387&key=3b524c0e-a1b0-498a-85c8-5bde8c977176">user journey mural board</a></p>
-
-
-      <!-- End of content -->
-
-    </div>
-
-    <div class="nhsuk-grid-column-one-third nhsuk-u-margin-bottom-4">
-
-      <h3 class="nhsuk-heading-m">Links</h3>
-      <p>
-        <a href="https://github.com/mikey-hippo/prototype-nhs-reverification" target="_blank">View github repo</a>
+      <p class="nhsuk-lede-text">
+        Research prototypes for the 'Update your contact details' service.
       </p>
 
-<!--
-      <b>Environments</b>
-      <ul>
-        <li><a href="https://nhsd-confluence.digital.nhs.uk/pages/viewpage.action?spaceKey=NL&title=NHS+login+Environment+Links">List of all environments</a></li>
-        <li><a href="https://auth.qa.signin.nhs.uk/authorize?scope=openid&client_id=nhs-onlineOpenPrf&redirect_uri=http://localhost:3000/auth-return&response_type=code&state=appstate&nonce=randomnonce">QA environment (an accurate reflection of what is in live, with field validation)</a></li>
-      </ul>
+      <hr>
 
-      <b>Prototypes</b>
-      <ul>
-        <li><a href="https://nhs-login.herokuapp.com/index">P0 (registration), P5 and P9 (IDVM) journeys</a>DEPRECIATED TAG</li>
-        <li><a href="https://nhs-cid.herokuapp.com/start">P9 (PYI and POL) journeys</a>DEPRECIATED TAG</li>
-        <li><a href="https://nhs-login-prototype-idchecker.herokuapp.com/">NHS ID Checker App - u: ID, p: checker</a></li>
-        <li><a href="https://nhs-login-admin-portal.herokuapp.com/search">NHS login admin portal - u: admin, p: portal</a></li>
-      </ul>
+      <h2>Currently in research and development</h2>
 
-      <b>Overviews</b>
-      <ul>
-        <li><a href="https://app.mural.co/invitation/mural/nhsdigital8118/1645028856357?sender=uf76f91a8abb4057219bc1226&key=ad50ce8a-cc99-4856-a001-89a27fd2fb9b">NHS login overview (mural)</a></li>
-        <li><a href="https://nhsconnect.github.io/nhslogin/user-journeys/">NHS login user journeys</a></li>
-      </ul>
+      <div class="nhsuk-main-wrapper " id="maincontent" role="main">
 
-      <b>Emails</b>
-      <ul>
-        <li><a href="https://nhsd-confluence.digital.nhs.uk/display/NL/All+emails+in+Notify">All live emails sent via Notify</a></li>
-        <li><a href="https://nhsd-confluence.digital.nhs.uk/pages/viewpage.action?pageId=80252083">Emails that get sent out from rejection reasons in ID Checker App</a></li>
-      </ul>
+        <div class="bulleted-summary-list">
+          <div class="relative">
 
-      <b>Websites</b>
-      <ul>
-        <li><a href="https://help.login.nhs.uk/">NHS login Help Centre</a></li>
-        <li><a href="https://www.nhs.uk/nhs-services/online-services/nhs-login/">NHS login public facing info on NHS.UK</a></li>
-        <li><a href="https://digital.nhs.uk/services/nhs-login">NHS login as a NHS Digital service</a></li>
-        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers">NHS login for partners and developers</a></li>
-        <li><a href="https://nhsconnect.github.io/nhslogin/">NHS login developer documentation</a></li>
-        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/how-nhs-login-works">How NHS login works</a></li>
-        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/nhs-login-integration-toolkit">NHS login integration toolkit</a></li>
-        <li><a href="https://digital.nhs.uk/services/nhs-login/nhs-login-for-partners-and-developers/nhs-login-integrated-partners-and-services">List of partners and services that use NHS login</a></li>
-      </ul>
+            <div class="inline-heading-link">
+              <h3 class="nhsuk-heading-m">
+                V1: January 2023
+              </h3>
+            </div>
 
-      <b>Misc.</b>
-      <ul>
-        <li><a href="https://hscic365-my.sharepoint.com/:v:/g/personal/lyte1_hscic_gov_uk/EdbttVDcKSxBlPgb85gOTcYB4_owiOgwz8fav4h4EMhYCg">A recording of the Welcome to NHS login meeting</a></li>
-      </ul>
+            <ul class="nhsuk-list spaced">
+              <div class="informative-tab-green"><strong>A user is invited to correct their contact details</strong></div>
+              <li>
+                <p>User is messaged either by SMS or email and directed to a service start page and then proceeds into a standalone web service that matches them to their PDS record and does a verification check on their good contact detail. If successful, they can change the bad contact detail.</p>
 
--->
+                <div class="nhsuk-grid-row">
+                  <ul class="nhsuk-list list-unstyled">
+                    <li> ➡️ User gets an email &nbsp;(<a href="/v1/notification-email?contactMethod=email&reason=missingmobile">missing mobile</a>) | (<a href="/v1/notification-email?contactMethod=email&reason=malformedmobile">malformed mobile</a>)</li>
+                    <li> ➡️ User gets an SMS &nbsp;(<a href="/v1/notification-sms?contactMethod=sms&reason=missingemail">missing email</a>) | (<a href="/v1/notification-sms?contactMethod=sms&reason=malformedemail">malformed email</a>)</li>
+                    <li class="nhsuk-u-padding-top-3"> ➡️ &nbsp;<a href="/v1/start">Service start page</a> | (<a href="/v1/start?devmode=true">run in devMode</a>)</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
 
     </div>
   </div>

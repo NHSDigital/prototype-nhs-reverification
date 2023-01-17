@@ -1,0 +1,213 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Add or correct your contact details
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhs-beta.css" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container beta-header">
+
+
+    <div class="nhsuk-header__logo">
+      <a class="nhsuk-header__link" href="#" onclick="return false;" aria-label="NHS homepage">
+
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+          <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" fill="#fff" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <div class="nhsuk-header__search">
+        <div class="nhsuk-header__search-wrap beta-header__search-wrap js-show" id="wrap-search">
+          <form class="nhsuk-header__search-form beta-header__search-form" id="search" method="get" role="search">
+            <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS website</label>
+            <div class="autocomplete-container" id="autocomplete-container"></div>
+            <input class="nhsuk-search__input" id="search-field" name="q" type="search" placeholder="Search" autocomplete="off" >
+            <button class="nhsuk-search__submit beta-search__submit" type="submit">
+              <svg class="nhsuk-icon nhsuk-icon__search beta-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+              </svg>
+              <span class="nhsuk-u-visually-hidden">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="beta-nhsuk-navigation-container">
+    <div class="nhsuk-width-container">
+      <nav class="beta-nhsuk-navigation" id="header-navigation" role="navigation" aria-label="Primary navigation">
+        <ul class="beta-nhsuk-header__navigation-list">
+          <li class="beta-nhsuk-header__navigation-item">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              Health A-Z
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item beta-nhsuk-header__navigation-item--services-mobile">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              NHS services
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              Live Well
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              Mental health
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              Care and support
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" href="#" onclick="return false;">
+              Pregnancy
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item beta-nhsuk-header__navigation-item--home">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link"  href="#" onclick="return false;">
+              Home
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-nhsuk-header__navigation-item beta-nhsuk-header__navigation-item--services">
+            <a class="nhsuk-header__navigation-link beta-nhsuk-header__navigation-link"  href="#" onclick="return false;">
+              NHS services
+              <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="34" width="34">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="beta-mobile-menu-container">
+            <button class="beta-nhsuk-header__menu-toggle nhsuk-header__navigation-link beta-nhsuk-header__navigation-link" aria-expanded="false">
+              <span class="nhsuk-u-visually-hidden">Browse</span>
+              More
+              <svg class="nhsuk-icon beta-nhsuk-icon__chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+              </svg>
+
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+</header>
+
+<nav class="nhsuk-breadcrumb beta-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+
+      <li class="nhsuk-breadcrumb__item">
+        <a href="#" onclick="return false;" class="nhsuk-breadcrumb__link">Home</a>
+      </li>
+
+      <li class="nhsuk-breadcrumb__item">
+        <a href="#" onclick="return false;" class="nhsuk-breadcrumb__link">NHS Services</a>
+      </li>
+
+      <li class="nhsuk-breadcrumb__item">
+        <a href="#" onclick="return false;" class="nhsuk-breadcrumb__link">Online service</a>
+      </li>
+
+    </ol>
+
+    <p class="nhsuk-breadcrumb__back">
+
+      <a href="#" onclick="return false;" class="nhsuk-breadcrumb__backlink">
+        <span class="nhsuk-u-visually-hidden">Back to </span>
+        Online Services
+      </a>
+
+    </p>
+
+  </div>
+</nav>
+
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+    <style>
+        .nhsuk-main-wrapper {
+            padding-top: 0;
+        }
+    </style>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <h1>Add or correct your contact details</h1>
+        <p>We use the contact details on your NHS record to get in touch with you about screening, vaccinations or other appointment reminders.</p>
+
+        <p>It's important that your contact details are correct, as your GP and other NHS services will use them to contact you.</p>
+
+        <p>You can update your email address or phone number by using this service.</p>
+
+        <p>This will not update your NHS login details.</p>
+
+        <h2>Before you start</h2>
+
+        <p>You will need to have access to your email account and phone.</p>
+
+        <p>To verify it's you, we will need to send a security code to the contact details we already have for you.</p>
+
+        <p>Once confirmed, we'll send a different security code to the contact details you're adding, to check it's working correctly.</p>
+
+        <a class="nhsuk-button" href="standalone/do-you-know-nhs" role="button" draggable="false">Start now</a>
+
+        <p>By using this service you are agreeing to our <a href="#" onclick="return false;">terms of use</a> and <a href="#" onclick="return false;">privacy policy</a>.</p>
+
+      </div>
+    </div>
+
+{% endblock %}

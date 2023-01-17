@@ -1,0 +1,58 @@
+body {
+    background-color: #f3f2f1 !important;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 48.0625em) {
+    .nhsuk-width-container {
+        margin: 0 auto;
+    }
+}
+
+.app-text-message {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 320px;
+    min-height: 420px;
+}
+
+.app-text-message__text {
+    max-width: 255px;
+    word-wrap: break-word;
+    margin-bottom: 12px;
+    line-height: 24px;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #E5E5EA;
+    color: black;
+}
+
+.app-text-message__text:before,
+.app-text-message__text:after {
+    content:"";
+    position:absolute;
+    bottom:-2px;
+    height:20px;
+}
+
+.app-text-message__text:before {
+    left:-7px;
+    border-left:20px solid #E5E5EA;
+    border-bottom-right-radius: 16px 14px;
+    transform:translate(0, -2px);
+}
+
+.app-text-message__text:after {
+    left:10px;
+    width:20px;
+    background:white;
+    border-bottom-right-radius: 10px;
+    transform:translate(-30px, -2px);
+}

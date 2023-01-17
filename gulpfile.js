@@ -98,7 +98,7 @@ function startBrowserSync(done){
     files: ['app/views/**/*.*', 'docs/views/**/*.*'],
     ghostmode: false,
     open: false,
-    notify: true,
+    notify: false,
     watch: true,
   }, done);
   gulp.watch("public/**/*.*").on("change", reload);
