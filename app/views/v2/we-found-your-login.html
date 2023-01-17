@@ -1,0 +1,178 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+We found your NHS login
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+        height: 60px;
+        width: 345px;
+        background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+        background-repeat: no-repeat;
+        background-size: 345px 60px;
+        display: block;
+        font-size: 0;
+        background-color: unset !important;
+        border: unset !important;
+        box-shadow: unset !important;
+    }
+
+    .nhsuk-button--blue {
+        background-color: #005bb3;
+        box-shadow: 0 4px 0 #002a52;
+    }
+</style>
+
+<div class="nhsuk-grid-row">
+
+  <form class="nhsuk-grid-column-two-thirds">
+
+    <form action="enter-your-password" class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-heading-l">
+          We found your NHS login
+        </h1>
+      </legend>
+
+      <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We found an NHS login linked to <strong>{{ data['userEmail']
+        or
+        'email@email.comm' }}.</strong>
+        <p>
+
+        <p>We are showing you this because you are accessing
+          <srong>your NHS account</strong> for the first time on this device, or you have not logged in to this service
+            for a while.
+        </p>
+
+        <p>Continue to visit <strong>your NHS account</strong>.</p>
+
+        <details class="nhsuk-details" id="nhsuk-details0" nhsuk-polyfilled="true">
+          <summary aria-controls="nhsuk-details__text0" aria-expanded="false" class="nhsuk-details__summary" role="button"
+                   tabindex="0">
+            <span class="nhsuk-details__summary-text"> Don't remember setting up an account? </span>
+          </summary>
+          <div aria-hidden="true" class="nhsuk-details__text" id="nhsuk-details__text0">
+            <p> You may have set up an NHS login when using other health websites or apps, like a COVID-19 service. </p>
+          </div>
+        </details>
+
+        <a aria-label="Continue with NHS login"
+           button-classes="nhsuk-login,nhsuk-body,nhsuk-button,"
+           class="login_continueWithNhsLogin_-t-uU"
+           data-v-60420a25=""
+           data-v-e274948a=""
+           href="/v4/P9/enter-your-password"
+           id="viewInstructionsButton"
+           role="button"
+           style="margin: 0px 0px 24px 0px;"
+           tabindex="0">
+          Continue with NHS login
+        </a>
+
+        <div class="nhsuk-hint">
+          <p>Alternatively you can continue without using NHS login:</p>
+        </div>
+
+        <p><a class="nhsuk-button nhsuk-button--secondary" href="/v4/malformed-mobile/do-you-know-nhs">Continue without</a></p>
+
+
+        <h2 class="nhsuk-heading-l">Would you like to sign in with NHS login?</h2>
+
+        <div class="nhsuk-hint">
+          <p>You may have set up an NHS login when using other health websites or apps, like COVID-19 service or the NHS
+            App.</p>
+          <p>We will use details from your NHS login and share them with your new GP. This is the quickest way to
+            complete your registration.</p>
+        </div>
+
+        <p>
+
+        </p>
+        <form action="/sprint-11/section-1/nhs-login-email-address" autocomplete="off" method="post">
+          <input id="user-auth" name="user-auth" type="hidden" value="p9">
+          <button class="nhsuk-button nhsuk-button--blue nhsuk-u-margin-bottom-4" type="submit">
+            Continue with NHS login
+          </button>
+        </form>
+
+        <div class="nhsuk-hint" id="contact-hint">
+          <p>Alternatively you can continue without using NHS login:</p>
+        </div>
+
+        <p><a class="nhsuk-button nhsuk-button--secondary" href="/sprint-11/section-1/what-is-your-name">Continue
+          without</a></p>
+
+
+      </div>
+
+      <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+        <form action="enter-your-password" class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              We found your NHS login
+            </h1>
+          </legend>
+
+          <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>We found an NHS login linked to <strong>{{ data['userEmail']
+            or
+            'email@email.comm' }}.</strong>
+            <p>
+
+            <p>We are showing you this because you are accessing
+              <srong>your NHS account</strong> for the first time on this device, or you have not logged in to this
+                service for a while.
+            </p>
+
+            <p>Continue to visit <strong>your NHS account</strong>.</p>
+
+            <details class="nhsuk-details" id="nhsuk-details0" nhsuk-polyfilled="true">
+              <summary aria-controls="nhsuk-details__text0" aria-expanded="false" class="nhsuk-details__summary" role="button"
+                       tabindex="0">
+                <span class="nhsuk-details__summary-text"> Don't remember setting up an account? </span>
+              </summary>
+              <div aria-hidden="true" class="nhsuk-details__text" id="nhsuk-details__text0">
+                <p> You may have set up an NHS login when using other health websites or apps, like a COVID-19
+                  service. </p>
+              </div>
+            </details>
+
+            <a aria-label="Continue with NHS login"
+               button-classes="nhsuk-login,nhsuk-body,nhsuk-button,"
+               class="login_continueWithNhsLogin_-t-uU"
+               data-v-60420a25=""
+               data-v-e274948a=""
+               href="/v4/P9/enter-your-password"
+               id="viewInstructionsButton"
+               role="button"
+               style="margin: 0px 0px 24px 0px;"
+               tabindex="0">
+              Continue with NHS login
+            </a>
+
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <h2 class="nhsuk-heading-m">What is NHS login?</h2>
+              <p> NHS login allows you to securely access health websites and apps with just one username and
+                password. </p>
+            </div>
+
+          </div>
+          </fieldset>
+          <div class="nhsuk-warning-callout  nhsuk-u-margin-top-3">
+            <h3 class="nhsuk-warning-callout__label">Coronavirus (COVID-19)</h3>
+            <p>For health information and advice, read <a class="nhsuk-link" href="#">NHS guidance about Coronavirus</a>
+            </p>
+          </div>
+        </form>
+      </div>
+  </form>
+</div>
+
+  {% endblock %}
