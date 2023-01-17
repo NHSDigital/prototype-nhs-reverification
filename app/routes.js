@@ -3,6 +3,24 @@ const express = require('express');
 
 const router = express.Router();
 
+// GOV Notify integration - ask Matt F for the API key if you need it
+var NotifyClient = require('notifications-node-client').NotifyClient,
+  notify = new NotifyClient(process.env.NOTIFYAPIKEY)
+
+// show all data store items in the terminal window
+router.use((req, res, next) => {
+  const log = {
+    method: req.method,
+    url: req.originalUrl,
+    data: req.session.data
+  }
+  // you can enable this in your .env file
+  if (process.env.LOGGING === 'TRUE') {
+    console.log(JSON.stringify(log, null, 2))
+  }
+  next()
+})
+
 // V1 ROUTES
 
 router.post('/v1/standalone/do-you-know-nhs', function (req, res) {
@@ -41,5 +59,26 @@ router.post('/v1/standalone/submit-new-mobile', function (req, res) {
 
   res.redirect('/v1/standalone/check-your-mobile')
 })
+
+// Dev Mode - Used to show routing by scenario other than user driven
+
+function devModeRoute(req, res, next) {
+  if (!req.session.data['devMode']) {
+    console.log('no data found')
+    var devMode = req.query.devMode
+    if (devMode === 'true') {
+      console.log('devmode detected')
+      req.session.data['devMode'] = 'true'
+      console.log('local storage updated')
+    } else {
+      console.log('devmode not detected')
+    }
+  } else {
+    console.log('data found and set to ' + req.session.data['devMode'])
+  }
+  next()
+}
+
+router.get('/*', devModeRoute)
 
 module.exports = router;
