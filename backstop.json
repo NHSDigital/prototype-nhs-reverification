@@ -11,8 +11,88 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Rever - index",
-      "url": "http://localhost:3000"
+      "label": "Reverification - start",
+      "url": "http://localhost:3000/v1/start"
+    },
+    {
+      "label": "Reverification - notification-email",
+      "url": "http://localhost:3000/v1/notification-email"
+    },
+    {
+      "label": "Reverification - notification-sms",
+      "url": "http://localhost:3000/v1/notification-sms"
+    },
+    {
+      "label": "Reverification - check-your-answers",
+      "url": "http://localhost:3000/v1/standalone/check-your-answers"
+    },
+    {
+      "label": "Reverification - check-your-answers-name",
+      "url": "http://localhost:3000/v1/standalone/check-your-answers?knowNHSNumber=no"
+    },
+    {
+      "label": "Reverification - check-your-email",
+      "url": "http://localhost:3000/v1/standalone/check-your-email"
+    },
+    {
+      "label": "Reverification - check-your-mobile",
+      "url": "http://localhost:3000/v1/standalone/check-your-mobile"
+    },
+    {
+      "label": "Reverification - check-your-mobile-verify-change",
+      "url": "http://localhost:3000/v1/standalone/check-your-mobile-verify-change"
+    },
+    {
+      "label": "Reverification - contact-details-email-missing",
+      "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=sms&reason=missingemail"
+    },
+    {
+      "label": "Reverification - contact-details-email-malformed",
+      "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=sms&reason=malformedemail"
+    },
+    {
+      "label": "Reverification - contact-details-sms-missing",
+      "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=email&reason=missingmobile"
+    },
+    {
+      "label": "Reverification - contact-details-sms-malformed",
+      "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=email&reason=malformedmobile"
+    },
+    {
+      "label": "Reverification - contact-details-final",
+      "url": "http://localhost:3000/v1/standalone/contact-details-final"
+    },
+    {
+      "label": "Reverification - contact-details-final-mobile",
+      "url": "http://localhost:3000/v1/standalone/contact-details-final?contactMethod=email"
+    },
+    {
+      "label": "Reverification - do-you-know-nhs",
+      "url": "http://localhost:3000/v1/standalone/do-you-know-nhs"
+    },
+    {
+      "label": "Reverification - enter-your-new-phone",
+      "url": "http://localhost:3000/v1/standalone/enter-your-new-phone"
+    },
+    {
+      "label": "Reverification - feedback-confirmation",
+      "url": "http://localhost:3000/v1/standalone/feedback-confirmation"
+    },
+    {
+      "label": "Reverification - feedback-page",
+      "url": "http://localhost:3000/v1/standalone/feedback-page"
+    },
+    {
+      "label": "Reverification - what-is-your-dob",
+      "url": "http://localhost:3000/v1/standalone/what-is-your-dob"
+    },
+    {
+      "label": "Reverification - what-is-your-postcode",
+      "url": "http://localhost:3000/v1/standalone/what-is-your-postcode"
+    },
+    {
+      "label": "Reverification - what-is-your-name",
+      "url": "http://localhost:3000/v1/standalone/what-is-your-name"
     }
   ],
   "paths": {
