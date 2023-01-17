@@ -31,24 +31,43 @@ Add or correct your contact details
   }}
 {% endblock %}
 
-<!-- Edit the footer -->
-<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-  {{ footer({
-    "links": [
+{{ footer({
+  "links": [
       {
-        "URL": "/",
-        "label": "Home"
+        "URL": "/legal/terms",
+        "label": "Terms of use"
       },
       {
-        "URL": "/page-example",
-        "label": "Example page"
+        "URL": "/legal/cookies",
+        "label": "Cookies"
+      },
+      {
+        "URL": "/legal/accessibility",
+        "label": "Accessibility"
+      },
+      {
+        "URL": "https://support-nhslogin.herokuapp.com/",
+        "label": "Help centre"
+      },
+      {
+        "URL": "?devMode=true",
+        "label": "DM"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "CD"
       }
     ]
-  })}}
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}
+
+  {% if data['devMode'] === 'true' %}
+    {% include "includes/devmode.html" %}
+  {% endif %}
+
   {% block scripts %}
     <!-- Custom JavaScript files can be added to this file -->
     {% include "includes/scripts.html" %}
