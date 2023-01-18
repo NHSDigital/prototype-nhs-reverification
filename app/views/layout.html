@@ -32,34 +32,7 @@ Add or correct your contact details
 {% endblock %}
 
 {% block footer %}
-{{ footer({
-  "links": [
-      {
-        "URL": "/legal/terms",
-        "label": "Terms of use"
-      },
-      {
-        "URL": "/legal/cookies",
-        "label": "Cookies"
-      },
-      {
-        "URL": "/legal/accessibility",
-        "label": "Accessibility"
-      },
-      {
-        "URL": "https://support-nhslogin.herokuapp.com/",
-        "label": "Help centre"
-      },
-      {
-        "URL": "?devMode=true",
-        "label": "DM"
-      },
-      {
-        "URL": "/examples/passing-data/clear-data",
-        "label": "CD"
-      }
-    ]
-  }) }}
+  {% include "v1/includes/footer.html" %}
 {% endblock %}
 
 {% block bodyEnd %}
