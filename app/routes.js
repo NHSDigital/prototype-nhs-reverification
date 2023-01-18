@@ -32,6 +32,19 @@ router.post('/v1/standalone/do-you-know-nhs', function (req, res) {
   }
 })
 
+// pds error screen. user chooses next action
+router.post('/v1/standalone/pds-not-found-next', function (req, res) {
+  var nextstep = req.session.data['pdserrornext']
+  if (nextstep == 'trydifferentnhsno'){
+    res.redirect('/v1/standalone/do-you-know-nhs')
+  } else if (nextstep == 'searchpdswithname') {
+    res.redirect('/v1/standalone/what-is-your-name')
+  } else {
+    res.redirect('/v1/standalone/go-to-gp')
+  }
+})
+
+
 router.post('/v1/standalone/submitdetails', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
   if (contactMethod == 'email'){
