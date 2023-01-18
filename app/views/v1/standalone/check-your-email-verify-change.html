@@ -16,7 +16,7 @@
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-    <form action="contact-details-final" method="post" class="form">
+    <form action="confirmation-of-change" method="post" class="form">
       <h1 class="nhsuk-heading-l">
         Check your email
       </h1>
@@ -55,6 +55,35 @@
       <button class="nhsuk-button full-width" type="submit" id="button--save">Continue</button>
       <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
     </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="confirmation-of-change">OTP entered correctly</a>
+          </li>
+        </ul>
+        <h4>Notify Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-otpwrong">Entered OTP wrong</a>
+          </li>
+          <li>
+            <a href="error-otplimit">Too many wrong OTP attempts</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
 
   </div>
 </div>
