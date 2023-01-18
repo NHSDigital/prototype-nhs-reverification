@@ -20,12 +20,4 @@ module.exports = {
     - save
     - account
   */
-  settings: [
-    {
-      v1_legal_terms: '/v1/legal/terms',
-      v1_legal_cookies: '/v1/legal/cookies',
-      v1_legal_privacy: '/v1/legal/privacy',
-      v1_legal_a11y: '/v1/legal/accessibility'
-    }
-  ]
 }
