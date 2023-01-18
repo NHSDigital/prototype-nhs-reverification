@@ -43,6 +43,14 @@
       "url": "http://localhost:3000/v1/standalone/check-your-mobile-verify-change"
     },
     {
+      "label": "Reverification - confirmation-of-change",
+      "url": "http://localhost:3000/v1/standalone/confirmation-of-change"
+    },
+    {
+      "label": "Reverification - confirmation-of-change-mobile",
+      "url": "http://localhost:3000/v1/standalone/confirmation-of-change?contactMethod=email"
+    },
+    {
       "label": "Reverification - contact-details-email-missing",
       "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=sms&reason=missingemail"
     },
@@ -59,20 +67,44 @@
       "url": "http://localhost:3000/v1/standalone/contact-details?contactMethod=email&reason=malformedmobile"
     },
     {
-      "label": "Reverification - contact-details-final",
-      "url": "http://localhost:3000/v1/standalone/contact-details-final"
-    },
-    {
-      "label": "Reverification - contact-details-final-mobile",
-      "url": "http://localhost:3000/v1/standalone/contact-details-final?contactMethod=email"
-    },
-    {
       "label": "Reverification - do-you-know-nhs",
       "url": "http://localhost:3000/v1/standalone/do-you-know-nhs"
     },
     {
       "label": "Reverification - enter-your-new-phone",
       "url": "http://localhost:3000/v1/standalone/enter-your-new-phone"
+    },
+    {
+      "label": "Reverification - enter-your-new-email",
+      "url": "http://localhost:3000/v1/standalone/enter-your-new-email"
+    },
+    {
+      "label": "Reverification - error-nothingtofix",
+      "url": "http://localhost:3000/v1/standalone/error-nothingtofix"
+    },
+    {
+      "label": "Reverification - error-notifyfail",
+      "url": "http://localhost:3000/v1/standalone/error-notifyfail"
+    },
+    {
+      "label": "Reverification - error-otplimit",
+      "url": "http://localhost:3000/v1/standalone/error-otplimit"
+    },
+    {
+      "label": "Reverification - error-otpwrong",
+      "url": "http://localhost:3000/v1/standalone/error-otpwrong"
+    },
+    {
+      "label": "Reverification - error-pdsmatch",
+      "url": "http://localhost:3000/v1/standalone/error-pdsmatch"
+    },
+    {
+      "label": "Reverification - error-recordcontainsnocontactdetails",
+      "url": "http://localhost:3000/v1/standalone/error-recordcontainsnocontactdetails"
+    },
+    {
+      "label": "Reverification - error-technicalcatchall",
+      "url": "http://localhost:3000/v1/standalone/error-technicalcatchall"
     },
     {
       "label": "Reverification - feedback-confirmation",
@@ -83,16 +115,20 @@
       "url": "http://localhost:3000/v1/standalone/feedback-page"
     },
     {
+      "label": "Reverification - go-to-gp",
+      "url": "http://localhost:3000/v1/standalone/go-to-gp"
+    },
+    {
       "label": "Reverification - what-is-your-dob",
       "url": "http://localhost:3000/v1/standalone/what-is-your-dob"
     },
     {
-      "label": "Reverification - what-is-your-postcode",
-      "url": "http://localhost:3000/v1/standalone/what-is-your-postcode"
-    },
-    {
       "label": "Reverification - what-is-your-name",
       "url": "http://localhost:3000/v1/standalone/what-is-your-name"
+    },
+    {
+      "label": "Reverification - what-is-your-postcode",
+      "url": "http://localhost:3000/v1/standalone/what-is-your-postcode"
     }
   ],
   "paths": {
