@@ -90,6 +90,47 @@
             <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
         </form>
 
+        {% if data['devMode'] === 'true' %}
+        {# DEVMODE SCENARIOS #}
+
+        <details class="nhsuk-details dev-mode" role="group">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h4>Happy path</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="#" onclick="submitSpinner2()">Single match found and one of the contact details is either invalid or missing</a>
+                    </li>
+                </ul>
+                <h4>PDS Errors</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="error-pdsmatch">No match</a>
+                    </li>
+                    <li>
+                        <a href="error-pdsmatch">Multiple matches found</a>
+                    </li>
+                    <li>
+                        <a href="error-technicalcatchall">technical error</a>
+                    </li>
+                </ul>
+                <h4>Attribute check errors</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="error-nothingtofix">Both contact detail are present and valid</a>
+                    </li>
+                    <li>
+                        <a href="error-recordcontainsnocontactdetails">Both contact details are empty</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        {% endif %}
+
     </div>
 </div>
 
@@ -116,6 +157,12 @@
                 buttonClicked(selects)
             }
         })
+    }
+
+    function submitSpinner2() {
+        console.log('clicked')
+        var selects = document.getElementById('button--save')
+        buttonClicked(selects)
     }
 </script>
 
