@@ -1,0 +1,73 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - edit the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block outerContent %}
+  {{ backLink({
+    "href": "what-is-your-postcode-no",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="we-found-your-login" autocomplete="on">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              You cannot continue
+            </h1>
+          </legend>
+
+          <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+
+            <p>You have asked for a security code too many times.</p>
+            <p>You must wait up to 1 hour before trying again.</p>
+
+    
+          </div>
+        </fieldset>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+  <style>
+    .Login_continueWithNhsLogin_-t-uU[data-v-e274948a] {
+    height: 60px;
+    width: 345px;
+    background-image: url(https://www.nhsapp.service.nhs.uk/v2-11-9/img/icon-continue-with-nhs-login-normal.5e4ceecb.svg);
+    background-repeat: no-repeat;
+    background-size: 345px 60px;
+    display: block;
+    font-size: 0;
+    background-color: unset!important;
+    border: unset!important;
+    box-shadow: unset!important;
+}
+</style>
+{% endblock %}
