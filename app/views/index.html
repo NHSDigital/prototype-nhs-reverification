@@ -4,6 +4,18 @@
 Add or correct your contact details
 {% endblock %}
 
+{% block header %}
+{{ header({
+"service": {
+"name": "",
+"href": "/"
+},
+"showNav": "false",
+"showSearch": "false"
+})
+}}
+{% endblock %}
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -60,4 +72,19 @@ Add or correct your contact details
     </div>
 
   </div>
+{% endblock %}
+
+{% block footer %}
+{{ footer({
+"links": [
+{
+"URL": "https://github.com/nhsuk/nhsuk-prototype-kit/releases",
+"label": "Prototype kit version: " + version
+},
+{
+"URL": "?devMode=true",
+"label": "Turn on devMode"
+}
+]
+})}}
 {% endblock %}
