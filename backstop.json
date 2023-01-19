@@ -15,14 +15,6 @@
       "url": "http://localhost:3000/v1/start"
     },
     {
-      "label": "Reverification - notification-email",
-      "url": "http://localhost:3000/v1/notification-email"
-    },
-    {
-      "label": "Reverification - notification-sms",
-      "url": "http://localhost:3000/v1/notification-sms"
-    },
-    {
       "label": "Reverification - check-your-answers",
       "url": "http://localhost:3000/v1/standalone/check-your-answers"
     },
@@ -133,6 +125,54 @@
     {
       "label": "Reverification - what-is-your-postcode",
       "url": "http://localhost:3000/v1/standalone/what-is-your-postcode"
+    },
+    {
+      "label": "Reverification - notification-email",
+      "url": "http://localhost:3000/v1/notification-email"
+    },
+    {
+      "label": "Reverification - notification-sms",
+      "url": "http://localhost:3000/v1/notification-sms"
+    },
+    {
+      "label": "Reverification - notification-email-missing",
+      "url": "http://localhost:3000/v1/notification-email-missing"
+    },
+    {
+      "label": "Reverification - notification-sms-missing",
+      "url": "http://localhost:3000/v1/notification-sms-missing"
+    },
+    {
+      "label": "Reverification - notification-email-no-links",
+      "url": "http://localhost:3000/v1/notification-email-no-links"
+    },
+    {
+      "label": "Reverification - notification-sms-no-links",
+      "url": "http://localhost:3000/v1/notification-sms-no-links"
+    },
+    {
+      "label": "Reverification - notification-email-missing-no-links",
+      "url": "http://localhost:3000/v1/notification-email-missing-no-links"
+    },
+    {
+      "label": "Reverification - notification-sms-missing-no-links",
+      "url": "http://localhost:3000/v1/notification-sms-missing-no-links"
+    },
+    {
+      "label": "Reverification - otp-email",
+      "url": "http://localhost:3000/v1/otp-email"
+    },
+    {
+      "label": "Reverification - otp-sms",
+      "url": "http://localhost:3000/v1/otp-sms"
+    },
+    {
+      "label": "Reverification - otp-new-email",
+      "url": "http://localhost:3000/v1/otp-new-email"
+    },
+    {
+      "label": "Reverification - otp-new-sms",
+      "url": "http://localhost:3000/v1/otp-new-sms"
     }
   ],
   "paths": {
