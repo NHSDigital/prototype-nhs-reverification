@@ -35,6 +35,10 @@
       "url": "http://localhost:3000/v1/standalone/check-your-email"
     },
     {
+      "label": "Reverification - check-your-email-verify-change",
+      "url": "http://localhost:3000/v1/standalone/check-your-email-verify-change"
+    },
+    {
       "label": "Reverification - check-your-mobile",
       "url": "http://localhost:3000/v1/standalone/check-your-mobile"
     },
