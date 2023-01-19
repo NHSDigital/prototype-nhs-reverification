@@ -28,11 +28,10 @@
     <h1 class="nhsuk-heading-l">Text message</h1>
 
     <div class="app-text-message">
-      <h2 class="nhsuk-heading-s">NHS-NoReply</h2>
+      <h2 class="nhsuk-heading-s">NHS contact details:</h2>
       <p class="app-text-message__text">
-        NHS contact details: The email address on your NHS record cannot be used.<br><br>
-        Your GP and the NHS will use your email to contact you with important updates.<br><br>
-        Update your email address online at <a href="start">www.nhs.uk/add-correct-contact-details </a></p>
+        NHS contact details: {{ data['otp_code'] or '783200' }} is your security code.<br><br>
+        You need to use this security code within 1 hour.</p>
     </div>
 
   </div>
