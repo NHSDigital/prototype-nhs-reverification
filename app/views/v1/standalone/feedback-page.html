@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Provide feedback to improve the service
+Provide feedback to improve the service
 {% endblock %}
 
 {% block content %}
@@ -11,48 +11,32 @@
 
     <form action="feedback-confirmation" autocomplete="off" method="post">
 
-      <h1>
-        Provide feedback to improve the service
-      </h1>
+      <h1 class="nhsuk-heading-l" id="form-heading" tabindex="-1">Provide feedback to improve the service</h1>
 
-      <p class="nhsuk-lede-text">
-        Your feedback can help us improve the Add or correct your contact details service.
-      </p>
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>If you think it's a life threatening emergency:</p>
-        <ul>
-          <li>call 999</li>
-        </ul>
-        <p>If you do not think it's an emergency:</p>
-        <ul>
-          <li>call 111 or <a href="https://111.nhs.uk/">go to 111 online</a></li>
-          <li>call 111 or <a href="">speak to a pharmacist, GP or dentist</a></li>
-          <li>search the <a href="https://www.nhs.uk/conditions/">NHS website health A-Z</a>for more advice about your
-            condition
-          </li>
-        </ul>
+      <div class="nhsuk-hint"><p>Your feedback can help us improve the Add or correct your contact details
+        service.</p>
+        <p>All feedback will be anonymous.</p>
+        <p>The NHS website team cannot help with medical problems.</p>
       </div>
 
       <p>The NHS website team does not access to individual patient information. If you have any questions or concerns
-          about your patient record, please contact your current GP surgery.</p>
-
+        about your patient record, please contact your current GP surgery.</p>
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label nhsuk-u-font-weight-bold" for="feedback">
-          Describe what happened on the page
-        </label>
-        <div class="nhsuk-hint" id="feedback-hint">
-          Do not include confidential or medical information in your message. For example, your NHS number, date of
-          birth, medical diagnosis or medical history.
-        </div>
-        <textarea aria-describedby="feedback-hint" class="nhsuk-textarea nhsuk-u-padding-3" id="feedback" name="feedback" rows=" 10 "></textarea>
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-form-group"><label class="nhsuk-label" for="feedback" id="feedback--label">Describe what
+            happened on the page</label>
+            <div class="nhsuk-hint" id="feedback--hint">Do not include confidential or medical information in your
+              message. For example, your NHS number, date of birth, medical diagnosis or medical history.
+            </div>
+            <textarea aria-describedby="feedback--hint" aria-labelledby="feedback--label" autocomplete="off"
+                      class="nhsuk-textarea" id="feedback" list="autocompleteOff" maxlength="2000" name="feedback"
+                      rows="8"></textarea></div>
+        </fieldset>
       </div>
 
-      <button class="nhsuk-button" type="submit">
+      <button aria-disabled="false" class="nhsuk-button" id="submit-provide-feedback" type="submit">
         Send feedback
       </button>
-
     </form>
 
   </div>

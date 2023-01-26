@@ -23,9 +23,8 @@
       "HTML": "<p>Your GP practice will need to review and approve this change before it can be updated across other services.</p>"
       }) }}
 
-      <p class="nhsuk-body-m nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
-        Would you like to <a href="feedback-page">give feedback about this service?</a>
-      </p>
+      {% set feedbackType = 'final' %}
+      {% include "../includes/feedback.html" %}
 
     </div>
 
