@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Get a security code
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="get-verification-otp" method="post" class="form">
+        <h1 class="nhsuk-heading-l">
+          Get a security code
+        </h1>
+
+        <p>We have found an NHS record with the information you have provided.</p>
+
+        <p>To continue, we will send you a 6 digit security code.
+
+        <p>You need to use this code within 1 hour or it will expire.
+
+      {% if req.session.data['contactMethod'] == 'email' %}
+        <p>The security code will be sent to: <strong>********lor@****l.com</strong> </p>
+      {% else %}
+        <p>The security code will be sent to: <strong>********681</strong> </p>
+      {% endif %}
+
+        <div>
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+        </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

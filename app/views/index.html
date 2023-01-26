@@ -77,14 +77,18 @@ Add or correct your contact details
 {% block footer %}
 {{ footer({
 "links": [
-{
-"URL": "https://github.com/nhsuk/nhsuk-prototype-kit/releases",
-"label": "Prototype kit version: " + version
-},
-{
-"URL": "?devMode=true",
-"label": "Turn on devMode"
-}
+  {
+    "URL": "https://github.com/nhsuk/nhsuk-prototype-kit/releases",
+    "label": "Prototype kit version: " + version
+  },
+  {
+    "URL": "?devMode=true",
+    "label": "Turn on devMode"
+  },
+  {
+    "URL": "/examples/passing-data/clear-data",
+    "label": "Clear data"
+  }
 ]
 })}}
 {% endblock %}

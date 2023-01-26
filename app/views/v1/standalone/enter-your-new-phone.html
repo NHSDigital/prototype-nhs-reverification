@@ -21,7 +21,7 @@
       Enter your new mobile number
     </h1>
 
-    <form action="check-your-mobile-verify-change"  method="post">
+    <form action="get-verification-otp-new"  method="post">
 
       <p>We will send a 6 digit security code.</p>
 
@@ -29,8 +29,10 @@
         <label class="nhsuk-label" for="newMobileNumber">
           UK mobile number
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="newMobileNumber" name="newMobileNumber" value="{{ data['first-name'] }}"  type="tel" spellcheck="false" autocomplete="tel">
+        <input class="nhsuk-input nhsuk-input--width-20" id="newMobileNumber" name="newMobileNum" value="{{ data['first-name'] }}"  type="tel" spellcheck="false" autocomplete="tel">
       </div>
+
+      <input class="govuk-input" name="contactMethod" type="hidden" value="sms">
 
       <button class="nhsuk-button full-width">
         Continue

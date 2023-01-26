@@ -18,7 +18,7 @@ Enter your new email address
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-      <form action="check-your-email-verify-change"  method="post">
+      <form action="get-verification-otp-new"  method="post">
 
         <h1 class="nhsuk-heading-l">
           Enter your new email address
@@ -32,6 +32,8 @@ Enter your new email address
           </label>
           <input class="nhsuk-input nhsuk-input--width-20" id="newEmailAddress" name="newEmailAddress" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email" value="{{ data['newEmailAddress']}}">
         </div>
+
+        <input class="govuk-input" name="contactMethod" type="hidden" value="email">
 
         <button class="nhsuk-button full-width">
           Continue
