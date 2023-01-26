@@ -44,7 +44,7 @@
     },
     {
       "label": "Reverification - confirmation-of-change-mobile",
-      "url": "http://localhost:3000/v1/standalone/confirmation-of-change?contactMethod=email"
+      "url": "http://localhost:3000/v1/standalone/confirmation-of-change?contactMethod=sms"
     },
     {
       "label": "Reverification - contact-details-email-missing",
@@ -109,6 +109,10 @@
     {
       "label": "Reverification - feedback-page",
       "url": "http://localhost:3000/v1/standalone/feedback-page"
+    },
+    {
+      "label": "Reverification - get-security-code",
+      "url": "http://localhost:3000/v1/standalone/get-security-code"
     },
     {
       "label": "Reverification - go-to-gp",
