@@ -159,22 +159,8 @@ Add or correct your contact details
 
   </div>
 </nav>
-
-
 {% endblock %}
 
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-{% endblock %}
-
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-{% endblock %}
-
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
     <style>
@@ -186,22 +172,45 @@ Add or correct your contact details
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
 
-        <h1>Add or correct your contact details</h1>
-        <p>We use the contact details on your NHS record to get in touch with you about screening, vaccinations or other appointment reminders.</p>
+        <h1 class="nhsuk-heading-xl">Add or correct the contact details on your NHS record</h1>
 
-        <p>It's important that your contact details are correct, as your GP and other NHS services will use them to contact you.</p>
+        <p>It's important your NHS record has your correct contact details.</p>
+        <p>This is because your GP surgery and other NHS services use them to contact you about screening, vaccinations or appointments.</p>
+        <p>This service lets you update or correct a missing or invalid mobile number or email address on your NHS record.</p>
 
-        <p>You can update your email address or phone number by using this service.</p>
+        <h2 class="nhsuk-heading-m">Who can use this service</h2>
 
-        <p>This will not update your NHS login details.</p>
+        <h3 class="nhsuk-heading-s">If you have been contacted by the NHS</h3>
 
-        <h2>Before you start</h2>
+        <p>If the NHS has sent you a text or email to tell you the mobile number or email address on your NHS record is missing, or is in an incorrect format, you can use this service to update it.</p>
+        <p>For example, if your NHS record does not have all 11 digits of your mobile number, you can fix it with this service.</p>
 
-        <p>You will need to have access to your email account and phone.</p>
+        <h3 class="nhsuk-heading-s">If you have not been contacted by the NHS</h3>
 
-        <p>To verify it's you, we will need to send a security code to the contact details we already have for you.</p>
+        <p>If you have an NHS account or the NHS App, you can use them to:</p>
 
-        <p>Once confirmed, we'll send a different security code to the contact details you're adding, to check it's working correctly.</p>
+        <ul>
+          <li>add a missing mobile number or email</li>
+          <li>fix an issue with a mobile number or email</li>
+        </ul>
+
+        <p><a href="#" onclick="return false;">Log in to your NHS account</a>or use the NHS App.</p>
+
+        <p>If you do not have an NHS account or the NHS App or if you want to change other details, contact your GP surgery.</p>
+
+        <p><a href="#" onclick="return false;">Find a GP</a></p>
+
+        <h2 class="nhsuk-heading-m">Before you start</h2>
+
+        <p>You will need access to your mobile phone or email account. This is so the service can send you security codes.</p>
+
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+
+        <p>To verify it's you, a security code will be sent to the mobile number or
+          email address on your NHS record.</p>
+
+        <p>Once confirmed, a different security code will be sent to the contact
+          details you're adding or updating, to check it's working correctly.</p>
 
         <a class="nhsuk-button" href="standalone/do-you-know-nhs" role="button" draggable="false">Start now</a>
 
@@ -237,7 +246,18 @@ Add or correct your contact details
         </details>
         {% endif %}
 
-        <p>By using this service you are agreeing to our <a href="#" onclick="return false;">terms of use</a> and <a href="#" onclick="return false;">privacy policy</a>.</p>
+        <p>By using this service, you are agreeing to the policies on the <a href="#" onclick="return false;">Add or correct your contact details website.</a>  [Or NHS website?]</p>
+
+        <h2 class="nhsuk-heading-s">More in Online services</h2>
+
+        <ul class="nhsuk-list">
+          <li><a href="#" onclick="return false;">About NHS login</a></li>
+          <li><a href="#" onclick="return false;">How to order repeat prescriptions online</a></li>
+          <li><a href="#" onclick="return false;">Find your NHS number service</a></li>
+        </ul>
+
+        <p class="nhsuk-u-secondary-text-color nhsuk-u-font-size-16 nhsuk-u-margin-top-6">Page last reviewed: 19 January 2023<br>
+          Next review due: 19 January 2026</p>
 
       </div>
     </div>
