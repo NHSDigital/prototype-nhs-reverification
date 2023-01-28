@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is your postcode?
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "what-is-your-dob",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="check-your-answers"  method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              What is your postcode?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint">
+            <p>Enter the postcode your GP has on record for you. For example EN1 1BE.</p>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="postcode">
+              Postcode
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code" value="{{ data['postcode'] }}">
+          </div>
+
+            <button class="nhsuk-button">Continue</button>
+
+        </fieldset>
+
+      </form>
+
+      {% include "../includes/feedback.html" %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  We cannot find your details
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="pds-not-found-next" method="post" class="form">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" >
+          <h1 class="nhsuk-fieldset__heading">
+            We cannot find your details
+          </h1>
+        </legend>
+
+        <p>We were unable to find an NHS record with the details you have provided. To find your NHS record, you must enter the contact information your GP has for you.</p>
+
+        <div class="nhsuk-form-group">
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+
+              <input class="nhsuk-radios__input" id="pdserrornext-1" name="pdserrornext" type="radio" value="trydifferentnhsno">
+              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-1">
+                Try with a different NHS number
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pdserrornext-2" name="pdserrornext" type="radio" value="searchpdswithname">
+              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-2">
+                Search using full name
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="pdserrornext-3"  name="pdserrornext" type="radio" value="detailsarecorrect">
+              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-3">
+                My details are correct
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+      </fieldset>
+
+      <button class="nhsuk-button full-width" type="submit">
+        Continue
+      </button>
+
+      <p>By using this service you are agreeing to our terms of use and privacy policy.</p>
+
+    </form>
+
+    {% include "../includes/feedback.html" %}
+
+  </div>
+
+</div>
+
+{% endblock %}

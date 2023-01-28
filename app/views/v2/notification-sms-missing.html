@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% set contactmethod = "sms" %}
+
+{% block pageTitle %}
+  Text message" %}
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/notify-text.css" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l">Text message</h1>
+
+    <div class="app-text-message">
+      <h2 class="nhsuk-heading-s">NHS contact details</h2>
+      <p class="app-text-message__text">
+        NHS contact details: We need you to add an email address to your NHS record..<br><br>
+        Your GP and the NHS will use your email to contact you with important updates.<br><br>
+        Add your email address online at <a href="start">www.nhs.uk/add-correct-contact-details </a></p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
