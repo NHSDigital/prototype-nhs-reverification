@@ -33,7 +33,7 @@
 
         <h2 class="nhsuk-heading-s">The security code will be sent to:</h2>
 
-        {% if req.session.data['contactMethod'] == 'email' %}
+        {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %}
           <p>********lor@****l.com</p>
         {% else %}
           <p>********681</p>

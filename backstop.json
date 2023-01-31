@@ -115,6 +115,10 @@
       "url": "http://localhost:3000/v1/standalone/get-security-code"
     },
     {
+      "label": "Reverification - get-security-code - email",
+      "url": "http://localhost:3000/v1/standalone/get-security-code?contactMethod=email"
+    },
+    {
       "label": "Reverification - go-to-gp",
       "url": "http://localhost:3000/v1/standalone/go-to-gp"
     },
