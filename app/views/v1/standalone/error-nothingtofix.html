@@ -4,6 +4,14 @@
   Your contact details appear to be valid
 {% endblock %}
 
+{% block outerContent %}
+  {{ backLink({
+    "href": "check-your-answers",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
