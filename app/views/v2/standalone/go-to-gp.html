@@ -4,6 +4,14 @@
   Contact your GP
 {% endblock %}
 
+{% block outerContent %}
+  {{ backLink({
+    "href": "error-pdsmatch",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="nhsuk-grid-row">
