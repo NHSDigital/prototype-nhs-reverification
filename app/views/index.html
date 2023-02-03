@@ -14,20 +14,25 @@ Add or correct your contact details
 "showSearch": "false"
 })
 }}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">NHS Reverification prototypes</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-
-      <h1>NHS Reverification prototypes</h1>
-
-      <p class="nhsuk-lede-text">
-        Research prototypes for the 'Update your contact details' service.
-      </p>
-
-      <hr>
-
       <h2>Currently in research and development</h2>
 
       <div class="nhsuk-main-wrapper " id="maincontent" role="main">
@@ -37,22 +42,34 @@ Add or correct your contact details
 
             <div class="inline-heading-link">
               <h3 class="nhsuk-heading-m">
-                V1: January 2023
+                Prototype v2: Aligned to Release 1
               </h3>
             </div>
 
             <ul class="nhsuk-list spaced">
-              <div class="informative-tab-green"><strong>A user is invited to correct their contact details</strong></div>
+              <div class="informative-tab-green"><strong>Design complete</strong></div>
               <li>
-                <p>User is messaged either by SMS or email and directed to a service start page and then proceeds into a standalone web service that matches them to their PDS record and does a verification check on their good contact detail. If successful, they can change the bad contact detail.</p>
+                <p>Prototype v2 is aligned with Release 1 of the 'Add or correct your contact details' service. Due to enter private beta on the 16th Feb 2023.</p>
 
-                <div class="nhsuk-grid-row">
-                  <ul class="nhsuk-list list-unstyled">
-                    <li> ➡️ User gets an email &nbsp;(<a href="/v1/notification-email?contactMethod=email&reason=missingmobile">missing mobile</a>) | (<a href="/v1/notification-email?contactMethod=email&reason=malformedmobile">malformed mobile</a>)</li>
-                    <li> ➡️ User gets an SMS &nbsp;(<a href="/v1/notification-sms?contactMethod=sms&reason=missingemail">missing email</a>) | (<a href="/v1/notification-sms?contactMethod=sms&reason=malformedemail">malformed email</a>)</li>
-                    <li class="nhsuk-u-padding-top-3"> ➡️ &nbsp;<a href="/v1/start">Service start page</a> | (<a href="/v1/start?devMode=true">run in devMode</a>)</li>
-                  </ul>
-                </div>
+                <a href="/v2/" class="nhsuk-button">Goto v2 prototype</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative">
+
+            <div class="inline-heading-link">
+              <h3 class="nhsuk-heading-m">
+                Prototype v1
+              </h3>
+            </div>
+
+            <ul class="nhsuk-list spaced">
+              <div class="informative-tab-green"><strong>Design complete</strong></div>
+              <li>
+                <p>Prototype v1 was aligned to the 'test' environment and went through guided and exploratory testing on 23 Jan 2023.</p>
+
+                <a href="/v1/" class="nhsuk-button">Goto v1 prototype</a>
               </li>
             </ul>
           </div>
