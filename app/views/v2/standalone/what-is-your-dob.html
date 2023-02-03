@@ -1,4 +1,5 @@
 {% set serviceHome = '/v2/start' %}
+
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -65,10 +66,12 @@
 
       </form>
 
-      {% include "../includes/feedback.html" %}
-
     </div>
 
   </div>
 
+{% endblock %}
+
+{% block footer %}
+  {% include 'v2/includes/footer.html' %}
 {% endblock %}

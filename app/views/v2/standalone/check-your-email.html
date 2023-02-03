@@ -1,4 +1,5 @@
 {% set serviceHome = '/v2/start' %}
+
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -62,7 +63,7 @@ Check your email
         </div>
     </form>
 
-    {% include "../includes/feedback.html" %}
+
 
     <script>
       function forgottenPasswordClickHandler(e) {
@@ -80,4 +81,8 @@ Check your email
   </div>
 </div>
 
+{% endblock %}
+
+{% block footer %}
+{% include 'v2/includes/footer.html' %}
 {% endblock %}
