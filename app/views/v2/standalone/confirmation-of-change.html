@@ -26,7 +26,9 @@ Your details have been updated
         <h2 class="nhsuk-heading-m">What happens next</h2>
         <ul class="nhsuk-list nhsuk-list--bullet">
           <li>Your details will be updated for all NHS healthcare providers.</li>
+          {% if data['contactMethod'] === 'sms' %}
           <li>Your GP surgery will be notified about this change.</li>
+          {% endif %}
         </ul>
       </div>
 
