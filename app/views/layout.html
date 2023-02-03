@@ -1,4 +1,7 @@
 {% extends "template.html" %}
+{% set serviceLink %}
+  {{ serviceHome or '/' }}
+{% endset %}
 
 {% block headCSS %}
   <link href="/css/main.css" rel="stylesheet">
@@ -10,9 +13,9 @@
 
 {% block header %}
   {{ header({
-    "service": {
+    "transactionalService": {
         "name": "Add or correct your contact details",
-        "href": "/"
+        "href": serviceLink
       },
       "showNav": "false",
       "showSearch": "false"
