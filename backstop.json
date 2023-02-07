@@ -83,8 +83,16 @@
       "url": "http://localhost:3000/v3/standalone/error-notifyfail"
     },
     {
+      "label": "Reverification - error-notify-feedback-fail",
+      "url": "http://localhost:3000/v3/standalone/error-notify-feedback-fail"
+    },
+    {
       "label": "Reverification - error-otplimit",
       "url": "http://localhost:3000/v3/standalone/error-otplimit"
+    },
+    {
+      "label": "Reverification - error-feedback-limit",
+      "url": "http://localhost:3000/v3/standalone/error-feedback-limit"
     },
     {
       "label": "Reverification - error-otpwrong",
