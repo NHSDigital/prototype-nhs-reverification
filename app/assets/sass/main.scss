@@ -183,9 +183,8 @@
     bottom: 0;
   }
 }
-
-
-.informative-tab-green {
+// tabs
+.informative-tab {
   text-transform: uppercase;
   font-size: 12px;
   background: #009639;
@@ -197,6 +196,14 @@
   border-top-left-radius: 5px;
 }
 
+.informative-tab-green {
+  background: $color_nhsuk-green;
+}
+
+.informative-tab-orange {
+  background: $color_nhsuk-orange;
+  color: black;
+}
 
 /* Warning text */
 

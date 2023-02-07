@@ -1,0 +1,150 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Contact details
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-heading-l">
+        Contact details
+      </h1>
+
+      <div class="nhsuk-hint">
+        <p>These are the details your GP and other NHS services use to contact you.</p>
+      </div>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+
+            {% if data['contactMethod'] === 'email' %}
+
+            ********lor@****l.com
+
+            {% else %}
+
+            <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
+              <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="nhsuk-warning-text__text">
+                <span class="nhsuk-warning-text__assistive"></span>
+                {% if data['reason'] === 'malformedemail' %}
+                Your email address is in an incorrect format
+                {% else %}
+                You do not have an email address in your contact details
+                {% endif %}
+              </strong>
+            </div>
+
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="enter-your-new-email">
+              {% if data['reason'] === 'malformedemail' %}
+              Add a new email address
+              {% else %}
+              Add an email address
+              {% endif %}
+            </a>
+
+            {% endif %}
+
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Mobile phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+
+            {% if data['contactMethod'] === 'email' %}
+
+            <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
+              <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="nhsuk-warning-text__text">
+                <span class="nhsuk-warning-text__assistive"></span>
+                {% if data['reason'] === 'malformedmobile' %}
+                Your mobile phone number is in an incorrect format
+                {% else %}
+                You do not have a mobile phone number in your contact details
+                {% endif %}
+              </strong>
+            </div>
+
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            <a href="enter-your-new-phone">
+              {% if data['reason'] === 'malformedmobile' %}
+              Add a new mobile phone number
+              {% else %}
+              Add a mobile phone number
+              {% endif %}
+            </a>
+
+            {% else %}
+
+            ********681
+
+            {% endif %}
+
+          </dd>
+
+        </div>
+
+      </dl>
+
+
+      {% if data['devMode'] === 'true' %}
+      {# DEVMODE SCENARIOS #}
+
+      <details class="nhsuk-details dev-mode govuk-!-margin-bottom-5" role="group">
+        <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+            <span class="nhsuk-details__summary-text">
+              Change scenario
+            </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Missing contact details</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="contact-details?contactMethod=email&reason=missingmobile">User got an email about <b>missing mobile number</b></a>
+            </li>
+            <li>
+              <a href="contact-details?contactMethod=sms&reason=missingemail">User got an SMS about <b>missing email address</b></a>
+            </li>
+          </ul>
+          <h4>Invalid contact details</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="contact-details?contactMethod=email&reason=malformedmobile">User got an email about <b>invalid mobile number</b></a>
+            </li>
+            <li>
+              <a href="contact-details?contactMethod=sms&reason=malformedemail">User got an SMS about <b>invalid email address</b></a>
+            </li>
+          </ul>
+        </div>
+      </details>
+      {% endif %}
+
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v2/includes/footer.html' %}
+{% endblock %}

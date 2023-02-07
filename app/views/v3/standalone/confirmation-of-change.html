@@ -1,0 +1,47 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Your details have been updated
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <div aria-live="polite" class="nhsuk-u-reading-width">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content"><h1 class="nhsuk-card__heading nhsuk-heading-l">Your details have been updated</h1>
+            <p class="nhsuk-card__description">
+              {% if data['contactMethod'] === 'sms' %}
+              Your mobile phone number has been updated to <strong>{{ data['newMobileNum'] or '07463 966681'}}</strong>.
+              {% else %}
+              Your email address has been updated to <strong>{{ data['newEmailAddress'] or 'test@test.com'}}</strong>.
+              {% endif %}
+            </p>
+          </div>
+        </div>
+
+        <h2 class="nhsuk-heading-m">What happens next</h2>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>Your details will be updated for all NHS healthcare providers.</li>
+          {% if data['contactMethod'] === 'sms' %}
+          <li>Your GP surgery will be notified about this change.</li>
+          {% endif %}
+        </ul>
+      </div>
+
+
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+  {% include 'v2/includes/footer.html' %}
+{% endblock %}

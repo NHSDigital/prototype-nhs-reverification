@@ -1,0 +1,184 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "what-is-your-postcode",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <h1 class="nhsuk-heading-l">Check your details</h1>
+
+        <dl class="nhsuk-summary-list">
+
+            {% if data['knowNHSNumber'] !== 'no' %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['nhs-number'] or '485 777 3456'}}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="do-you-know-nhs">
+                        Change<span class="nhsuk-u-visually-hidden"> NHS number</span>
+                    </a>
+                </dd>
+            </div>
+            {% endif %}
+
+            {% if data['knowNHSNumber'] === 'no' %}
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['first-name'] or 'Sarah' }} {{ data['last-name'] or 'Jones' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="whats-your-name">
+                        Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+                </dd>
+            </div>
+            {% endif %}
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or 'May' }} {{ data['date-of-birth-year'] or '1988' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-dob">
+                        Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                    </a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Postcode
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    {{ data['postcode'] or 'LS11 9UI' }}
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="what-is-your-postcode">
+                        Change<span class="nhsuk-u-visually-hidden"> postcode</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
+        <form method="post" action="get-security-code">
+            <button class="nhsuk-button full-width" id="button--save">Submit</button>
+            <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
+        </form>
+
+        {% if data['devMode'] === 'true' %}
+        {# DEVMODE SCENARIOS #}
+
+        <details class="nhsuk-details dev-mode" role="group">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+            </summary>
+            <div class="nhsuk-details__text">
+                <h4>Happy path</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="#" onclick="submitSpinner2()">Single match found and one of the contact details is either invalid or missing</a>
+                    </li>
+                </ul>
+                <h4>PDS Errors</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="error-pdsmatch">No match</a>
+                    </li>
+                    <li>
+                        <a href="error-pdsmatch">Multiple matches found</a>
+                    </li>
+                    <li>
+                        <a href="error-technicalcatchall">technical error</a>
+                    </li>
+                </ul>
+                <h4>Attribute check errors</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="error-nothingtofix">Both contact detail are present and valid</a>
+                    </li>
+                    <li>
+                        <a href="error-recordcontainsnocontactdetails">Both contact details are empty</a>
+                    </li>
+                </ul>
+                <h4>Notify Errors</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a href="error-notifyfail">Single match found and one of the contact details is either invalid or missing but Notify fails to send the message</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        {% endif %}
+
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    submitSpinner()
+
+    function buttonClicked(target) {
+        target.setAttribute('disabled', 'disabled')
+        target.className += ' button--save'
+        setTimeout(function () {
+            document.getElementById('button2').click()
+        }, 1000)
+    }
+
+    function submitSpinner() {
+        var selects = document.getElementById('button--save')
+        selects.addEventListener('click', function (event) {
+            event.preventDefault()
+            if (selects.getAttribute('disabled') === 'disabled') {
+                console.log('already clicked')
+            } else {
+                event.preventDefault()
+                console.log(selects.getAttribute('disabled'))
+                buttonClicked(selects)
+            }
+        })
+    }
+
+    function submitSpinner2() {
+        console.log('clicked')
+        var selects = document.getElementById('button--save')
+        buttonClicked(selects)
+    }
+</script>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include 'v2/includes/footer.html' %}
+{% endblock %}

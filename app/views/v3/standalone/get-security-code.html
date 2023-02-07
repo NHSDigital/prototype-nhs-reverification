@@ -1,0 +1,64 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Get a security code
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="get-verification-otp" method="post" class="form">
+        <h1 class="nhsuk-heading-l">
+          Get a security code
+        </h1>
+
+        <div class="nhsuk-hint">
+          <p>We have found an NHS record with the information you have provided.</p>
+
+          <p>To continue, we will send you a 6 digit security code.
+
+          <p>You need to use this code within <b>1 hour</b> or it will expire.
+
+        </div>
+
+        <h2 class="nhsuk-heading-s">The security code will be sent to:</h2>
+
+        {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %}
+        <p>********lor@****l.com</p>
+        {% else %}
+        <p>********681</p>
+        {% endif %}
+
+      <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">
+        <summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
+          <span class="nhsuk-details__summary-text">
+            {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %}
+              I do not have access to this email
+            {% else %}
+              I do not have access to this phone
+            {% endif %}
+          </span>
+        </summary>
+        <div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true">
+          <p>If you do not have access to this mobile phone, you will not be able to complete this change online. To update your details, please visit your GP.</p><p><a href="#" onclick="return false;">Find a GP</a></p>
+        </div>
+      </details>
+
+        <div>
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+        </div>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v2/includes/footer.html' %}
+{% endblock %}
