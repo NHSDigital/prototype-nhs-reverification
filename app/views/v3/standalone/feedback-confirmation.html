@@ -25,3 +25,8 @@ Thank you for your feedback
 
 </div>
 {% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v3/includes/footer.html' %}
+{% endblock %}
