@@ -58,17 +58,21 @@
             <a href="check-your-mobile-verify-change">OTP sent successfully by Notify</a>
           </li>
         </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-otplimit?referer=newphone">User has requested the OTP too many times</a>
+          </li>
+        </ul>
         <h4>Notify Errors</h4>
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="error-notifyfail">Notify fails to send</a>
+            <a href="error-notifyfail?referer=newphone">Notify fails to send</a>
           </li>
         </ul>
       </div>
     </details>
     {% endif %}
-
-
 
   </div>
 </div>
