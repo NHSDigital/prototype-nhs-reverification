@@ -22,7 +22,7 @@
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-        <h1 class="nhsuk-heading-l">Check your details</h1>
+        <h1 class="nhsuk-heading-l">Check your answers</h1>
 
         <dl class="nhsuk-summary-list">
 
@@ -63,7 +63,7 @@
                     Date of birth
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    {{ data['date-of-birth-day'] or '20' }} {{ data['date-of-birth-month'] or 'May' }} {{ data['date-of-birth-year'] or '1988' }}
+                    {{ data['date-of-birth'][0] or '20' }} {{ data['date-of-birth'][1] | returnDate or 'May' }} {{ data['date-of-birth'][2] or '1988' }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="what-is-your-dob">
