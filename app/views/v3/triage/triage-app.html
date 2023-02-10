@@ -1,0 +1,65 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Choose your method
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../start",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="triage-app-post" method="post">
+
+    {{ radios({
+      "idPrefix": "appuser",
+      "name": "appuser",
+      "fieldset": {
+        "legend": {
+          "text": "Do you use the NHS App?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": "true"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        },
+        {
+          "value": "notsure",
+          "text": "I don't know"
+        }
+      ]
+    }) }}
+
+    {{ button({
+      "text": "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+{% include 'v3/includes/footer.html' %}
+{% endblock %}
