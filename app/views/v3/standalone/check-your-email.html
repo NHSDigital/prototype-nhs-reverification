@@ -15,7 +15,7 @@ Check your email
 
         <h1 class="nhsuk-heading-l">Check your email</h1>
 
-        <p>Enter the 6 digit security code we have sent to <strong>********lor@****l.com</strong> to confirm this is your email address.</p>
+        <p>Enter the 6 digit security code we have sent to <strong>{{ data['emailAddressObf'] or '********lor@****l.com' }}</strong> to confirm this is your email address.</p>
         <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
 
         <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">

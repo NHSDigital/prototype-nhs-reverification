@@ -1,5 +1,7 @@
 // External dependencies
-const express = require('express');
+const express = require('express')
+const obfuscatorEmail = require('obfuscator-email')
+const moment = require('moment')
 
 const router = express.Router();
 
@@ -282,6 +284,36 @@ router.post('/v2/standalone/get-verification-otp-new', function (req, res) {
 
 // V3 ROUTES
 
+// triage steps
+
+router.post('/v3/triage/triage-app-post', function (req, res) {
+  var notification = req.session.data['appuser']
+  if (notification == 'yes'){
+    res.redirect('/v3/triage/methods')
+  }else {
+    res.redirect('/v3/triage/triage-notified')
+  }
+})
+
+router.post('/v3/triage/triage-notified-post', function (req, res) {
+  var notification = req.session.data['notified']
+  if (notification == 'yes'){
+    res.redirect('/v3/triage/methods')
+  }else {
+    res.redirect('/v3/triage/triage-3')
+  }
+})
+
+router.post('/v3/triage/triage-3-post', function (req, res) {
+  var notification = req.session.data['appuser']
+  if (notification == 'yes'){
+    res.redirect('/v3/triage/methods')
+  }else {
+    res.redirect('/v3/triage/methods')
+  }
+})
+
+
 router.post('/v3/standalone/do-you-know-nhs', function (req, res) {
   var NHSnumber = req.session.data['knowNHSNumber']
   if (NHSnumber == 'yes'){
@@ -289,6 +321,52 @@ router.post('/v3/standalone/do-you-know-nhs', function (req, res) {
   }else {
     res.redirect('/v3/standalone/what-is-your-name')
   }
+})
+
+// Obfuscate the UR participants contact details for display on the page
+router.get('/v3/standalone/get-security-code', function (req, res) {
+  console.log(process.env[req.session.data['ur']])
+  if (req.session.data['ur']) {
+
+    if (req.session.data['contactMethod'] === 'email') {
+      let email = process.env[req.session.data['ur']]
+
+      // create an obfuscated version of it
+      if (email ) {
+        emailObf = obfuscatorEmail(email)
+      } else {
+        // create a placeholder string as the field wasn't filled in properly
+        emailObf = '*******6789'
+      }
+
+      req.session.data['emailAddress'] = email
+      req.session.data['emailAddressObf'] = emailObf
+      return res.render('v3/standalone/get-security-code', {
+        'email': emailObf
+      })
+    } else {
+      // pull in mobile number from environmant variable and create an obsfucated version
+
+      let mobile = process.env[req.session.data['ur']]
+
+      // create an obfuscated version of it
+      if (mobile && mobile.length === 11 ) {
+        mobileObf = '*******' + mobile.substr(-4)
+      } else {
+        // create a placeholder string as the field wasn't filled in properly
+        mobileObf = '*******6789'
+      }
+      req.session.data['mobileNum'] = mobile
+      req.session.data['mobileNumObf'] = mobileObf
+      return res.render('v3/standalone/get-security-code', {
+        'mobile': mobileObf
+      })
+    }
+  } else {
+    // do nothing
+    return res.render('v3/standalone/get-security-code')
+  }
+
 })
 
 // pds error screen. user chooses next action
@@ -420,5 +498,18 @@ function devModeRoute(req, res, next) {
 }
 
 router.get('/*', devModeRoute)
+
+// Delete query string if clearQuery set
+// This lets us give urls to research participants that set up data correctly / and have the query string self-delete once done
+// router.get('*', function(req, res, next) {
+//   const data = req.session.data
+//   let requestedUrl = url.parse(req.url).pathname
+//   if (req?.query?.clearQuery) {
+//     delete req.session.data.clearQuery
+//     res.redirect(requestedUrl)
+//   } else {
+//     next()
+//   }
+// })
 
 module.exports = router;

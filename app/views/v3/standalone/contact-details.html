@@ -30,7 +30,7 @@
 
             {% if data['contactMethod'] === 'email' %}
 
-            ********lor@****l.com
+            {{ data['emailAddressObf'] or '********lor@****l.com' }}
 
             {% else %}
 
@@ -95,7 +95,7 @@
 
             {% else %}
 
-            ********681
+            {{ data['mobileNumObf'] or '********681' }}
 
             {% endif %}
 
