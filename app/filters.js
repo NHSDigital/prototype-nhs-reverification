@@ -47,8 +47,15 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   filters.returnDate = (input) => {
     var dateFormat = "MMMM"
     var d = moment().month(input-1).format(dateFormat)
-    console.log(d)
     return d;
+  }
+
+  filters.ukMobile = (input) => {
+    // remove whitespace
+    input = input.replace(/\s/g,'')
+    // add the space back in
+    var number = input.substring(0, 5) + " " + input.substring(5)
+    return number;
   }
 
   /* ------------------------------------------------------------------

@@ -1,5 +1,9 @@
 {% set serviceHome = '/v3/start' %}
 
+{% if data['newMobileNum'] %}
+  {% set mobile = data['newMobileNum'] | ukMobile | nowrap | safe %}
+{% endif %}
+
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -23,7 +27,7 @@
         Check your mobile phone
       </h1>
 
-      <p>Enter the 6 digit security code we have sent to <strong>{{ data['newMobileNum'] | nowrap | safe or '07463 966681'}}</strong> to confirm this is your phone number.</p>
+      <p>Enter the 6 digit security code we have sent to <strong>{{ mobile or '07463 966681' }}</strong> to confirm this is your phone number.</p>
       <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
 
       <details nhsuk-polyfilled="true" id="nhsuk-details" class="nhsuk-details">
