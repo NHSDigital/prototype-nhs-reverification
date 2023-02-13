@@ -300,11 +300,11 @@ router.post('/v3/triage/triage-notified-post', function (req, res) {
   if (notification == 'yes'){
     res.redirect('/v3/triage/methods')
   }else {
-    res.redirect('/v3/triage/triage-3')
+    res.redirect('/v3/triage/triage-which-details-post')
   }
 })
 
-router.post('/v3/triage/triage-3-post', function (req, res) {
+router.post('/v3/triage/triage-which-details-post', function (req, res) {
   var notification = req.session.data['appuser']
   if (notification == 'yes'){
     res.redirect('/v3/triage/methods')
