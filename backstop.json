@@ -11,9 +11,30 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
+      "label": "Reverification - start-multi",
+      "url": "http://localhost:3000/v3/start-multi"
+    },
+    {
+      "label": "Reverification - triage-app",
+      "url": "http://localhost:3000/v3/triage/triage-app"
+    },
+    {
+      "label": "Reverification - triage-notified",
+      "url": "http://localhost:3000/v3/triage/triage-notified"
+    },
+    {
+      "label": "Reverification - triage-which-details",
+      "url": "http://localhost:3000/v3/triage/triage-which-details"
+    },
+    {
+      "label": "Reverification - methods",
+      "url": "http://localhost:3000/v3/triage/methods"
+    },
+    {
       "label": "Reverification - start",
       "url": "http://localhost:3000/v3/start"
     },
+
     {
       "label": "Reverification - check-your-answers",
       "url": "http://localhost:3000/v3/standalone/check-your-answers"
