@@ -1,6 +1,9 @@
 {% set serviceHome = '/v3/start' %}
-
 {% extends 'layout.html' %}
+
+{% if data['date-of-birth'][1] %}
+  {% set month = data['date-of-birth'][1] | returnDate %}
+{% endif %}
 
 {% block pageTitle %}
   Check your answers
@@ -63,7 +66,7 @@
                     Date of birth
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    {{ data['date-of-birth'][0] or '20' }} {{ data['date-of-birth'][1] | returnDate or 'May' }} {{ data['date-of-birth'][2] or '1988' }}
+                    {{ data['date-of-birth'][0] or '20' }} {{ month or 'May' }} {{ data['date-of-birth'][2] or '1988' }}
                 </dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href="what-is-your-dob">
