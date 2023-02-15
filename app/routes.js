@@ -287,8 +287,8 @@ router.post('/v2/standalone/get-verification-otp-new', function (req, res) {
 // triage steps
 
 router.post('/v3/triage/triage-app-post', function (req, res) {
-  var notification = req.session.data['appuser']
-  if (notification == 'yes'){
+  var appuser = req.session.data['appuser']
+  if (appuser === 'yes'){
     res.redirect('/v3/triage/methods')
   }else {
     res.redirect('/v3/triage/triage-notified')
@@ -296,17 +296,17 @@ router.post('/v3/triage/triage-app-post', function (req, res) {
 })
 
 router.post('/v3/triage/triage-notified-post', function (req, res) {
-  var notification = req.session.data['notified']
-  if (notification == 'yes'){
+  var notified = req.session.data['notified']
+  if (notified === 'yes'){
     res.redirect('/v3/triage/methods')
   }else {
-    res.redirect('/v3/triage/triage-which-details-post')
+    res.redirect('/v3/triage/triage-which-details')
   }
 })
 
 router.post('/v3/triage/triage-which-details-post', function (req, res) {
   var notification = req.session.data['appuser']
-  if (notification == 'yes'){
+  if (notification === 'yes'){
     res.redirect('/v3/triage/methods')
   }else {
     res.redirect('/v3/triage/methods')

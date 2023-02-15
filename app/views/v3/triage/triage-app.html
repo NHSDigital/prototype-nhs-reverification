@@ -6,9 +6,21 @@
   Choose your method
 {% endblock %}
 
+{% block header %}
+  {{ header({
+    "service": {
+      "name": "Update your contact details",
+      "href": "/"
+    },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
 {% block outerContent %}
   {{ backLink({
-    "href": "../start",
+    "href": "start-multi",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
