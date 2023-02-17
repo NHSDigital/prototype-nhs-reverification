@@ -1,0 +1,44 @@
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+
+    {% if firstOption === 'nhs-account' %}
+    <h1 class="nhsuk-card__heading nhsuk-heading-l">Access your NHS account</h1>
+    {% else %}
+    <h3 class="nhsuk-card__heading nhsuk-heading-s">Access your NHS account</h3>
+    {% endif %}
+
+    <p class="nhsuk-card__description">
+      Logging in to NHS account allows editing of a contact mobile number and email address, even if they are not missing or in an incorrect format
+    </p>
+
+    {{ details({
+    "text": "How to update your phone number or email address using the NHS account:",
+    "HTML": "
+    <ol>
+      <li>Log in.</li>
+      <li>Go to More.</li>
+      <li>Select Account and settings.</li>
+      <li>Select Manage NHS account.</li>
+      <li>Then select Contact details on your NHS record.</li>
+      <li>Choose which contact detail you want to change on your NHS record.</li>
+      <li>Follow the on-screen instructions.</li>
+    </ol>
+    <p>Ask your GP surgery for help if you can't find your NHS number.</p>
+    "
+    }) }}
+
+    <a href="#" onclick="return false;" role="button" draggable="false" class="nhsuk-button nhsuk-button--beta-login">Log in to your NHS account</a>
+
+<!--    <div class="nhsuk-inset-text">-->
+<!--      <span class="nhsuk-u-visually-hidden">Information: </span>-->
+<!--      <h3 class="nhsuk-heading-m">Access your NHS account</h3>-->
+<!--      <ul class="nhsuk-list nhsuk-u-clear">-->
+<!--        <li class="nhsuk-u-float-left"><a href="https://www.nhsapp.service.nhs.uk/patient/?referrer=NHS_UK&amp;origin=about_nhs_login" role="button" draggable="false" class="nhsuk-button nhsuk-button&#45;&#45;beta-login">Log in to your NHS account</a></li>-->
+<!--        <li class="nhsuk-u-float-left"><a href="https://www.nhsapp.service.nhs.uk/login" role="button" draggable="false" class="nhsuk-button nhsuk-button&#45;&#45;secondary nhsuk-u-margin-bottom-0">Create an account</a>-->
+<!--        </li></ul>-->
+<!--    </div>-->
+
+<!--    <a href="https://www.nhsapp.service.nhs.uk/" class="nhsuk-button nhsuk-button&#45;&#45;beta-login">NHS App online</a>-->
+  </div>
+
+</div>

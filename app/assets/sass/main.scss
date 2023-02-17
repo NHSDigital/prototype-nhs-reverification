@@ -265,3 +265,13 @@
 .app-nowrap {
   white-space: nowrap;
 }
+
+.nhsuk-button--beta-login {
+  background-color: #005eb8;
+  box-shadow: 0 4px 0 #002f5c;
+  margin-bottom: 0;
+  margin-right: 10px;
+  &:hover {
+    background-color: #003f7b;
+  }
+}
