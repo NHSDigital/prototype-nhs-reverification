@@ -319,14 +319,16 @@ router.get('/v3/triage/methods', function (req, res) {
   let canUseWebService = 'yes'
   var details = req.session.data['which-details']
 
-  // parse the checkbox input
-  for (i = 0; i < details.length; i++) {
-    if (details[i] === 'email') {
-      var updateEmail = 'yes'
-    } else if (details[i] === 'mobile') {
-      var updateMobile = 'yes'
-    } else if (details[i] === 'address') {
-      var updateAddress = 'yes'
+  if (details) {
+    // parse the checkbox input
+    for (i = 0; i < details.length; i++) {
+      if (details[i] === 'email') {
+        var updateEmail = 'yes'
+      } else if (details[i] === 'mobile') {
+        var updateMobile = 'yes'
+      } else if (details[i] === 'address') {
+        var updateAddress = 'yes'
+      }
     }
   }
 
