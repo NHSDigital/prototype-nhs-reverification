@@ -27,8 +27,12 @@
       "url": "http://localhost:3000/v3/triage/triage-which-details"
     },
     {
-      "label": "Reverification - methods",
+      "label": "Reverification - triage-methods",
       "url": "http://localhost:3000/v3/triage/methods"
+    },
+    {
+      "label": "Reverification - triage-nhs",
+      "url": "http://localhost:3000/v3/triage/do-you-know-nhs"
     },
     {
       "label": "Reverification - start",
