@@ -12,7 +12,7 @@
   "scenarios": [
     {
       "label": "Reverification - start-multi",
-      "url": "http://localhost:3000/v3/start-multi"
+      "url": "http://localhost:3000/v3/triage/start-multi"
     },
     {
       "label": "Reverification - triage-app",
