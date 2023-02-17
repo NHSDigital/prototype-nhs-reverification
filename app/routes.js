@@ -305,12 +305,43 @@ router.post('/v3/triage/triage-notified-post', function (req, res) {
 })
 
 router.post('/v3/triage/triage-which-details-post', function (req, res) {
-  var notification = req.session.data['appuser']
-  if (notification === 'yes'){
-    res.redirect('/v3/triage/methods')
-  }else {
-    res.redirect('/v3/triage/methods')
+  var details = req.session.data['which-details']
+  res.redirect('/v3/triage/methods')
+})
+
+// Methods page pre-render
+router.get('/v3/triage/methods', function (req, res) {
+  console.log('App user: ' + req.session.data['appuser'])
+  console.log('Notified by NHS: ' + req.session.data['notified'])
+  console.log('Details to update: ' + req.session.data['which-details'])
+
+  let canUseApp = 'yes'
+  let canUseWebService = 'yes'
+  var details = req.session.data['which-details']
+
+  // parse the checkbox input
+  for (i = 0; i < details.length; i++) {
+    if (details[i] === 'email') {
+      var updateEmail = 'yes'
+    } else if (details[i] === 'mobile') {
+      var updateMobile = 'yes'
+    } else if (details[i] === 'address') {
+      var updateAddress = 'yes'
+    }
   }
+
+  if (updateAddress === 'yes') {
+    canUseApp = 'no'
+  }
+
+  if (req.session.data['notified'] === 'no') {
+    canUseWebService = 'no'
+  }
+
+  return res.render('v3/triage/methods', {
+    'canUseApp': canUseApp,
+    'canUseWebService': canUseWebService
+  })
 })
 
 
