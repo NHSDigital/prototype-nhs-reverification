@@ -32,25 +32,78 @@
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <div aria-live="polite" class="nhsuk-u-reading-width">
+
+      <h1 class="nhsuk-heading-l">Your options</h1>
+
+      {% if canUseApp === 'yes' %}
+
       <div class="nhsuk-card">
         <div class="nhsuk-card__content"><h1 class="nhsuk-card__heading nhsuk-heading-l">Your details have been updated</h1>
           <p class="nhsuk-card__description">
-            {% if data['contactMethod'] === 'sms' %}
-            Your mobile phone number has been updated to <strong>{{ data['newMobileNum'] or '07463 966681'}}</strong>.
-            {% else %}
-            Your email address has been updated to <strong>{{ data['newEmailAddress'] or 'test@test.com'}}</strong>.
-            {% endif %}
+            Use App
           </p>
         </div>
       </div>
 
-      <h2 class="nhsuk-heading-m">What happens next</h2>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>Your details will be updated for all NHS healthcare providers.</li>
-        {% if data['contactMethod'] === 'sms' %}
-        <li>Your GP surgery will be notified about this change.</li>
-        {% endif %}
-      </ul>
+      {% endif %}
+
+      {% if canUseWebService === 'yes' %}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">Use our web service</h2>
+          <p class="nhsuk-card__description">
+            Because the NHS notified you to change a single detail the
+          </p>
+
+          <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="do">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+              <span class="nhsuk-action-link__text">Add or correct your contact details</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      {% endif %}
+
+      <h2 class="nhsuk-heading-m">Other options</h2>
+
+      {% if canUseApp === 'no' %}
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h1 class="nhsuk-card__heading nhsuk-heading-s">Log in to your NHS account</h1>
+          <p class="nhsuk-card__description">
+            If you have the App on your mobile phone or tablet you can also use that.
+          </p>
+          {{ details({
+          "text": "How to update your phone number or email address using the NHS App:",
+          "HTML": "
+          <ol>
+            <li>Log in.</li>
+            <li>Go to More.</li>
+            <li>Select Account and settings.</li>
+            <li>Select Manage NHS account.</li>
+            <li>Then select Contact details on your NHS record.</li>
+            <li>Choose which mobile phone number you want to keep on your NHS record.</li>
+            <li>Follow the on-screen instructions.</li>
+          </ol>
+          <p>Ask your GP surgery for help if you can't find your NHS number.</p>
+          "
+          }) }}
+
+          <a href="https://www.nhsapp.service.nhs.uk/" class="nhsuk-button nhsuk-button--beta-login">NHS App online</a>
+        </div>
+
+      </div>
+
+      {% endif %}
+
     </div>
 
   </div>
