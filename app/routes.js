@@ -412,14 +412,12 @@ router.post('/v3/standalone/get-verification-otp', function (req, res) {
 
   if (contactMethod === 'email'){
     if (req.session.data['emailAddress'] !== '') {
+      console.log('send email')
       // generate a random 6 digit number for the Email
       var pinCode1 = Math.floor(100 + Math.random() * 900)
       var pinCode2 = Math.floor(100 + Math.random() * 900)
       var personalisation = {
         'otp_code': pinCode1 + "" + pinCode2
-      }
-      var personalisation = {
-        'name': req.session.data['given-names']
       }
       notify.sendEmail(
         '8a6fb1b2-3c73-4f79-bff7-0e837dfa3178',
