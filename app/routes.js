@@ -189,7 +189,7 @@ router.post('/v2/standalone/pds-not-found-next', function (req, res) {
 router.post('/v2/standalone/get-verification-otp', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
 
-  if (contactMethod == 'email'){
+  if (contactMethod === 'email'){
     if (req.session.data['emailAddress'] !== '') {
       // generate a random 6 digit number for the Email
       var pinCode1 = Math.floor(100 + Math.random() * 900)
@@ -247,7 +247,7 @@ router.post('/v2/standalone/submit-new-mobile', function (req, res) {
 router.post('/v2/standalone/get-verification-otp-new', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
 
-  if (contactMethod == 'email'){
+  if (contactMethod === 'email'){
     if (req.session.data['newEmailAddress'] !== '') {
       // generate a random 6 digit number for the Email
       var pinCode1 = Math.floor(100 + Math.random() * 900)
@@ -410,7 +410,7 @@ router.post('/v3/standalone/pds-not-found-next', function (req, res) {
 router.post('/v3/standalone/get-verification-otp', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
 
-  if (contactMethod == 'email'){
+  if (contactMethod === 'email'){
     if (req.session.data['emailAddress'] !== '') {
       // generate a random 6 digit number for the Email
       var pinCode1 = Math.floor(100 + Math.random() * 900)
@@ -468,7 +468,7 @@ router.post('/v3/standalone/submit-new-mobile', function (req, res) {
 router.post('/v3/standalone/get-verification-otp-new', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
 
-  if (contactMethod == 'email'){
+  if (contactMethod === 'email'){
     if (req.session.data['newEmailAddress'] !== '') {
       // generate a random 6 digit number for the Email
       var pinCode1 = Math.floor(100 + Math.random() * 900)

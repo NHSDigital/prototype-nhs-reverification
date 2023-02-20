@@ -63,7 +63,7 @@
               <div class="nhsuk-radios nhsuk-radios--conditional">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="knowNHSNumber-yes" name="knowNHSNumber" type="radio" value="yes" aria-controls="conditional-nhs-number-1" aria-expanded="false" {{ checked("knowNHSNumber", "yes") }}>
+                  <input class="nhsuk-radios__input" id="knowNHSNumber-yes" name="knowNHSNumber2" type="radio" value="yes" aria-controls="conditional-nhs-number-1" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="knowNHSNumber-yes">
                     Yes, I know my NHS number
                   </label>
@@ -77,12 +77,12 @@
                     <div class="nhsuk-hint" id="NHSNumberHint">
                       Example: 485 777 3456
                     </div>
-                    <input class="nhsuk-input nhsuk-input--width-20" id="NHSNumber" name="nhs-number" value="{{ data['nhs-number'] }}">
+                    <input class="nhsuk-input nhsuk-input--width-20" id="NHSNumber" name="nhs-number-triage">
                   </div>
                 </div>
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="knowNHSNumber-no" name="knowNHSNumber" type="radio" value="no" {{ checked("knowNHSNumber", "no") }}>
+                  <input class="nhsuk-radios__input" id="knowNHSNumber-no" name="knowNHSNumber2" type="radio" value="no">
                   <label class="nhsuk-label nhsuk-radios__label" for="knowNHSNumber-no">
                     No, continue with my full name
                   </label>
