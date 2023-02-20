@@ -1,0 +1,30 @@
+{% if hideFeedback !== 'true' %}
+  {% include "../includes/feedback.html" %}
+{% endif%}
+
+{{ footer({
+  "links": [
+    {
+      "URL": "/v3/start",
+      "label": "Home"
+    },
+    {
+      "URL": "/v3/legal/accessibility",
+      "label": "Accessibility"
+    },
+    {
+      "URL": "/v3/legal/privacy",
+      "label": "Privacy notice"
+    },
+    {
+      "URL": "/v3/legal/terms",
+      "label": "Terms and conditions"
+    },
+
+    {
+      "URL": "/v3/legal/cookies",
+      "label": "Cookie policy"
+    }
+  ],
+  "copyright": "&copy; NHS Digital 2023"
+}) }}

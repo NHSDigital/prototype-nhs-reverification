@@ -1,0 +1,83 @@
+{% set serviceHome = '/v3/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Enter your new mobile number
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+  "href": "contact-details",
+    "text": "Go back",
+  "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      Enter your new mobile number
+    </h1>
+
+    <form action="get-verification-otp-new"  method="post">
+
+      <p>We will send a 6 digit security code.</p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="newMobileNumber">
+          UK mobile number
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="newMobileNumber" name="newMobileNum" value="{{ data['newMobileNum'] }}"  type="tel" spellcheck="false" autocomplete="tel">
+      </div>
+
+      <input class="govuk-input" name="contactMethod" type="hidden" value="sms">
+
+      <button class="nhsuk-button full-width">
+        Continue
+      </button>
+
+    </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="check-your-mobile-verify-change">OTP sent successfully by Notify</a>
+          </li>
+        </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-otplimit?referer=newphone">User has requested the OTP too many times</a>
+          </li>
+        </ul>
+        <h4>Notify Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-notifyfail?referer=newphone">Notify fails to send</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v3/includes/footer.html' %}
+{% endblock %}
