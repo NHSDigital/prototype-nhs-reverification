@@ -19,7 +19,7 @@ Your details have been updated
         <div class="nhsuk-card">
           <div class="nhsuk-card__content"><h1 class="nhsuk-card__heading nhsuk-heading-l">Your details have been updated</h1>
             <p class="nhsuk-card__description">
-              {% if data['contactMethod'] === 'sms' %}
+              {% if data['contactMethod'] === 'email' %}
               Your mobile phone number has been updated to <strong class="app-nowrap">{{ mobile or '07463 966681'}}</strong>.
               {% else %}
               Your email address has been updated to <strong>{{ data['newEmailAddress'] or 'test@test.com'}}</strong>.
@@ -31,7 +31,7 @@ Your details have been updated
         <h2 class="nhsuk-heading-m">What happens next</h2>
         <ul class="nhsuk-list nhsuk-list--bullet">
           <li>Your details will be updated for all NHS healthcare providers.</li>
-          {% if data['contactMethod'] === 'sms' %}
+          {% if data['contactMethod'] === 'email' %}
           <li>Your GP surgery will be notified about this change.</li>
           {% endif %}
         </ul>
