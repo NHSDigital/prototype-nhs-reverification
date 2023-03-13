@@ -275,3 +275,23 @@
     background-color: #003f7b;
   }
 }
+
+// APP STORE IMAGES
+.app-apps-store-link {
+  margin: 16px;
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  @include mq($until: desktop) {
+    margin: 8px;
+  }
+
+  img {
+    width: 100%;
+  }
+  a:active, a:focus, a:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
