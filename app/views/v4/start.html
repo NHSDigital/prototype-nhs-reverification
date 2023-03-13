@@ -166,27 +166,27 @@ Social care and support guide - NHS
     <div class="nhsuk-u-reading-width">
       <h1 class="nhsuk-heading-xl">Add or correct the contact details on your NHS record</h1>
 
-      <p>Only use this service if you have received an email or text from the NHS asking you to update your contact details.</p>
-      <p>This is because the contact details on your NHS record are different from the details your GP surgery has for you. It's important both are correct and up to date.</p>
+      <p>Only use this service if you have received an email or text from the NHS asking you to update or correct a missing or invalid mobile number or email address.</p>
+      <p>It’s important your contact details are correct and up to date.</p>
 
       <h2 class="nhsuk-heading-m">Before you start</h2>
 
       <p>You will need your mobile phone and access to your email.</p>
 
       {{ details({
-      "text": "If you have not been contacted by the NHS",
-      "HTML": "
-      <p>You can update your contact details using:</p>
-      <ul>
-        <li><a href=\"#\" onclick=\"return false;\">your NHS account</a></li>
-        <li>the NHS App</li>
-      </ul>
-      <p>You could also contact your GP by using <a href=\"#\" onclick=\"return false;\">Find a GP</a></p>
-      "
+        "text": "If you have not been contacted by the NHS",
+        "HTML": "
+        <p>You can update your contact details using:</p>
+        <ul>
+          <li><a href=\"#\" onclick=\"return false;\">your NHS account</a></li>
+          <li>the NHS App</li>
+        </ul>
+        <p>You could also contact your GP by using <a href=\"#\" onclick=\"return false;\">Find a GP</a></p>
+        "
       }) }}
 
 
-      <a class="nhsuk-button" href="standalone/do-you-know-nhs" role="button" draggable="false">Start now</a>
+      <a class="nhsuk-button" href="standalone/triage-notified" role="button" draggable="false">Start now</a>
 
       {% if data['devMode'] === 'true' %}
       {# DEVMODE SCENARIOS #}
@@ -201,19 +201,19 @@ Social care and support guide - NHS
           <h4>Missing contact details</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="standalone/do-you-know-nhs?contactMethod=email&reason=missingmobile">User got an email about <b>missing mobile number</b></a>
+              <a href="standalone/triage-notified?contactMethod=email&reason=missingmobile">User got an email about <b>missing mobile number</b></a>
             </li>
             <li>
-              <a href="standalone/do-you-know-nhs?contactMethod=sms&reason=missingemail">User got an SMS about <b>missing email address</b></a>
+              <a href="standalone/triage-notified?contactMethod=sms&reason=missingemail">User got an SMS about <b>missing email address</b></a>
             </li>
           </ul>
           <h4>Invalid contact details</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="standalone/do-you-know-nhs?contactMethod=email&reason=malformedmobile">User got an email about <b>invalid mobile number</b></a>
+              <a href="standalone/triage-notified?contactMethod=email&reason=malformedmobile">User got an email about <b>invalid mobile number</b></a>
             </li>
             <li>
-              <a href="standalone/do-you-know-nhs?contactMethod=sms&reason=malformedemail">User got an SMS about <b>invalid email address</b></a>
+              <a href="standalone/triage-notified?contactMethod=sms&reason=malformedemail">User got an SMS about <b>invalid email address</b></a>
             </li>
           </ul>
         </div>
