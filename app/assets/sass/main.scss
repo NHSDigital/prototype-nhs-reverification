@@ -295,3 +295,16 @@
     box-shadow: none;
   }
 }
+.service-access {
+  counter-reset: li;
+  padding: 0;
+  list-style: none;
+}
+
+.service-access__item {
+  position: relative;
+  background-color: white;
+  border: 1px solid #d8dde0;
+  margin-bottom: 8px;
+  padding: 16px;
+}
