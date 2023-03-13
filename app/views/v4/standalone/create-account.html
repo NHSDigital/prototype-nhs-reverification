@@ -1,0 +1,56 @@
+{% set serviceHome = '/v4/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Have you received a message from the NHS to add or correct your contact details?
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="create-account-post" method="post">
+
+      {{ radios({
+        "idPrefix": "create-account",
+        "name": "create-account",
+        "fieldset": {
+          "legend": {
+            "text": "Would you like to create an NHS account using the details you have given?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        hint: {
+          text: "This lets you access health and care websites or apps safely and securely. "
+        },
+        "items": [
+          {
+            "value": "yes",
+            "text": "Yes, create an NHS account"
+          },
+          {
+            "value": "no",
+            "text": "No thanks"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+{% include 'v4/includes/footer.html' %}
+{% endblock %}
