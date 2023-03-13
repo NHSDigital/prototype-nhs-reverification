@@ -19,29 +19,28 @@ Would you like to sign in with NHS login?
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h2 class="nhsuk-heading-l">Would you like to sign in with NHS login?</h2>
+    <h2 class="nhsuk-heading-l">Would you like to use your NHS login?</h2>
 
-    <div class="nhsuk-hint" id="contact-hint">
-      <p>You may have set up an NHS login when using other health websites or apps, like COVID-19 service or the NHS App.</p>
-    </div>
+<!--    <div id="contact-hint">-->
+<!--      <p>You may have set up an NHS login when using other health websites or apps, like COVID-19 service or the NHS App.</p>-->
+<!--    </div>-->
 
-    <p>
+    <p>NHS login allows you to access your health and care websites and apps with one set of login details.</p>
 
-    </p><form action="/sprint-12/section-1/nhs-login-email-address" method="post" autocomplete="off">
+    <p>We will check if you have an NHS login. If not, you can set one up.</p>
+
+    <form action="/sprint-12/section-1/nhs-login-email-address" method="post" autocomplete="off">
     <input type="hidden" name="user-auth" id="user-auth" value="p9">
-    <a href="#" onclick="return false;" class="nhsuk-button nhsuk-button--beta-login nhsuk-u-margin-bottom-4" type="submit">
-      Continue with NHS login
+    <a href="nhs-login-email" class="nhsuk-button nhsuk-button--beta-login nhsuk-u-margin-bottom-4" type="submit">
+      Continue to NHS login
     </a>
   </form>
 
-    <div class="nhsuk-hint" id="contact-hint">
+    <div id="contact-hint" class="nhsuk-u-margin-top-4">
       <p>Alternatively you can continue without using NHS login:</p>
     </div>
 
     <p><a href="do-you-know-nhs" class="nhsuk-button nhsuk-button--secondary">Continue without</a></p>
-
-
-
 
   </div>
 </div>
