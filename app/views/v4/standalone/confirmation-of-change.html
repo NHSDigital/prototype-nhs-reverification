@@ -1,4 +1,4 @@
-{% set serviceHome = '/v3/start' %}
+{% set serviceHome = '/v4/start' %}
 {% extends 'layout.html' %}
 
 {% if data['newMobileNum'] %}
@@ -34,10 +34,13 @@ Your details have been updated
           {% if data['contactMethod'] === 'sms' %}
           <li>Your GP surgery will be notified about this change.</li>
           {% endif %}
+
+          {% if data['create-account'] !== 'no' %}
+            <li>We will email you instructions on how to set up your NHS login.</li>
+          {% endif %}
         </ul>
+
       </div>
-
-
 
     </div>
 
@@ -46,5 +49,5 @@ Your details have been updated
 
 {% block footer %}
 {% set feedbackType = 'final' %}
-  {% include 'v3/includes/footer.html' %}
+  {% include 'v4/includes/footer.html' %}
 {% endblock %}

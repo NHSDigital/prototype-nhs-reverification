@@ -1,4 +1,4 @@
-{% set serviceHome = '/v3/start' %}
+{% set serviceHome = '/v4/start' %}
 
 {% if data['newMobileNum'] %}
   {% set mobile = data['newMobileNum'] | ukMobile %}
@@ -120,5 +120,5 @@
 {% endblock %}
 
 {% block footer %}
-  {% include 'v3/includes/footer.html' %}
+  {% include 'v4/includes/footer.html' %}
 {% endblock %}
