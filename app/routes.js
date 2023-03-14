@@ -565,7 +565,7 @@ router.get('/v4/standalone/get-security-code', function (req, res) {
   } else {
     // do nothing
     req.session.data['nhslogin'] = "false"
-    return res.render('v3/standalone/get-security-code')
+    return res.render('v4/standalone/get-security-code')
   }
 
 })
