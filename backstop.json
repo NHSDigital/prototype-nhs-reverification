@@ -39,6 +39,10 @@
       "url": "http://localhost:3000/v4/standalone/nhs-login-create"
     },
     {
+      "label": "Reverification - login-created-email",
+      "url": "http://localhost:3000/v4/login-created-email"
+    },
+    {
       "label": "Reverification - check-your-answers",
       "url": "http://localhost:3000/v4/standalone/check-your-answers"
     },
