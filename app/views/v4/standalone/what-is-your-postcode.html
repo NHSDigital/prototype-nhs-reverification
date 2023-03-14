@@ -27,15 +27,16 @@
             </h1>
           </legend>
 
-          <div class="nhsuk-hint">
-            <p>Enter the postcode your GP has on record for you. For example EN1 1BE.</p>
+          <div class="">
+            <p>This is the postcode you used to register with your current GP.</p>
           </div>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="postcode">
               Postcode
             </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code" value="{{ data['postcode'] }}">
+            <div class="nhsuk-hint" id="postcode-hint">For example EN1 1BE.</div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="postcode" aria-describedby="postcode-hint" name="postcode" type="text" autocomplete="postal-code" value="{{ data['postcode'] }}">
           </div>
 
             <button class="nhsuk-button">Continue</button>

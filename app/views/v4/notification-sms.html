@@ -30,11 +30,16 @@
     <h1 class="nhsuk-heading-l">Text message</h1>
 
     <div class="app-text-message">
-      <h2 class="nhsuk-heading-s">NHScontact</h2>
+      <h2 class="nhsuk-heading-s">NHS</h2>
       <p class="app-text-message__text">
-        NHS contact details: The email address on your NHS record cannot be used.<br><br>
-        Your GP and the NHS will use your email to contact you with important updates.<br><br>
-        Update your email address online at <a href="start">www.nhs.uk/add-correct-contact-details</a></p>
+
+      Correct your NHS contact details {{ data['first-name'] or 'Sarah' }}<br><br>
+
+      Your GP and the NHS will use these details to contact you about healthcare services.<br><br>
+
+      You can either:
+      - visit <a href="start">www.nhs.uk/add-correct-contact-details</a>, or
+      - go to <a href="start">nhs.uk</a> and search for ‘Correct email address’
     </div>
 
   </div>
