@@ -40,7 +40,8 @@ body {
     padding:0 30px;
 }
 
-.app-text-message__text {
+.app-text-message__text,
+.nhsuk-contents-list{
     max-width: 600px;
     word-wrap: break-word;
     margin-bottom: 12px;
@@ -48,6 +49,10 @@ body {
     position:relative;
     padding:10px 30px;
     color:black;
+}
+
+.nhsuk-contents-list {
+    margin:10px 30px;
 }
 
 hr {
