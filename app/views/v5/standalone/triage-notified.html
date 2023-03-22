@@ -1,0 +1,61 @@
+{% set serviceHome = '/v4/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Did you get a message from the NHS to correct your details?
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../start",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="triage-notified-post" method="post">
+
+    {{ radios({
+      "idPrefix": "notified",
+      "name": "notified",
+      "fieldset": {
+        "legend": {
+          "text": "Did you get a message from the NHS to correct your details?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": "true"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    }) }}
+
+    {{ button({
+      "text": "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+{% include 'v4/includes/footer.html' %}
+{% endblock %}

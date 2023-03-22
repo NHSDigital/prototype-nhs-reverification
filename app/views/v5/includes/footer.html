@@ -1,0 +1,30 @@
+{% if hideFeedback !== 'true' %}
+  {% include "../includes/feedback.html" %}
+{% endif%}
+
+{{ footer({
+  "links": [
+    {
+      "URL": "/v3/start",
+      "label": "Home"
+    },
+    {
+      "URL": "/v4/legal/accessibility",
+      "label": "Accessibility"
+    },
+    {
+      "URL": "/v4/legal/privacy",
+      "label": "Privacy notice"
+    },
+    {
+      "URL": "/v4/legal/terms",
+      "label": "Terms and conditions"
+    },
+
+    {
+      "URL": "/v4/legal/cookies",
+      "label": "Cookie policy"
+    }
+  ],
+  "copyright": "&copy; Crown copyright"
+}) }}

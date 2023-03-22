@@ -1,0 +1,115 @@
+{% set serviceHome = '/v4/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your email
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="contact-details" method="post" class="form">
+
+        <h1 class="nhsuk-heading-l">Check your email</h1>
+
+        <p>Enter the 6 digit security code we have sent to <strong>{{ data['emailAddressObf'] or '********lor@****l.com' }}</strong> to confirm this is your email address.</p>
+        <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
+
+        <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">
+          <summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
+            <span class="nhsuk-details__summary-text"> Not received your security code?</span>
+          </summary>
+          <div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true">
+          <p> When we are really busy, it may take a bit longer for your code to arrive. </p><p><a href="">Send the security code again</a> </p><p>
+            If you do not have access to this email address, you will not be able to complete this change online. To update your details, please visit your GP.<br><br>
+            <a href="#" onclick="return false;">Find a GP</a></p>
+          </div>
+        </details>
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+            <label class="nhsuk-label" for="otp">
+              Security code
+            </label>
+
+            <div class="nhsuk-hint" id="contact-hint">
+              The code is 6 digits
+            </div>
+
+            <input class="nhsuk-input nhsuk-input--width-5" inputmode="numeric" spellcheck="false"  id="otp" name="create-sms-otp" type="text" autocomplete="one-time-code" >
+
+          </fieldset>
+
+        </div>
+
+        <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">
+          <summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
+            <span class="nhsuk-details__summary-text"> I do not have access to this email</span>
+          </summary>
+          <div id="nhsuk-details__text0" class="nhsuk-details__text" aria-hidden="true">
+            <p> If you do not have access to this email address, you will not be able to complete this change online. To update your details, please visit your GP.<br><br>
+            <a href="#" onclick="return false;">Find a GP</a></p>
+          </div>
+        </details>
+
+        <div>
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+        </div>
+    </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="contact-details">Code entered is correct</a>
+          </li>
+        </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="check-your-email?error=true">User gets OTP wrong</a>
+          </li>
+          <li>
+            <a href="error-otplimit?referer=checkemail">User gets OTP wrong for the 3rd time</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+    <script>
+      function forgottenPasswordClickHandler(e) {
+        e.preventDefault();
+        var x = document.getElementById("loading");
+        if (x.style.display === "none") {
+          x.style.display = "inline-block";
+        } else {
+          x.style.display = "none";
+        }
+        setTimeout(() => window.location.href = e.target.href, 2000)
+      }
+    </script>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include 'v4/includes/footer.html' %}
+{% endblock %}

@@ -1,0 +1,124 @@
+{% set serviceHome = '/v4/start' %}
+
+{% if data['newMobileNum'] %}
+  {% set mobile = data['newMobileNum'] | ukMobile %}
+{% endif %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your mobile phone
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "enter-your-new-phone",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="verify-change-post" method="post" class="form">
+      <h1 class="nhsuk-heading-l">
+        Check your mobile phone
+      </h1>
+
+      <p>Enter the 6 digit security code we have sent to <strong class="app-nowrap">{{ mobile or '07463 966681' }}</strong> to confirm this is your phone number.</p>
+      <p>You need to use this code within <strong>1 hour</strong> or it will expire.</p>
+
+      <details nhsuk-polyfilled="true" id="nhsuk-details" class="nhsuk-details">
+        <summary role="button" aria-controls="nhsuk-details__text" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
+          <span class="nhsuk-details__summary-text"> Not received your security code?</span>
+        </summary>
+        <div id="nhsuk-details__text" class="nhsuk-details__text" aria-hidden="true">
+          <p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="#" onclick="return false;">Send the security code again</a></p>
+        </div>
+      </details>
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <label class="nhsuk-label" for="sms-verify-otp">
+            Security code
+          </label>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            The code is 6 digits
+          </div>
+
+          <input class="nhsuk-input nhsuk-input--width-5" inputmode="numeric" spellcheck="false"  id="sms-verify-otp" name="sms-verify-otp" type="text" autocomplete="one-time-code">
+
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button full-width" type="submit" id="button--save">Continue</button>
+      <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
+    </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="confirmation-of-change">Code entered is correct</a>
+          </li>
+        </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="check-your-mobile-verify-change?error=true">User gets OTP wrong</a>
+          </li>
+          <li>
+            <a href="error-otplimit?referer=checkmobilechange">User gets OTP wrong for the 3rd time</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  submitSpinner()
+
+  function buttonClicked(target) {
+    target.setAttribute('disabled', 'disabled')
+    target.className += ' button--save'
+    setTimeout(function () {
+      document.getElementById('button2').click()
+    }, 1000)
+  }
+
+  function submitSpinner() {
+    var selects = document.getElementById('button--save')
+    selects.addEventListener('click', function (event) {
+      event.preventDefault()
+      if (selects.getAttribute('disabled') === 'disabled') {
+        console.log('already clicked')
+      } else {
+        event.preventDefault()
+        console.log(selects.getAttribute('disabled'))
+        buttonClicked(selects)
+      }
+    })
+  }
+</script>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v4/includes/footer.html' %}
+{% endblock %}

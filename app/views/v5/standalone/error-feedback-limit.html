@@ -1,0 +1,32 @@
+{% set serviceHome = '/v4/start' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Enter your email address
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-heading-l">You cannot continue</h1>
+
+        <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+
+          <p>You have sent your feedback too many times.</p>
+          <p>You must wait up to 1 hour before trying again.</p>
+
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v4/includes/footer.html' %}
+{% endblock %}
