@@ -21,21 +21,21 @@ What postcode does your GP have for you?
 
       <form action="check-your-answers"  method="post">
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" for="postcode">
             <h1 class="nhsuk-heading-l">
               What postcode does your GP have for you?
             </h1>
           </legend>
 
-          <div class="">
-            <p>This is the postcode that was used to register you with your current GP.</p>
-          </div>
+<!--          <div class="">-->
+<!--            <p>This is the postcode that was used to register you with your current GP.</p>-->
+<!--          </div>-->
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="postcode">
-              Postcode
-            </label>
-            <div class="nhsuk-hint" id="postcode-hint">For example EN1 1BE.</div>
+<!--            <label class="nhsuk-label" for="postcode">-->
+<!--              Postcode-->
+<!--            </label>-->
+            <div class="nhsuk-hint" id="postcode-hint">This may be different to your current address. For example EN1 1BE.</div>
             <input class="nhsuk-input nhsuk-input--width-10" id="postcode" aria-describedby="postcode-hint" name="postcode" type="text" autocomplete="postal-code" value="{{ data['postcode'] }}">
           </div>
 
