@@ -21,6 +21,11 @@
       "showSearch": "false"
     })
   }}
+
+{% if feedbackType %}
+  {% include 'v5/includes/feedback.html' %}
+{% endif %}
+
 {% endblock %}
 
 {% block footer %}
