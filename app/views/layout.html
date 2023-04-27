@@ -23,7 +23,9 @@
   }}
 
 {% if feedbackType %}
-  {% include 'v5/includes/feedback.html' %}
+  {% if hideFeedback !== 'true' %}
+    {% include 'v5/includes/feedback.html' %}
+  {% endif %}
 {% endif %}
 
 {% endblock %}
