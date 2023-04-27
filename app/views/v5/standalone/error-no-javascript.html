@@ -1,0 +1,36 @@
+{% set serviceHome = '/v5/start' %}
+{% set feedbackType = 'step' %}
+{% set hideFeedback = 'true' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Turn on Javascript to use this service
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-heading-l">Turn on Javascript to use this service</h1>
+
+        <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+
+          <p>Find out <a href="">how to enable Javascript for Windows</a>, or <a href="">how to enable Javascript for Mac</a>.</p>
+          <p>Alternatively, you can contact your GP to check and update your details.</p>
+          <p>If you are not registered with a GP, try our <a href="">Find a GP service</a></p>
+
+        </div>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+{{ footer({
+"links": [],
+"copyright": "&copy; Crown copyright"
+}) }}
+{% endblock %}
