@@ -1,0 +1,56 @@
+{% set serviceHome = '/v6/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Would you like us to create an NHS login with the details you provided?
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="create-account-post" method="post">
+
+      {{ radios({
+        "idPrefix": "create-account",
+        "name": "create-account",
+        "fieldset": {
+          "legend": {
+            "text": "Would you like us to create an NHS login with the details you provided?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        hint: {
+          text: "Your NHS login will be created automatically. You can then access our health and care websites safely and securely. "
+        },
+        "items": [
+          {
+            "value": "yes",
+            "text": "Yes, create an NHS login"
+          },
+          {
+            "value": "no",
+            "text": "No thanks"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+{% include 'v6/includes/footer.html' %}
+{% endblock %}

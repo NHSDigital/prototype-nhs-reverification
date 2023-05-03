@@ -1,0 +1,67 @@
+{% set serviceHome = '/v6/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Provide feedback to improve the service
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="feedback-confirmation" autocomplete="off" method="post">
+
+      <h1>
+        Provide feedback to improve the service
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Your feedback can help us improve the Add or correct your contact details service.
+      </p>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>If you think it's a life threatening emergency:</p>
+        <ul>
+          <li>call 999</li>
+        </ul>
+        <p>If you do not think it's an emergency:</p>
+        <ul>
+          <li>call 111 or <a href="https://111.nhs.uk/">go to 111 online</a></li>
+          <li>call 111 or <a href="">speak to a pharmacist, GP or dentist</a></li>
+          <li>search the <a href="https://www.nhs.uk/conditions/">NHS website health A-Z</a>for more advice about your
+            condition
+          </li>
+        </ul>
+      </div>
+
+      <p>The NHS website team does not access to individual patient information. If you have any questions or concerns
+          about your patient record, please contact your current GP surgery.</p>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-u-font-weight-bold" for="feedback">
+          Describe what happened on the page
+        </label>
+        <div class="nhsuk-hint" id="feedback-hint">
+          Do not include confidential or medical information in your message. For example, your NHS number, date of
+          birth, medical diagnosis or medical history.
+        </div>
+        <textarea aria-describedby="feedback-hint" class="nhsuk-textarea nhsuk-u-padding-3" id="feedback" name="feedback" rows=" 10 "></textarea>
+      </div>
+
+      <button class="nhsuk-button" type="submit">
+        Send feedback
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v6/includes/footer.html' %}
+{% endblock %}

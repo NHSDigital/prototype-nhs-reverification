@@ -899,6 +899,207 @@ router.post('/v5/standalone/create-account-post', function (req, res) {
   }
 })
 
+
+// V6 ROUTES
+
+// triage step
+router.post('/v6/standalone/triage-notified-post', function (req, res) {
+  var notified = req.session.data['notified']
+  if (notified === 'no'){
+    res.redirect('/v6/standalone/other-channels')
+  }else {
+    res.redirect('/v6/standalone/use-login')
+  }
+})
+
+router.post('/v6/standalone/do-you-know-nhs', function (req, res) {
+  var NHSnumber = req.session.data['knowNHSNumber']
+  if (NHSnumber === 'yes'){
+    res.redirect('/v6/standalone/what-is-your-dob')
+  }else {
+    res.redirect('/v6/standalone/what-is-your-name')
+  }
+})
+
+// Obfuscate the UR participants contact details for display on the page
+router.get('/v6/standalone/get-security-code', function (req, res) {
+  console.log(process.env[req.session.data['ur']])
+  if (req.session.data['ur']) {
+
+    if (req.session.data['contactMethod'] === 'email') {
+      let email = process.env[req.session.data['ur']]
+
+      // create an obfuscated version of it
+      if (email ) {
+        emailObf = obfuscatorEmail(email)
+      } else {
+        // create a placeholder string as the field wasn't filled in properly
+        emailObf = '*******6789'
+      }
+
+      req.session.data['emailAddress'] = email
+      req.session.data['emailAddressObf'] = emailObf
+      return res.render('v6/standalone/get-security-code', {
+        'email': emailObf
+      })
+    } else {
+      // pull in mobile number from environmant variable and create an obsfucated version
+
+      let mobile = process.env[req.session.data['ur']]
+
+      // create an obfuscated version of it
+      if (mobile && mobile.length === 11 ) {
+        mobileObf = '*******' + mobile.substr(-4)
+      } else {
+        // create a placeholder string as the field wasn't filled in properly
+        mobileObf = '*******6789'
+      }
+      req.session.data['mobileNum'] = mobile
+      req.session.data['mobileNumObf'] = mobileObf
+      req.session.data['nhslogin'] = "false"
+      return res.render('v6/standalone/get-security-code', {
+        'mobile': mobileObf
+      })
+    }
+  } else {
+    // do nothing
+    req.session.data['nhslogin'] = "false"
+    return res.render('v6/standalone/get-security-code')
+  }
+
+})
+
+// pds error screen. user chooses next action
+router.post('/v6/standalone/pds-not-found-next', function (req, res) {
+  var nextstep = req.session.data['pdserrornext']
+  if (nextstep === 'trydifferentnhsno'){
+    res.redirect('/v6/standalone/do-you-know-nhs')
+  } else if (nextstep === 'searchpdswithname') {
+    res.redirect('/v6/standalone/what-is-your-name')
+  } else {
+    res.redirect('/v6/standalone/go-to-gp')
+  }
+})
+
+
+router.post('/v6/standalone/get-verification-otp', function (req, res) {
+  var contactMethod = req.session.data['contactMethod']
+
+  if (contactMethod === 'email'){
+    if (req.session.data['emailAddress'] !== '') {
+      console.log('send email')
+      // generate a random 6 digit number for the Email
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2
+      }
+      notify.sendEmail(
+        '8a6fb1b2-3c73-4f79-bff7-0e837dfa3178',
+        req.session.data['emailAddress'],
+        { personalisation: personalisation }
+      ).catch(err => console.error(err))
+    }
+    res.redirect('/v6/standalone/check-your-email')
+  }else {
+    if (req.session.data['mobileNum'] !== '') {
+      // generate a random 6 digit number for the SMS
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2
+      }
+      notify.sendSms(
+        '42f4f14e-087c-4347-bc10-9005ee51cbdd',
+        req.session.data['mobileNum'],
+        { personalisation: personalisation }
+      ).catch(err => console.error(err))
+    }
+    res.redirect('/v6/standalone/check-your-mobile')
+  }
+})
+
+router.post('/v6/standalone/submit-new-mobile', function (req, res) {
+  // trim out the white space we we can count it easier
+  let number = req.session.data['newMobileNumber']
+
+  let newMobileObf = ''
+
+  // if the uk mobile number is filled-in correctly create an obfuscated version of it
+  if (number && number.length === 11 ) {
+    newMobileObf = '*******' + number.substr(-4)
+  } else {
+    // create a placeholder string as the field wasn't filled in properly
+    newMobileObf = '*******6789'
+  }
+
+  req.session.data['newMobileObf'] = newMobileObf
+
+  res.redirect('/v6/standalone/check-your-mobile')
+})
+
+router.post('/v6/standalone/get-verification-otp-new', function (req, res) {
+  var contactMethod = req.session.data['contactMethod']
+
+  if (contactMethod === 'email'){
+    if (req.session.data['newEmailAddress'] !== '') {
+      // generate a random 6 digit number for the Email
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2
+      }
+      notify.sendEmail(
+        'eb57ad0c-eba9-42c7-a4bd-3e8d87a9843f',
+        req.session.data['newEmailAddress'],
+        {personalisation: personalisation}
+      ).catch(err => console.error(err))
+      console.log("sent email")
+    }
+    res.redirect('/v6/standalone/check-your-email-verify-change')
+  } else {
+    if (req.session.data['newMobileNum'] !== '') {
+      // generate a random 6 digit number for the SMS
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2
+      }
+      notify.sendSms(
+        '215c71e8-7431-4700-8dd4-cc4e9f0801a0',
+        req.session.data['newMobileNum'],
+        {personalisation: personalisation}
+      ).catch(err => console.error(err))
+      console.log("sent SMS")
+    }
+    res.redirect('/v6/standalone/check-your-mobile-verify-change')
+  }
+})
+
+// route if not an NHS login account holder
+router.post('/v6/standalone/verify-change-post', function (req, res) {
+  // trim out the white space we we can count it easier
+  let nhslogin = req.session.data['nhslogin']
+
+  if (nhslogin === 'false'){
+    res.redirect('/v6/standalone/create-account')
+  }else {
+    res.redirect('/v6/standalone/confirmation-of-change')
+  }
+})
+
+router.post('/v6/standalone/create-account-post', function (req, res) {
+  // trim out the white space we we can count it easier
+  let createAccount = req.session.data['create-account']
+
+  if (createAccount === 'no'){
+    res.redirect('/v6/standalone/confirmation-of-change')
+  }else {
+    res.redirect('/v6/standalone/confirmation-of-change')
+  }
+})
+
+
 // Dev Mode - Used to show routing by scenario other than user driven
 
 function devModeRoute(req, res, next) {

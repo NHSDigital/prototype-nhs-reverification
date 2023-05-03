@@ -1,0 +1,62 @@
+{% set serviceHome = '/v6/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is your name?
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "do-you-know-nhs",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="what-is-your-dob" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+              What is your name?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint">
+            <p>This should be the name you used when you registered with your current GP.</p>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="first-name">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="first-name" name="first-name" value="{{ data['first-name'] }}" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="last-name">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="last-name" name="last-name" value="{{ data['last-name'] }}" type="text">
+          </div>
+
+        </fieldset>
+
+        <button class="nhsuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v6/includes/footer.html' %}
+{% endblock %}

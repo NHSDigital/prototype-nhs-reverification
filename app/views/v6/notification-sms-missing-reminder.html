@@ -1,0 +1,52 @@
+{% set serviceHome = '/v6/start' %}
+{% set serviceFooter = 'v5/includes/footer' %}
+{% extends 'layout.html' %}
+
+{% set contactmethod = "sms" %}
+
+{% block pageTitle %}
+  Text message
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/notify-text.css" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l">Text message</h1>
+
+    <div class="app-text-message">
+      <h2 class="nhsuk-heading-s">NHS</h2>
+      <p class="app-text-message__text">
+
+        Reminder: We've noticed you don't have an email address on your NHS record.<br><br>
+
+        Your GP and the NHS use your contact details to get in touch about your healthcare.<br><br>
+
+        To add your email address go to <a href="start">www.nhs.uk/add-correct-contact-details</a><br><br>
+
+        You can also go to the NHS website and search for 'add contact'.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

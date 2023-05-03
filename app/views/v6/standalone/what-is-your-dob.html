@@ -1,0 +1,77 @@
+{% set serviceHome = '/v6/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What is your date of birth?
+{% endblock %}
+
+{% block outerContent %}
+  {% if data['knowNHSNumber'] === 'yes' %}
+    {% set link = 'do-you-know-nhs' %}
+  {% else %}
+    {% set link = 'what-is-your-name' %}
+  {% endif %}
+
+  {{ backLink({
+    "href": link,
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <form action="what-is-your-postcode" method="post">
+        <fieldset class="nhsuk-fieldset">
+
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" role="group">
+            <h1 class="nhsuk-heading-l">
+              What is your date of birth?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint">
+            <p>For example, 15 3 1984</p>
+          </div>
+
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day" id="date-of-birth-day--label">Day</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day" name="[date-of-birth]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['date-of-birth'][0] }}" autocomplete="bday-day">
+            </div>
+          </div>
+
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month" id="date-of-birth-month--label">Month</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month" name="[date-of-birth]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['date-of-birth'][1] }}" autocomplete="bday-month">
+            </div>
+          </div>
+
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year" id="date-of-birth-year--label">Year</label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year" name="[date-of-birth]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data['date-of-birth'][2] }}" autocomplete="bday-year">
+            </div>
+          </div>
+
+        </fieldset>
+
+        <button class="nhsuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'v6/includes/footer.html' %}
+{% endblock %}
