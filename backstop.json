@@ -12,203 +12,203 @@
   "scenarios": [
     {
       "label": "Reverification - start",
-      "url": "http://localhost:3000/v5/start"
+      "url": "http://localhost:3000/v6/start"
     },
     {
       "label": "Reverification - triage-notified",
-      "url": "http://localhost:3000/v5/standalone/triage-notified"
+      "url": "http://localhost:3000/v6/standalone/triage-notified"
     },
     {
       "label": "Reverification - use-login",
-      "url": "http://localhost:3000/v5/standalone/use-login"
+      "url": "http://localhost:3000/v6/standalone/use-login"
     },
     {
       "label": "Reverification - other-channels",
-      "url": "http://localhost:3000/v5/standalone/other-channels"
+      "url": "http://localhost:3000/v6/standalone/other-channels"
     },
     {
       "label": "Reverification - create-account",
-      "url": "http://localhost:3000/v5/standalone/create-account"
+      "url": "http://localhost:3000/v6/standalone/create-account"
     },
     {
       "label": "Reverification - nhs-login-email",
-      "url": "http://localhost:3000/v5/standalone/nhs-login-email"
+      "url": "http://localhost:3000/v6/standalone/nhs-login-email"
     },
     {
       "label": "Reverification - nhs-login-create",
-      "url": "http://localhost:3000/v5/standalone/nhs-login-create"
+      "url": "http://localhost:3000/v6/standalone/nhs-login-create"
     },
     {
       "label": "Reverification - login-created-email",
-      "url": "http://localhost:3000/v5/login-created-email"
+      "url": "http://localhost:3000/v6/login-created-email"
     },
     {
       "label": "Reverification - check-your-answers",
-      "url": "http://localhost:3000/v5/standalone/check-your-answers"
+      "url": "http://localhost:3000/v6/standalone/check-your-answers"
     },
     {
       "label": "Reverification - check-your-answers-name",
-      "url": "http://localhost:3000/v5/standalone/check-your-answers?knowNHSNumber=no"
+      "url": "http://localhost:3000/v6/standalone/check-your-answers?knowNHSNumber=no"
     },
     {
       "label": "Reverification - check-your-email",
-      "url": "http://localhost:3000/v5/standalone/check-your-email"
+      "url": "http://localhost:3000/v6/standalone/check-your-email"
     },
     {
       "label": "Reverification - check-your-email-verify-change",
-      "url": "http://localhost:3000/v5/standalone/check-your-email-verify-change"
+      "url": "http://localhost:3000/v6/standalone/check-your-email-verify-change"
     },
     {
       "label": "Reverification - check-your-mobile",
-      "url": "http://localhost:3000/v5/standalone/check-your-mobile"
+      "url": "http://localhost:3000/v6/standalone/check-your-mobile"
     },
     {
       "label": "Reverification - check-your-mobile-verify-change",
-      "url": "http://localhost:3000/v5/standalone/check-your-mobile-verify-change"
+      "url": "http://localhost:3000/v6/standalone/check-your-mobile-verify-change"
     },
     {
       "label": "Reverification - confirmation-of-change",
-      "url": "http://localhost:3000/v5/standalone/confirmation-of-change"
+      "url": "http://localhost:3000/v6/standalone/confirmation-of-change"
     },
     {
       "label": "Reverification - confirmation-of-change-mobile",
-      "url": "http://localhost:3000/v5/standalone/confirmation-of-change?contactMethod=sms"
+      "url": "http://localhost:3000/v6/standalone/confirmation-of-change?contactMethod=sms"
     },
     {
       "label": "Reverification - contact-details-email-missing",
-      "url": "http://localhost:3000/v5/standalone/contact-details?contactMethod=sms&reason=missingemail"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&reason=missingemail"
     },
     {
       "label": "Reverification - contact-details-email-malformed",
-      "url": "http://localhost:3000/v5/standalone/contact-details?contactMethod=sms&reason=malformedemail"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&reason=malformedemail"
     },
     {
       "label": "Reverification - contact-details-sms-missing",
-      "url": "http://localhost:3000/v5/standalone/contact-details?contactMethod=email&reason=missingmobile"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&reason=missingmobile"
     },
     {
       "label": "Reverification - contact-details-sms-malformed",
-      "url": "http://localhost:3000/v5/standalone/contact-details?contactMethod=email&reason=malformedmobile"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&reason=malformedmobile"
     },
     {
       "label": "Reverification - do-you-know-nhs",
-      "url": "http://localhost:3000/v5/standalone/do-you-know-nhs"
+      "url": "http://localhost:3000/v6/standalone/do-you-know-nhs"
     },
     {
       "label": "Reverification - enter-your-new-phone",
-      "url": "http://localhost:3000/v5/standalone/enter-your-new-phone"
+      "url": "http://localhost:3000/v6/standalone/enter-your-new-phone"
     },
     {
       "label": "Reverification - enter-your-new-email",
-      "url": "http://localhost:3000/v5/standalone/enter-your-new-email"
+      "url": "http://localhost:3000/v6/standalone/enter-your-new-email"
     },
     {
       "label": "Reverification - error-nothingtofix",
-      "url": "http://localhost:3000/v5/standalone/error-nothingtofix"
+      "url": "http://localhost:3000/v6/standalone/error-nothingtofix"
     },
     {
       "label": "Reverification - error-notifyfail",
-      "url": "http://localhost:3000/v5/standalone/error-notifyfail"
+      "url": "http://localhost:3000/v6/standalone/error-notifyfail"
     },
     {
       "label": "Reverification - error-notify-feedback-fail",
-      "url": "http://localhost:3000/v5/standalone/error-notify-feedback-fail"
+      "url": "http://localhost:3000/v6/standalone/error-notify-feedback-fail"
     },
     {
       "label": "Reverification - error-otplimit",
-      "url": "http://localhost:3000/v5/standalone/error-otplimit"
+      "url": "http://localhost:3000/v6/standalone/error-otplimit"
     },
     {
       "label": "Reverification - error-feedback-limit",
-      "url": "http://localhost:3000/v5/standalone/error-feedback-limit"
+      "url": "http://localhost:3000/v6/standalone/error-feedback-limit"
     },
     {
       "label": "Reverification - error-otpwrong",
-      "url": "http://localhost:3000/v5/standalone/error-otpwrong"
+      "url": "http://localhost:3000/v6/standalone/error-otpwrong"
     },
     {
       "label": "Reverification - error-pdsmatch",
-      "url": "http://localhost:3000/v5/standalone/error-pdsmatch"
+      "url": "http://localhost:3000/v6/standalone/error-pdsmatch"
     },
     {
       "label": "Reverification - error-recordcontainsnocontactdetails",
-      "url": "http://localhost:3000/v5/standalone/error-recordcontainsnocontactdetails"
+      "url": "http://localhost:3000/v6/standalone/error-recordcontainsnocontactdetails"
     },
     {
       "label": "Reverification - error-technicalcatchall",
-      "url": "http://localhost:3000/v5/standalone/error-technicalcatchall"
+      "url": "http://localhost:3000/v6/standalone/error-technicalcatchall"
     },
     {
       "label": "Reverification - feedback-confirmation",
-      "url": "http://localhost:3000/v5/standalone/feedback-confirmation"
+      "url": "http://localhost:3000/v6/standalone/feedback-confirmation"
     },
     {
       "label": "Reverification - feedback-page",
-      "url": "http://localhost:3000/v5/standalone/feedback-page"
+      "url": "http://localhost:3000/v6/standalone/feedback-page"
     },
     {
       "label": "Reverification - get-security-code",
-      "url": "http://localhost:3000/v5/standalone/get-security-code"
+      "url": "http://localhost:3000/v6/standalone/get-security-code"
     },
     {
       "label": "Reverification - get-security-code - email",
-      "url": "http://localhost:3000/v5/standalone/get-security-code?contactMethod=email"
+      "url": "http://localhost:3000/v6/standalone/get-security-code?contactMethod=email"
     },
     {
       "label": "Reverification - go-to-gp",
-      "url": "http://localhost:3000/v5/standalone/go-to-gp"
+      "url": "http://localhost:3000/v6/standalone/go-to-gp"
     },
     {
       "label": "Reverification - what-is-your-dob",
-      "url": "http://localhost:3000/v5/standalone/what-is-your-dob"
+      "url": "http://localhost:3000/v6/standalone/what-is-your-dob"
     },
     {
       "label": "Reverification - what-is-your-name",
-      "url": "http://localhost:3000/v5/standalone/what-is-your-name"
+      "url": "http://localhost:3000/v6/standalone/what-is-your-name"
     },
     {
       "label": "Reverification - what-is-your-postcode",
-      "url": "http://localhost:3000/v5/standalone/what-is-your-postcode"
+      "url": "http://localhost:3000/v6/standalone/what-is-your-postcode"
     },
     {
       "label": "Reverification - notification-email-malformed",
-      "url": "http://localhost:3000/v5/notification-email-malformed"
+      "url": "http://localhost:3000/v6/notification-email-malformed"
     },
     {
       "label": "Reverification - notification-sms-malformed",
-      "url": "http://localhost:3000/v5/notification-sms-malformed"
+      "url": "http://localhost:3000/v6/notification-sms-malformed"
     },
     {
       "label": "Reverification - notification-email-missing",
-      "url": "http://localhost:3000/v5/notification-email-missing"
+      "url": "http://localhost:3000/v6/notification-email-missing"
     },
     {
       "label": "Reverification - notification-sms-missing",
-      "url": "http://localhost:3000/v5/notification-sms-missing"
+      "url": "http://localhost:3000/v6/notification-sms-missing"
     },
     {
       "label": "Reverification - notification-email-missing-reminder",
-      "url": "http://localhost:3000/v5/notification-email-missing-reminder"
+      "url": "http://localhost:3000/v6/notification-email-missing-reminder"
     },
     {
       "label": "Reverification - notification-sms-missing-reminder",
-      "url": "http://localhost:3000/v5/notification-sms-missing-reminder"
+      "url": "http://localhost:3000/v6/notification-sms-missing-reminder"
     },
     {
       "label": "Reverification - otp-email",
-      "url": "http://localhost:3000/v5/otp-email"
+      "url": "http://localhost:3000/v6/otp-email"
     },
     {
       "label": "Reverification - otp-sms",
-      "url": "http://localhost:3000/v5/otp-sms"
+      "url": "http://localhost:3000/v6/otp-sms"
     },
     {
       "label": "Reverification - otp-new-email",
-      "url": "http://localhost:3000/v5/otp-new-email"
+      "url": "http://localhost:3000/v6/otp-new-email"
     },
     {
       "label": "Reverification - otp-new-sms",
-      "url": "http://localhost:3000/v5/otp-new-sms"
+      "url": "http://localhost:3000/v6/otp-new-sms"
     }
   ],
   "paths": {
