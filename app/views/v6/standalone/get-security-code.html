@@ -6,6 +6,14 @@
   We will send you a security code
 {% endblock %}
 
+{% block outerContent %}
+{{ backLink({
+"href": "contact-details",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="nhsuk-grid-row">
@@ -17,9 +25,10 @@
         </h1>
 
         <div class="nhsuk-hint">
-          <p>We have found an NHS record with the information you have provided.</p>
+          <p>Before you can change your
+            {% if req.session.data['contactMethod'] === 'sms' or data['contactMethod'] === 'sms' %} email address{% else %} mobile phone number{% endif %} we need to do an identity check. </p>
 
-          <p>When you select 'Continue' we will send you a 6 digit security code.</p>
+          <p>When you select 'Continue' we will send you a 6 digit security code to your {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} email address{% else %} mobile phone number{% endif %}.</p>
 
           <p>You need to use this code within <b>1 hour</b> or it will expire.
 

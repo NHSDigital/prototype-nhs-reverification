@@ -91,7 +91,7 @@
             </div>
         </dl>
 
-        <form method="post" action="get-security-code">
+        <form method="post" action="contact-details">
             <button class="nhsuk-button full-width" id="button--save">Continue</button>
             <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
         </form>
@@ -106,10 +106,20 @@
         </span>
             </summary>
             <div class="nhsuk-details__text">
-                <h4>Happy path</h4>
+                <h4>Happy paths</h4>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>
-                        <a href="#" onclick="submitSpinner2()">Single match found and one of the contact details is either invalid or missing</a>
+                        <a href="?result=singlegood" onclick="submitSpinner2()">Single match found and one of the contact details is either invalid or missing</a>
+                    </li>
+                    <li>
+                        <a href="?result=bothgood">Single match found and both contact details are present and valid</a>
+                    </li>
+                </ul>
+                <h4>Unhappy path</h4>
+                <ul class="govuk-list govuk-list--bullet">
+
+                    <li>
+                        <a href="error-recordcontainsnocontactdetails">Both contact details are empty</a>
                     </li>
                 </ul>
                 <h4>PDS Errors</h4>
@@ -124,15 +134,7 @@
                         <a href="error-technicalcatchall">technical error</a>
                     </li>
                 </ul>
-                <h4>Attribute check errors</h4>
-                <ul class="govuk-list govuk-list--bullet">
-                    <li>
-                        <a href="error-nothingtofix">Both contact detail are present and valid</a>
-                    </li>
-                    <li>
-                        <a href="error-recordcontainsnocontactdetails">Both contact details are empty</a>
-                    </li>
-                </ul>
+
                 <h4>Notify Errors</h4>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>

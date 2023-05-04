@@ -908,7 +908,7 @@ router.post('/v6/standalone/triage-notified-post', function (req, res) {
   if (notified === 'no'){
     res.redirect('/v6/standalone/other-channels')
   }else {
-    res.redirect('/v6/standalone/use-login')
+    res.redirect('/v6/standalone/do-you-know-nhs')
   }
 })
 
@@ -918,6 +918,15 @@ router.post('/v6/standalone/do-you-know-nhs', function (req, res) {
     res.redirect('/v6/standalone/what-is-your-dob')
   }else {
     res.redirect('/v6/standalone/what-is-your-name')
+  }
+})
+
+router.post('/v6/standalone/check-your-answers-post', function (req, res) {
+  var result = req.session.data['result']
+  if (result === 'singlegood'){
+    res.redirect('/v6/standalone/get-security-code')
+  }else {
+    res.redirect('/v6/standalone/pick-security-detail')
   }
 })
 
@@ -1082,7 +1091,7 @@ router.post('/v6/standalone/verify-change-post', function (req, res) {
   let nhslogin = req.session.data['nhslogin']
 
   if (nhslogin === 'false'){
-    res.redirect('/v6/standalone/create-account')
+    res.redirect('/v6/standalone/confirmation-of-change')
   }else {
     res.redirect('/v6/standalone/confirmation-of-change')
   }

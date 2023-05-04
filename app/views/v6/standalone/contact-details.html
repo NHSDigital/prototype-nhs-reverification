@@ -28,36 +28,62 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
 
-            {% if data['contactMethod'] === 'email' %}
+            {% if data['result'] === 'bothgood' %}
 
             {{ data['emailAddressObf'] or '********lor@****l.com' }}
 
             {% else %}
 
-            <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
-              <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="nhsuk-warning-text__text">
-                <span class="nhsuk-warning-text__assistive"></span>
-                {% if data['reason'] === 'malformedemail' %}
-                Your email address is in an incorrect format
+                {% if data['contactMethod'] === 'email' %}
+
+                    {{ data['emailAddressObf'] or '********lor@****l.com' }}
+
                 {% else %}
-                You do not have an email address in your contact details
+
+                  <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
+                    <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="nhsuk-warning-text__text">
+                      <span class="nhsuk-warning-text__assistive"></span>
+                      {% if data['reason'] === 'malformedemail' %}
+                      Your email address is in an incorrect format
+                      {% else %}
+                      You do not have an email address in your contact details
+                      {% endif %}
+                    </strong>
+                  </div>
+
                 {% endif %}
-              </strong>
-            </div>
+
+            {% endif %}
 
           </dd>
 
           <dd class="nhsuk-summary-list__actions">
-            <a href="enter-your-new-email">
-              {% if data['reason'] === 'malformedemail' %}
-              Add a new email address
+            <a href="get-security-code?contactMethod=sms">
+
+              {% if data['result'] === 'bothgood' %}
+
+                Change email address
+
               {% else %}
-              Add an email address
+
+                {% if data['contactMethod'] === 'sms' %}
+
+                  {% if data['reason'] === 'missingemail' %}
+                    Add an email address
+                  {% else %}
+                    Add a new email address
+                  {% endif %}
+
+                {% else%}
+
+                {% endif %}
+
               {% endif %}
+
             </a>
 
-            {% endif %}
+
 
           </dd>
         </div>
@@ -68,7 +94,17 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
 
-            {% if data['contactMethod'] === 'email' %}
+            {% if data['result'] === 'bothgood' %}
+
+            {{ data['mobileNumObf'] or '********681' }}
+
+            {% else %}
+
+            {% if data['contactMethod'] === 'sms' %}
+
+            {{ data['mobileNumObf'] or '********681' }}
+
+            {% else %}
 
             <div class="nhsuk-warning-text nhsuk-u-margin-bottom-3">
               <span class="nhsuk-warning-text__icon" aria-hidden="true">!</span>
@@ -82,22 +118,37 @@
               </strong>
             </div>
 
+            {% endif %}
+
+            {% endif %}
+
           </dd>
 
           <dd class="nhsuk-summary-list__actions">
-            <a href="enter-your-new-phone">
-              {% if data['reason'] === 'malformedmobile' %}
-              Add a new mobile phone number
+            <a href="get-security-code?contactMethod=email">
+
+              {% if data['result'] === 'bothgood' %}
+
+                Change mobile phone number
+
               {% else %}
-              Add a mobile phone number
+
+                {% if data['contactMethod'] === 'email' %}
+
+                  {% if data['reason'] === 'missingmobile' %}
+                    Add a mobile phone number
+                  {% else %}
+                    Add a new mobile phone number
+                  {% endif %}
+
+                {% else%}
+
+                {% endif %}
+
               {% endif %}
+
             </a>
 
-            {% else %}
-
-            {{ data['mobileNumObf'] or '********681' }}
-
-            {% endif %}
 
           </dd>
 
@@ -116,22 +167,31 @@
             </span>
         </summary>
         <div class="nhsuk-details__text">
+
+          <h4>Both good</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="contact-details?contactMethod=email&result=bothgood&reason=none">User got an email about <b>missing mobile number</b></a>
+            </li>
+          </ul>
+
+
           <h4>Missing contact details</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="contact-details?contactMethod=email&reason=missingmobile">User got an email about <b>missing mobile number</b></a>
+              <a href="contact-details?contactMethod=email&result=singlegood&reason=missingmobile">User got an email about <b>missing mobile number</b></a>
             </li>
             <li>
-              <a href="contact-details?contactMethod=sms&reason=missingemail">User got an SMS about <b>missing email address</b></a>
+              <a href="contact-details?contactMethod=sms&result=singlegood&reason=missingemail">User got an SMS about <b>missing email address</b></a>
             </li>
           </ul>
           <h4>Invalid contact details</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="contact-details?contactMethod=email&reason=malformedmobile">User got an email about <b>invalid mobile number</b></a>
+              <a href="contact-details?contactMethod=email&result=singlegood&reason=malformedmobile">User got an email about <b>invalid mobile number</b></a>
             </li>
             <li>
-              <a href="contact-details?contactMethod=sms&reason=malformedemail">User got an SMS about <b>invalid email address</b></a>
+              <a href="contact-details?contactMethod=sms&result=singlegood&reason=malformedemail">User got an SMS about <b>invalid email address</b></a>
             </li>
           </ul>
         </div>
