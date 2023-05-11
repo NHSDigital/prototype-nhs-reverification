@@ -4,7 +4,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Did you get a message from the NHS to correct your contact details?
+Are you trying to change your address details?
 {% endblock %}
 
 {% block outerContent %}
@@ -21,14 +21,14 @@
 
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-    <form action="triage-notified-post" method="post">
+    <form action="triage-address-post" method="post">
 
     {{ radios({
-      "idPrefix": "notified",
-      "name": "notified",
+      "idPrefix": "address",
+      "name": "address",
       "fieldset": {
         "legend": {
-          "text": "Did you get a message from the NHS to correct your contact details?",
+          "text": "Are you trying to change your address details?",
           "classes": "nhsuk-fieldset__legend--l",
           "isPageHeading": "false"
         }

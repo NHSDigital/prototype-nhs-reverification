@@ -903,12 +903,12 @@ router.post('/v5/standalone/create-account-post', function (req, res) {
 // V6 ROUTES
 
 // triage step
-router.post('/v6/standalone/triage-notified-post', function (req, res) {
+router.post('/v6/standalone/triage-address-post', function (req, res) {
   var notified = req.session.data['notified']
   if (notified === 'no'){
-    res.redirect('/v6/standalone/other-channels')
-  }else {
     res.redirect('/v6/standalone/do-you-know-nhs')
+  }else {
+    res.redirect('/v6/standalone/other-channels')
   }
 })
 
