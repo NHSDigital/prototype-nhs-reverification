@@ -904,8 +904,8 @@ router.post('/v5/standalone/create-account-post', function (req, res) {
 
 // triage step
 router.post('/v6/standalone/triage-address-post', function (req, res) {
-  var notified = req.session.data['notified']
-  if (notified === 'no'){
+  var address = req.session.data['address']
+  if (address === 'no'){
     res.redirect('/v6/standalone/do-you-know-nhs')
   }else {
     res.redirect('/v6/standalone/other-channels')
