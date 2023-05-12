@@ -143,6 +143,10 @@
       "url": "http://localhost:3000/v6/standalone/error-technicalcatchall"
     },
     {
+      "label": "Reverification - error-blocked",
+      "url": "http://localhost:3000/v6/standalone/error-blocked"
+    },
+    {
       "label": "Reverification - feedback-confirmation",
       "url": "http://localhost:3000/v6/standalone/feedback-confirmation"
     },
