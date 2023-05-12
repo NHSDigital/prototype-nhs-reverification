@@ -13,51 +13,40 @@
 
     <form action="pds-not-found-next" method="post" class="form">
 
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l" >
-          <h1 class="nhsuk-fieldset__heading">
-            We cannot find your details
+          <h1 class="nhsuk-heading-l">
+            We have not been able to match the details you have provided to an NHS record
           </h1>
-        </legend>
 
-        <p>We were unable to find an NHS record with the details you have provided. To find your NHS record, you must enter the contact information your GP has for you.</p>
 
-        <div class="nhsuk-form-group">
+          {{ radios({
+          "idPrefix": "pdserrornext",
+          "name": "pdserrornext",
+          "fieldset": {
+            "legend": {
+              "text": "What do you want to do?",
+              "classes": "nhsuk-fieldset__legend--m",
+              "isPageHeading": "false"
+            }
+          },
+          "items": [
+            {
+              "value": "trydifferentnhsno",
+              "text": "Try again with NHS number"
+            },
+            {
+              "value": "searchpdswithname",
+              "text": "Try using full name"
+            }
+          ]
+        }) }}
 
-          <div class="nhsuk-radios">
-
-            <div class="nhsuk-radios__item">
-
-              <input class="nhsuk-radios__input" id="pdserrornext-1" name="pdserrornext" type="radio" value="trydifferentnhsno">
-              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-1">
-                Try again with NHS number
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="pdserrornext-2" name="pdserrornext" type="radio" value="searchpdswithname">
-              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-2">
-                Try using full name
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="pdserrornext-3"  name="pdserrornext" type="radio" value="detailsarecorrect">
-              <label class="nhsuk-label nhsuk-radios__label" for="pdserrornext-3">
-                My details are correct
-              </label>
-            </div>
-
-          </div>
-        </div>
-
-      </fieldset>
-
-      <button class="nhsuk-button full-width" type="submit">
-        Continue
-      </button>
+          {{ button({
+          "text": "Continue"
+        }) }}
 
     </form>
+
+    {% include "../includes/other-channels.html" %}
 
   </div>
 

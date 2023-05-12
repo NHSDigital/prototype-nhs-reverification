@@ -3,7 +3,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  You cannot continue
+You have entered an incorrect security code too many times
 {% endblock %}
 
 {% block content %}
@@ -13,13 +13,14 @@
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <h1 class="nhsuk-heading-l">
-      You cannot continue
+      You have entered an incorrect security code too many times
     </h1>
 
     <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
-      <p>You have entered a wrong security code too many times.</p>
-      <p>You must wait up to 1 hour before trying again.</p>
+      <p>You must wait 1 hour before trying again.</p>
     </div>
+
+    {% include "../includes/other-channels.html" %}
 
   </div>
 
