@@ -21,7 +21,7 @@
 
     <form action="get-verification-otp" method="post" class="form">
         <h1 class="nhsuk-heading-l">
-          We will send a security code to your{% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} email address{% else %} mobile phone number{% endif %}
+          We will send a security code to your{% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} email{% else %} mobile{% endif %}
         </h1>
 
         <div class="nhsuk-hint">
