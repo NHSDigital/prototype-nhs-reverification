@@ -708,7 +708,7 @@ router.post('/v5/standalone/triage-notified-post', function (req, res) {
   if (notified === 'no'){
     res.redirect('/v5/standalone/other-channels')
   }else {
-    res.redirect('/v5/standalone/use-login')
+    res.redirect('/v5/standalone/do-you-know-nhs')
   }
 })
 
