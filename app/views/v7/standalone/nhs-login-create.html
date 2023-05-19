@@ -1,0 +1,120 @@
+{% set serviceHome = '/v7/start' %}
+
+{% set hideFeedback = 'true' %}
+
+{% extends 'layout.html' %}
+
+{% block header %}
+  {{ header({
+    "service": {
+      "name": "NHS login",
+      "href": "#"
+    },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
+{% block pageTitle %}
+  Have you received a message from the NHS to add or correct your contact details?
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "nhs-login-email",
+"text": "Back to: Enter your email address",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="" method="post" class="form">
+      <fieldset class="nhsuk-fieldset">
+
+
+        <div class="service-access-wrapper">
+          <ol class="service-access">
+            <li class="service-access__item active">
+
+              <h3 class="service-access__item__title">Create an account</h3>
+              <div class="service-access__item__desc">
+                <p>We will use <strong>mail@mail.com</strong> to set up your NHS login and register with <strong>NHS App</strong>.
+                </p>
+
+                <p>  You will need a working mobile phone with signal that we can text a security code to.</p>
+
+              </div>
+
+              <button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+            </li>
+
+
+
+
+
+            <li class="service-access__item active">
+              <p class="service-access__item__title__text__leftandright"><strong>Next step</strong></p>
+              <h3 class="service-access__item__title">Help us find your NHS record</h3>
+              <div class="service-access__item__desc">
+                <p>You will need to tell us some details so that we can connect to your existing health record.</p>
+              </div>
+
+
+
+
+              <!--  -->
+            </li></ol>
+
+        </div>
+
+      </fieldset></form>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  submitSpinner()
+
+  function buttonClicked(target) {
+    target.setAttribute('disabled', 'disabled')
+    target.className += ' button--save'
+    setTimeout(function () {
+      document.getElementById('button2').click()
+    }, 1000)
+  }
+
+  function submitSpinner() {
+    var selects = document.getElementById('button--save')
+    selects.addEventListener('click', function (event) {
+      event.preventDefault()
+      if (selects.getAttribute('disabled') === 'disabled') {
+        console.log('already clicked')
+      } else {
+        event.preventDefault()
+        console.log(selects.getAttribute('disabled'))
+        buttonClicked(selects)
+      }
+    })
+  }
+
+  function submitSpinner2() {
+    console.log('clicked')
+    var selects = document.getElementById('button--save')
+    buttonClicked(selects)
+  }
+</script>
+
+{% endblock %}
+
+{% block footer %}
+{% set feedbackType = 'final' %}
+{% include 'v7/includes/footer.html' %}
+{% endblock %}

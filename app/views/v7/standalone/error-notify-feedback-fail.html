@@ -1,0 +1,34 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Something went wrong
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-heading-l">Something went wrong</h1>
+
+      <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+
+        <p>We were unable to send your feedback submissions. Please try again. </p>
+
+        <button data-redirect="get-security-code" class="nhsuk-button full-width" id="button--save">Try again</button>
+
+        {% include "../includes/other-channels.html" %}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v7/includes/footer.html' %}
+{% endblock %}

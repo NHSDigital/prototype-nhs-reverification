@@ -207,6 +207,21 @@
   color: black;
 }
 
+.informative-tab-blue {
+  background: $color_nhsuk-blue;
+  color: white;
+}
+
+.informative-tab-purple {
+  background: $color_nhsuk-purple;
+  color: white;
+}
+
+.informative-tab-grey {
+  background: $color_nhsuk-grey-3;
+  color: white;
+}
+
 /* Warning text */
 
 @media (min-width: 768px) {

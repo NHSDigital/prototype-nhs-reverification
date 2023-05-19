@@ -1,0 +1,43 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+You can only use this service if you have been contacted by the NHS
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "triage-address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <div class="nhsuk-u-reading-width">
+
+      <h1 class="nhsuk-heading-l">You can only use this service if you have been contacted by the NHS</h1>
+
+      <p class="nhsuk-card__description">
+        You can only use this service if you have received an email or text from the NHS asking you to add or correct the mobile number or email address on your NHS record.
+      </p>
+
+      {% include "../includes/other-channels.html" %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'v7/includes/footer.html' %}
+{% endblock %}

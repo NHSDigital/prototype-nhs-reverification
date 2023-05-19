@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Prototype v6 - Add or correct your contact details
+{% endblock %}
+
+{% block header %}
+{{ header({
+"service": {
+"name": "NHS Reverification prototypes",
+"href": "/"
+},
+"showNav": "false",
+"showSearch": "false"
+})
+}}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">Prototype v6</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Design recommendation prototype</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h2>Add or correct your contact details</h2>
+
+      <ul class="nhsuk-list spaced">
+        <div class="informative-tab informative-tab-orange"><strong>In design</strong></div>
+        <li>
+          <p>A citizen is notified (SMS or email) about either a missing or malformed (invalid) contact detail and directed to a service to rectify it. <br><br>They are linked to or find a standalone web service that that takes their details and matches them to their PDS record or allows to sign in with NHS login.<br><br>If not an NHS login user - A verification check happens on their good contact detail. If successful, they can then change the bad contact detail.</p>
+
+          <div class="nhsuk-grid-row">
+            <ul class="nhsuk-list list-unstyled">
+              <li> ➡️ User gets an email &nbsp;(<a href="/v6/notification-email-missing?contactMethod=email&result=singlegood&reason=missingmobile">missing mobile</a>) | (<a href="/v6/notification-email-malformed?contactMethod=email&result=singlegood&reason=malformedmobile">malformed mobile</a>)</li>
+              <li> ➡️ User gets an SMS &nbsp;(<a href="/v6/notification-sms-missing?contactMethod=sms&result=singlegood&reason=missingemail">missing email</a>) | (<a href="/v6/notification-sms-malformed?contactMethod=sms&result=singlegood&reason=malformedemail">malformed email</a>)</li>
+              <li class="nhsuk-u-padding-top-3"> ➡️ &nbsp;<a href="/v6/start">Service start page</a> | (<a href="/v6/start?devMode=true">run in devMode</a>)</li>
+            </ul>
+          </div>
+
+          <h3 class="nhsuk-u-margin-top-8">Changes in this prototype</h3>
+
+          <ol class="nhsuk-summary-list">
+            <li>Expanded the scope of the service to include changes to technical valid but incorrect contact details</li>
+          </ol>
+
+        </li>
+      </ul>
+
+
+
+
+    </div>
+
+    <div class="nhsuk-grid-column-one-third nhsuk-u-margin-bottom-4">
+
+      <h3 class="nhsuk-heading-m">Links</h3>
+
+      <ul>
+        <li><a href="https://github.com/NHSDigital/prototype-nhs-reverification" target="_blank">Go to the Github repository</a></li>
+        <li><a href="https://app.mural.co/invitation/mural/nhsdigital8118/1674053701439?sender=u019d5d941f51fc1db6df7154&key=16c6c253-8a8b-49a2-a8cf-5d44851613c8" target="_blank">View the journey map on Mural</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+{{ footer({
+"links": [
+  {
+    "URL": "https://github.com/nhsuk/nhsuk-prototype-kit/releases",
+    "label": "Prototype kit version: " + version
+  },
+  {
+    "URL": "?devMode=true",
+    "label": "Turn on devMode"
+  },
+  {
+    "URL": "/examples/passing-data/clear-data",
+    "label": "Clear data"
+  }
+]
+})}}
+{% endblock %}

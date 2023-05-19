@@ -1,0 +1,63 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Are you trying to change your address details?
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../start",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="triage-address-post" method="post">
+
+    {{ radios({
+      "idPrefix": "address",
+      "name": "address",
+      "fieldset": {
+        "legend": {
+          "text": "Are you trying to change your address details?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": "false"
+        }
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes",
+          checked: checked("address", "yes")
+        },
+        {
+          "value": "no",
+          "text": "No",
+          checked: checked("address", "no")
+        }
+      ]
+    }) }}
+
+    {{ button({
+      "text": "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'v7/includes/footer.html' %}
+{% endblock %}

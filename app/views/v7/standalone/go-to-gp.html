@@ -1,0 +1,50 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Contact your GP
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "error-pdsmatch",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <h1 class="nhsuk-heading-l">Contact your GP</h1>
+
+    <p>We were unable to match your details to an NHS record.<p>
+
+    <p>To check and update your details, please contact your GP.<p>
+
+    <p>If you are not registered with a GP, try our <a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP</a> service.<p>
+
+    <div class="nhsuk-action-link">
+
+      <a class="nhsuk-action-link__link" href="#" onclick="return false;" >
+
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="36" width="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Find a GP</span>
+      </a>
+    </div>
+
+
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'v7/includes/footer.html' %}
+{% endblock %}
