@@ -19,8 +19,28 @@
       "url": "http://localhost:3000/v6/standalone/triage-address"
     },
     {
+      "label": "Reverification - use-login",
+      "url": "http://localhost:3000/v6/standalone/use-login"
+    },
+    {
       "label": "Reverification - other-channels",
       "url": "http://localhost:3000/v6/standalone/other-channels"
+    },
+    {
+      "label": "Reverification - create-account",
+      "url": "http://localhost:3000/v6/standalone/create-account"
+    },
+    {
+      "label": "Reverification - nhs-login-email",
+      "url": "http://localhost:3000/v6/standalone/nhs-login-email"
+    },
+    {
+      "label": "Reverification - nhs-login-create",
+      "url": "http://localhost:3000/v6/standalone/nhs-login-create"
+    },
+    {
+      "label": "Reverification - login-created-email",
+      "url": "http://localhost:3000/v6/login-created-email"
     },
     {
       "label": "Reverification - check-your-answers",
@@ -87,6 +107,10 @@
       "url": "http://localhost:3000/v6/standalone/enter-your-new-email"
     },
     {
+      "label": "Reverification - error-nothingtofix",
+      "url": "http://localhost:3000/v6/standalone/error-nothingtofix"
+    },
+    {
       "label": "Reverification - error-notifyfail",
       "url": "http://localhost:3000/v6/standalone/error-notifyfail"
     },
@@ -119,16 +143,8 @@
       "url": "http://localhost:3000/v6/standalone/error-technicalcatchall"
     },
     {
-      "label": "Reverification - error-no-javascript",
-      "url": "http://localhost:3000/v6/standalone/error-no-javascript"
-    },
-    {
       "label": "Reverification - error-blocked",
       "url": "http://localhost:3000/v6/standalone/error-blocked"
-    },
-    {
-      "label": "Reverification - error-under-16",
-      "url": "http://localhost:3000/v6/standalone/error-under-16"
     },
     {
       "label": "Reverification - feedback-confirmation",
