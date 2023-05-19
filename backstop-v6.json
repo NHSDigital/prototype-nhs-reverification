@@ -60,19 +60,19 @@
     },
     {
       "label": "Reverification - contact-details-email-missing",
-      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&result=singlegood&reason=missingemail"
+      "url": "http://localhost:3000/v6/standalone/contactMethod=sms&result=singlegood&reason=missingemail"
     },
     {
       "label": "Reverification - contact-details-email-malformed",
-      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&result=singlegood&reason=malformedemail"
+      "url": "http://localhost:3000/v6/standalone/contactMethod=sms&result=singlegood&reason=malformedemail"
     },
     {
       "label": "Reverification - contact-details-sms-missing",
-      "url": "http://localhost:3000/v6/standalone/contact-details?contact-details?contactMethod=email&result=singlegood&reason=missingmobile"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&result=singlegood&reason=missingmobile"
     },
     {
       "label": "Reverification - contact-details-sms-malformed",
-      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&result=singlegood&reason=malformedmobile"
+      "url": "http://localhost:3000/v6/standalone/contactMethod=email&result=singlegood&reason=malformedmobile"
     },
     {
       "label": "Reverification - do-you-know-nhs",
