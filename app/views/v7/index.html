@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Prototype v6 - Add or correct your contact details
+Prototype v7 - Add or correct your contact details
 {% endblock %}
 
 {% block header %}
@@ -21,8 +21,8 @@ Prototype v6 - Add or correct your contact details
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-hero__wrapper">
-          <h1 class="nhsuk-u-margin-bottom-3">Prototype v6</h1>
-          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Design recommendation prototype</p>
+          <h1 class="nhsuk-u-margin-bottom-3">Prototype v7</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Expanded Scope with NHS login integration</p>
         </div>
       </div>
     </div>
@@ -39,22 +39,23 @@ Prototype v6 - Add or correct your contact details
       <h2>Add or correct your contact details</h2>
 
       <ul class="nhsuk-list spaced">
-        <div class="informative-tab informative-tab-orange"><strong>In design</strong></div>
+        <div class="informative-tab informative-tab-green"><strong>In design</strong></div>
         <li>
-          <p>A citizen is notified (SMS or email) about either a missing or malformed (invalid) contact detail and directed to a service to rectify it. <br><br>They are linked to or find a standalone web service that that takes their details and matches them to their PDS record or allows to sign in with NHS login.<br><br>If not an NHS login user - A verification check happens on their good contact detail. If successful, they can then change the bad contact detail.</p>
+          <p>A citizen either finds the service via NHS UK or is notified (SMS or email) about either a missing or malformed (invalid) contact detail and directed to a service to rectify it. <br><br>They are linked to or find a standalone web service that that takes their details and matches them to their PDS record or allows to sign in with NHS login.<br><br>If not an NHS login user - A verification check happens on the alternative contact detail to the one they want to change. If successful, they can then change the contact detail but are restricted from using the service for 7 days.</p>
 
           <div class="nhsuk-grid-row">
             <ul class="nhsuk-list list-unstyled">
-              <li> ➡️ User gets an email &nbsp;(<a href="/v6/notification-email-missing?contactMethod=email&result=singlegood&reason=missingmobile">missing mobile</a>) | (<a href="/v6/notification-email-malformed?contactMethod=email&result=singlegood&reason=malformedmobile">malformed mobile</a>)</li>
-              <li> ➡️ User gets an SMS &nbsp;(<a href="/v6/notification-sms-missing?contactMethod=sms&result=singlegood&reason=missingemail">missing email</a>) | (<a href="/v6/notification-sms-malformed?contactMethod=sms&result=singlegood&reason=malformedemail">malformed email</a>)</li>
-              <li class="nhsuk-u-padding-top-3"> ➡️ &nbsp;<a href="/v6/start">Service start page</a> | (<a href="/v6/start?devMode=true">run in devMode</a>)</li>
+              <li> ➡️ User gets an email &nbsp;(<a href="/v7/notification-email-missing?contactMethod=email&result=singlegood&reason=missingmobile">missing mobile</a>) | (<a href="/v7/notification-email-malformed?contactMethod=email&result=singlegood&reason=malformedmobile">malformed mobile</a>)</li>
+              <li> ➡️ User gets an SMS &nbsp;(<a href="/v7/notification-sms-missing?contactMethod=sms&result=singlegood&reason=missingemail">missing email</a>) | (<a href="/v7/notification-sms-malformed?contactMethod=sms&result=singlegood&reason=malformedemail">malformed email</a>)</li>
+              <li class="nhsuk-u-padding-top-3"> ➡️ &nbsp;<a href="/v7/start">Service start page</a> | (<a href="/v7/start?devMode=true">run in devMode</a>)</li>
             </ul>
           </div>
 
           <h3 class="nhsuk-u-margin-top-8">Changes in this prototype</h3>
 
           <ol class="nhsuk-summary-list">
-            <li>Expanded the scope of the service to include changes to technical valid but incorrect contact details</li>
+            <li>Expanded the scope of the service to include allowing changes to technically valid but incorrect contact details.</li>
+            <li>NHS login integration with a scope of P5</li>
           </ol>
 
         </li>
