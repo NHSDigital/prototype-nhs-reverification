@@ -3,7 +3,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-You have asked for a security code too many times
+  You have asked for a security code too many times
 {% endblock %}
 
 {% block content %}
@@ -16,11 +16,11 @@ You have asked for a security code too many times
 
         <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
 
-          <p>You have asked for a security code too many times</p>
+          <p>You must wait 1 hour before trying again.</p>
+
+          {% include "../includes/other-channels.html" %}
 
         </div>
-
-      {% include "../includes/other-channels.html" %}
 
     </div>
 

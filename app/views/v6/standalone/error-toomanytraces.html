@@ -1,9 +1,9 @@
-{% set serviceHome = '/v5/start' %}
+{% set serviceHome = '/v6/start' %}
 {% set feedbackType = 'step' %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  You have entered an incorrect security code too many times
+  You have searched for an NHS record too many times
 {% endblock %}
 
 {% block content %}
@@ -13,14 +13,16 @@
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <h1 class="nhsuk-heading-l">
-      You have entered an incorrect security code too many times
+      You have searched for an NHS record too many times
     </h1>
 
     <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
-      <p>You must wait up to 1 hour before trying again.</p>
-    </div>
 
-    {% include "../includes/other-channels.html" %}
+      <p>You must wait up to 1 hour before trying again.</p>
+
+      {% include "../includes/other-channels.html" %}
+
+    </div>
 
   </div>
 
@@ -28,5 +30,5 @@
 {% endblock %}
 
 {% block footer %}
-  {% include 'v5/includes/footer.html' %}
+  {% include 'v6/includes/footer.html' %}
 {% endblock %}

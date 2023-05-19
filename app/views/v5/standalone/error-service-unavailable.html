@@ -4,7 +4,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
- Add or correct your contact details is currently unavailable
+  Sorry, there is a problem with this service
 {% endblock %}
 
 {% block content %}
@@ -13,14 +13,13 @@
 
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-      <h1 class="nhsuk-heading-l">Add or correct your contact details is currently unavailable</h1>
+      <h1 class="nhsuk-heading-l">Sorry, there is a problem with this service</h1>
 
         <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
 
-          <p>Please visit your GP to update you contact details, or try again later.</p>
-          <p>If you are not registered with a GP, try our Find a GP service.</p>
+          <p>Try again later.</p>
 
-          <p><a href="">Find you nearest GP surgery</a></p>
+          {% include "../includes/other-channels.html" %}
 
         </div>
 
@@ -30,8 +29,8 @@
 {% endblock %}
 
 {% block footer %}
-{{ footer({
-"links": [],
-"copyright": "&copy; Crown copyright"
-}) }}
+  {{ footer({
+    "links": [],
+    "copyright": "&copy; Crown copyright"
+  }) }}
 {% endblock %}

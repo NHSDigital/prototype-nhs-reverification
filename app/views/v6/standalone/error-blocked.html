@@ -1,6 +1,5 @@
 {% set serviceHome = '/v6/start' %}
 {% set feedbackType = 'step' %}
-{% set hideFeedback = 'true' %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -31,8 +30,5 @@ Sorry, you can't use this service right now
 {% endblock %}
 
 {% block footer %}
-{{ footer({
-"links": [],
-"copyright": "&copy; Crown copyright"
-}) }}
+  {% include 'v6/includes/footer.html' %}
 {% endblock %}
