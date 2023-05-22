@@ -20,20 +20,20 @@
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <form action="get-verification-otp" method="post" class="form">
-        <h1 class="nhsuk-heading-l">
-          We will send a security code to your{% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} email{% else %} mobile{% endif %}
-        </h1>
+      <h1 class="nhsuk-heading-l">
+        We will send a security code to your{% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} email{% else %} mobile{% endif %}
+      </h1>
 
-        <div class="nhsuk-hint">
-          <p>To protect your details we need to know it's you.</p>
+      <div class="nhsuk-hint">
+        <p>To protect your details we need to know it's you.</p>
 
-          <p>To do this we will send a you a 6 digit code.</p>
+        <p>To do this we will send a you a 6 digit code.</p>
 
-          <p>You must use this code within 1 hour of getting it.</p>
+        <p>You must use this code within 1 hour of getting it.</p>
 
-        </div>
+      </div>
 
-        <p>When you select Continue we will send the code to ********681</p>
+      <p>When you select Continue we will send the code to {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} ********lor@****l.com{% else %} ********681{% endif %}</p>
 
       <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">
         <summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
@@ -50,12 +50,12 @@
         </div>
       </details>
 
-        <div>
-          <button class="nhsuk-button full-width" type="submit" id="button--save">
-            Continue
-          </button>
-          <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
-        </div>
+      <div>
+        <button class="nhsuk-button full-width" type="submit" id="button--save">
+          Continue
+        </button>
+        <button id="button2" class="nhsuk-u-visually-hidden">Submit</button>
+      </div>
     </form>
 
     {% if data['devMode'] === 'true' %}
