@@ -1,5 +1,5 @@
 {% set serviceHome = '/v6/start' %}
-{% set feedbackType = 'step' %}
+{% set hideFeedback = 'true' %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -17,7 +17,10 @@ Thank you for your feedback
           <p class="nhsuk-card__description">Your feedback was successfully submitted to the Add or correct your contact
             details service. This will help us to improve our service.</p></div>
       </div>
-      <p>Close this tab to go back to updating your details.</p></div>
+
+      {% if data['feedback-type'] !== 'final' %}
+       <p>Close this tab to go back to updating your details.</p></div>
+      {% endif %}
 
     </div>
 

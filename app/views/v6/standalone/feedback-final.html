@@ -1,0 +1,114 @@
+{% set serviceHome = '/v6/start' %}
+{% set hideFeedback = 'true' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Give feedback on the Add or correct your contact details service
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="feedback-confirmation" autocomplete="off" method="post">
+
+      <h1 class="nhsuk-heading-l" id="form-heading" tabindex="-1">Give feedback on the Add or correct your contact details service</h1>
+
+      <form action="feedback-confirmation" autocomplete="off" method="post">
+
+        {% call fieldset({
+        legend: {
+        "text": "Overall, how did you feel about the service you received today?",
+        "classes": "nhsuk-fieldset__legend--m",
+        "isPageHeading": false
+        }
+        }) %}
+        {{ radios({
+        "idPrefix": "satisfied",
+        "name": "satisfied",
+        "items": [
+          {
+            "value": "Very satisfied",
+            "text": "Very satisfied"
+          },
+          {
+            "value": "Satisfied",
+            "text": "Satisfied"
+          },
+          {
+            "value": "Neither satisfied or dissatisfied",
+            "text": "Neither satisfied or dissatisfied"
+          },
+          {
+            "value": "Dissatisfied",
+            "text": "Dissatisfied"
+          },
+          {
+            "value": "Very dissatisfied",
+            "text": "Very dissatisfied"
+          }
+        ]
+      }) }}
+        {% endcall %}
+
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-form-group"><label class="nhsuk-label" for="feedback" id="feedback--label">How can we improve this service?</label>
+            <div class="nhsuk-hint" id="feedback--hint">Do not include confidential or medical information in your
+              message. For example, your NHS number, date of birth, medical diagnosis or medical history.
+            </div>
+            <textarea aria-describedby="feedback--hint"  aria-labelledby="feedback--label" autocomplete="off"
+                      class="nhsuk-textarea" id="feedback" list="autocompleteOff" maxlength="2000" name="feedback"
+                      rows="8"></textarea></div>
+        </fieldset>
+
+        <input type="hidden" name="feedback-type" value="final" />
+
+        <button aria-disabled="false" class="nhsuk-button" id="submit-provide-feedback" type="submit">
+          Send feedback
+        </button>
+
+    </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="feedback-confirmation">Feedback submitted</a>
+          </li>
+        </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-feedback-limit">User has sent their feedback too many times</a>
+          </li>
+        </ul>
+        <h4>Notify Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-notify-feedback-fail">Notify fails to send the message</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v6/includes/footer.html' %}
+{% endblock %}
+

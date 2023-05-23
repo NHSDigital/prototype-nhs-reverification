@@ -33,13 +33,12 @@
       <h2 class="nhsuk-heading-s">NHS</h2>
       <p class="app-text-message__text">
 
-        Reminder: We've noticed you don't have an email address on your NHS record.<br><br>
+        {{ data['first-name'] or 'Sarah' }},<br><br>
 
-        Your GP and the NHS use your contact details to get in touch about your healthcare.<br><br>
+        The mobile phone number we have for you has been changed. This message is sent to the old number for security reasons. If you did not make this change you should call us on 01234 567890.<br><br>
 
-        To add your email address go to <a href="start">www.nhs.uk/add-correct-contact-details</a><br><br>
+        NHS England
 
-        You can also go to the NHS website and search for 'add contact'.
       </p>
     </div>
 

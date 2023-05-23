@@ -30,13 +30,13 @@
 
             {% if data['result'] === 'bothgood' %}
 
-            {{ data['emailAddressObf'] or '********lor@****l.com' }}
+            {{ email or '********lor@****l.com' }}
 
             {% else %}
 
                 {% if data['contactMethod'] === 'email' %}
 
-                    {{ data['emailAddressObf'] or '********lor@****l.com' }}
+                    {{ email or '********lor@****l.com' }}
 
                 {% else %}
 
@@ -96,13 +96,13 @@
 
             {% if data['result'] === 'bothgood' %}
 
-            {{ data['mobileNumObf'] or '********681' }}
+            {{ mobile or '********681' }}
 
             {% else %}
 
             {% if data['contactMethod'] === 'sms' %}
 
-            {{ data['mobileNumObf'] or '********681' }}
+            {{ mobile or '********681' }}
 
             {% else %}
 
