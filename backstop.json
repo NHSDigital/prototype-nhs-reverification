@@ -201,6 +201,22 @@
     {
       "label": "Reverification - otp-new-sms",
       "url": "http://localhost:3000/v6/otp-new-sms"
+    },
+    {
+      "label": "Reverification - notification-sms-confirmation",
+      "url": "http://localhost:3000/v6/notification-sms-confirmation"
+    },
+    {
+      "label": "Reverification - notification-sms-2nd-confirmation",
+      "url": "http://localhost:3000/v6/notification-sms-2nd-confirmation"
+    },
+    {
+      "label": "Reverification - notification-email-confirmation",
+      "url": "http://localhost:3000/v6/notification-email-confirmation"
+    },
+    {
+      "label": "Reverification - notification-email-2nd-confirmation",
+      "url": "http://localhost:3000/v6/notification-email-2nd-confirmation"
     }
   ],
   "paths": {
