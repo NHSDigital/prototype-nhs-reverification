@@ -931,12 +931,91 @@ router.post('/v6/standalone/check-your-answers-post', function (req, res) {
 })
 
 // Obfuscate the UR participants contact details for display on the page
+router.get('/v6/standalone/contact-details', function (req, res) {
+  // if user has come without a notification
+  if (req.session.data['ure'] && req.session.data['urm']) {
+
+    let email = process.env[req.session.data['ure']]
+    let mobile = process.env[req.session.data['urm']]
+
+    // create an obfuscated version of email
+    if (email ) {
+      emailObf = obfuscatorEmail(email)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      emailObf = '*******6789'
+    }
+
+    // create an obfuscated version of mobile
+    if (mobile && mobile.length === 11 ) {
+      mobileObf = '*******' + mobile.substr(-4)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      mobileObf = '*******6789'
+    }
+
+    // write values to the data store
+    req.session.data['emailAddress'] = email
+    req.session.data['emailAddressObf'] = emailObf
+    req.session.data['mobileNum'] = mobile
+    req.session.data['mobileNumObf'] = mobileObf
+
+    return res.render('v6/standalone/contact-details', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+
+  } else if (req.session.data['ure'] || req.session.data['urm']) {
+
+      if (req.session.data['contactMethod'] === 'email') {
+        let email = process.env[req.session.data['ure']]
+
+        // create an obfuscated version of it
+        if (email ) {
+          emailObf = obfuscatorEmail(email)
+        } else {
+          // create a placeholder string as the field wasn't filled in properly
+          emailObf = '*******6789'
+        }
+        // write values to the data store
+        req.session.data['emailAddress'] = email
+        req.session.data['emailAddressObf'] = emailOb
+
+        return res.render('v6/standalone/contact-details', {
+          'email': emailObf
+        })
+
+      } else {
+        // pull in mobile number from environment variable and create an obsfucated version
+        let mobile = process.env[req.session.data['urm']]
+
+        // create an obfuscated version of it
+        if (mobile && mobile.length === 11 ) {
+          mobileObf = '*******' + mobile.substr(-4)
+        } else {
+          // create a placeholder string as the field wasn't filled in properly
+          mobileObf = '*******6789'
+        }
+        req.session.data['mobileNum'] = mobile
+        req.session.data['mobileNumObf'] = mobileObf
+        return res.render('v6/standalone/contact-details', {
+          'mobile': mobileObf
+        })
+      }
+  } else {
+    // do nothing
+    return res.render('v6/standalone/contact-details')
+  }
+
+})
+
+// Obfuscate the UR participants contact details for display on the page
 router.get('/v6/standalone/get-security-code', function (req, res) {
   console.log(process.env[req.session.data['ur']])
   if (req.session.data['ur']) {
 
     if (req.session.data['contactMethod'] === 'email') {
-      let email = process.env[req.session.data['ur']]
+      let email = process.env[req.session.data['ure']]
 
       // create an obfuscated version of it
       if (email ) {
@@ -952,9 +1031,9 @@ router.get('/v6/standalone/get-security-code', function (req, res) {
         'email': emailObf
       })
     } else {
-      // pull in mobile number from environmant variable and create an obsfucated version
+      // pull in mobile number from environment variable and create an obsfucated version
 
-      let mobile = process.env[req.session.data['ur']]
+      let mobile = process.env[req.session.data['urp']]
 
       // create an obfuscated version of it
       if (mobile && mobile.length === 11 ) {
@@ -1087,14 +1166,81 @@ router.post('/v6/standalone/get-verification-otp-new', function (req, res) {
 
 // route if not an NHS login account holder
 router.post('/v6/standalone/verify-change-post', function (req, res) {
-  // trim out the white space we we can count it easier
-  let nhslogin = req.session.data['nhslogin']
+  var contactMethod = req.session.data['contactMethod']
+  var result = req.session.data['result']
 
-  if (nhslogin === 'false'){
-    res.redirect('/v6/standalone/confirmation-of-change')
-  }else {
-    res.redirect('/v6/standalone/confirmation-of-change')
+  if (contactMethod === 'email'){
+    if (req.session.data['newEmailAddress'] !== '') {
+      // generate a random 6 digit number for the Email
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2,
+        'firstname': "Matt"
+      }
+      notify.sendEmail(
+        'a9740904-4999-403e-aed0-64be567ce63f',
+        req.session.data['newEmailAddress'],
+        {personalisation: personalisation}
+      ).catch(err => console.error(err))
+      console.log("sent email")
+    }
+  } else {
+    if (req.session.data['newMobileNum'] !== '') {
+      // generate a random 6 digit number for the SMS
+      var pinCode1 = Math.floor(100 + Math.random() * 900)
+      var pinCode2 = Math.floor(100 + Math.random() * 900)
+      var personalisation = {
+        'otp_code': pinCode1 + "" + pinCode2,
+        'firstname': "Matt"
+      }
+      notify.sendSms(
+        '8d109c95-4252-4a07-aa2d-f3e5a39e780e',
+        req.session.data['newMobileNum'],
+        {personalisation: personalisation}
+      ).catch(err => console.error(err))
+      console.log("sent SMS")
+    }
   }
+
+  if (result === 'bothgood'){
+
+    if (contactMethod === 'email'){
+      if (req.session.data['newEmailAddress'] !== '') {
+        // generate a random 6 digit number for the Email
+        var pinCode1 = Math.floor(100 + Math.random() * 900)
+        var pinCode2 = Math.floor(100 + Math.random() * 900)
+        var personalisation = {
+          'otp_code': pinCode1 + "" + pinCode2,
+          'firstname': "Matt"
+        }
+        notify.sendEmail(
+          '96ff77f9-7525-44c3-880c-86d5ff05165f',
+          req.session.data['newEmailAddress'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+        console.log("sent 2nd email")
+      }
+    } else {
+      if (req.session.data['newMobileNum'] !== '') {
+        // generate a random 6 digit number for the SMS
+        var pinCode1 = Math.floor(100 + Math.random() * 900)
+        var pinCode2 = Math.floor(100 + Math.random() * 900)
+        var personalisation = {
+          'otp_code': pinCode1 + "" + pinCode2,
+          'firstname': "Matt"
+        }
+        notify.sendSms(
+          '254dfd8b-9c74-4d5d-8c12-3b80073f5480',
+          req.session.data['newMobileNum'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+        console.log("sent 2nd SMS")
+      }
+    }
+  }
+
+  res.redirect('/v6/standalone/confirmation-of-change')
 })
 
 router.post('/v6/standalone/create-account-post', function (req, res) {

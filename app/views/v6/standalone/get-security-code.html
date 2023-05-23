@@ -33,7 +33,7 @@
 
       </div>
 
-      <p>When you select Continue we will send the code to {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} ********lor@****l.com{% else %} ********681{% endif %}</p>
+      <p>When you select Continue we will send the code to {% if req.session.data['contactMethod'] === 'email' or data['contactMethod'] === 'email' %} {{ data['emailAddressObf'] or '********lor@****l.com' }}{% else %} {{ data['mobileNumObf'] or '********681' }}{% endif %}</p>
 
       <details nhsuk-polyfilled="true" id="nhsuk-details0" class="nhsuk-details">
         <summary role="button" aria-controls="nhsuk-details__text0" tabindex="0" class="nhsuk-details__summary" aria-expanded="false">
