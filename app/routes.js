@@ -1239,8 +1239,11 @@ router.post('/v6/standalone/verify-change-post', function (req, res) {
       }
     }
   }
-
-  res.redirect('/v6/standalone/confirmation-of-change')
+  if (req.session.data['feedback'] === 'new') {
+    res.redirect('/v6/standalone/confirmation-of-change-2')
+  } else {
+    res.redirect('/v6/standalone/confirmation-of-change')
+  }
 })
 
 router.post('/v6/standalone/create-account-post', function (req, res) {
