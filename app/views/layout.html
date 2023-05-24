@@ -23,15 +23,13 @@
   }}
 
 {% if feedbackType %}
-  {% if hideFeedback !== 'true' %}
-    {% include 'v5/includes/feedback.html' %}
-  {% endif %}
+    {% include 'v6/includes/feedback.html' %}
 {% endif %}
 
 {% endblock %}
 
 {% block footer %}
-  {% include "v1/includes/footer.html" %}
+  {% include "v6/includes/footer.html" %}
 {% endblock %}
 
 {% block bodyEnd %}

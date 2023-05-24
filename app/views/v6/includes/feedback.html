@@ -9,7 +9,9 @@
           <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">alpha</strong>
 
           <span class="nhsuk-phase-banner__text">
-              This is a new service – your <a class="govuk-link" href="feedback-page" target="_blank">feedback (opens in a new tab)</a> will help us to improve this page.
+
+              This is a new service {% if hideFeedback !== 'true' %}– your <a class="govuk-link" href="feedback-page" target="_blank">feedback (opens in a new tab)</a> will help us to improve this page.{% endif %}
+
           </span>
         </p>
       </div>

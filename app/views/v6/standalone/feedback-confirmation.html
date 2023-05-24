@@ -1,4 +1,5 @@
 {% set serviceHome = '/v6/start' %}
+{% set feedbackType = 'final' %}
 {% set hideFeedback = 'true' %}
 {% extends 'layout.html' %}
 
@@ -18,7 +19,7 @@ Thank you for your feedback
             details service. This will help us to improve our service.</p></div>
       </div>
 
-      {% if data['feedback-type'] !== 'final' %}
+      {% if data['feedback-type'] === 'final' %}
        <p>Close this tab to go back to updating your details.</p></div>
       {% endif %}
 
@@ -30,6 +31,5 @@ Thank you for your feedback
 {% endblock %}
 
 {% block footer %}
-  {% set hideFeedback = 'true' %}
   {% include 'v6/includes/footer.html' %}
 {% endblock %}

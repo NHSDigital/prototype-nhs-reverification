@@ -59,6 +59,10 @@
       "url": "http://localhost:3000/v6/standalone/confirmation-of-change?contactMethod=sms"
     },
     {
+      "label": "Reverification - confirmation-of-change-2-mobile",
+      "url": "http://localhost:3000/v6/standalone/confirmation-of-change-2?contactMethod=sms"
+    },
+    {
       "label": "Reverification - contact-details-both-good",
       "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&result=bothgood&reason=none"
     },

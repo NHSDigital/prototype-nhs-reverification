@@ -1,5 +1,6 @@
 {% set serviceHome = '/v6/start' %}
-{% set feedbackType = 'step' %}
+{% set feedbackType = 'final' %}
+{% set hideFeedback = 'true' %}
 {% extends 'layout.html' %}
 
 {% if data['newMobileNum'] %}
@@ -103,6 +104,5 @@ Your details have been updated
 {% endblock %}
 
 {% block footer %}
-{% set feedbackType = 'final' %}
   {% include 'v6/includes/footer.html' %}
 {% endblock %}

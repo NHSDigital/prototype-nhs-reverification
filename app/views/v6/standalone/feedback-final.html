@@ -1,5 +1,6 @@
 {% set serviceHome = '/v6/start' %}
 {% set hideFeedback = 'true' %}
+{% set feedbackType = 'final' %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -108,7 +109,6 @@ Give feedback on the Add or correct your contact details service
 {% endblock %}
 
 {% block footer %}
-  {% set hideFeedback = 'true' %}
   {% include 'v6/includes/footer.html' %}
 {% endblock %}
 
