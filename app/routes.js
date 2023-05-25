@@ -943,7 +943,7 @@ router.get('/v6/standalone/contact-details', function (req, res) {
       emailObf = obfuscatorEmail(email)
     } else {
       // create a placeholder string as the field wasn't filled in properly
-      emailObf = '*******6789'
+      emailObf = '********lor@****l.com'
     }
 
     // create an obfuscated version of mobile
@@ -975,7 +975,7 @@ router.get('/v6/standalone/contact-details', function (req, res) {
           emailObf = obfuscatorEmail(email)
         } else {
           // create a placeholder string as the field wasn't filled in properly
-          emailObf = '*******6789'
+          emailObf = '********lor@****l.com'
         }
         // write values to the data store
         req.session.data['emailAddress'] = email
