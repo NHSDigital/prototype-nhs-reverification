@@ -1164,81 +1164,81 @@ router.post('/v6/standalone/get-verification-otp-new', function (req, res) {
   }
 })
 
-// route if not an NHS login account holder
+// send
 router.post('/v6/standalone/verify-change-post', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
   var result = req.session.data['result']
 
-  if (contactMethod === 'email'){
-    if (req.session.data['newEmailAddress'] !== '') {
-      // generate a random 6 digit number for the Email
-      var pinCode1 = Math.floor(100 + Math.random() * 900)
-      var pinCode2 = Math.floor(100 + Math.random() * 900)
-      var personalisation = {
-        'otp_code': pinCode1 + "" + pinCode2,
-        'firstname': "Matt"
-      }
-      notify.sendEmail(
-        'a9740904-4999-403e-aed0-64be567ce63f',
-        req.session.data['newEmailAddress'],
-        {personalisation: personalisation}
-      ).catch(err => console.error(err))
-      console.log("sent email")
+  // always send confirmation to the email address
+  // this is existing email address if they have changed mobile or new Email if they changed email
+
+  // contact methodis is email is means we can send to existing email
+  if (req.session.data['newEmailAddress']){
+    // generate a random 6 digit number for the SMS
+    var pinCode1 = Math.floor(100 + Math.random() * 900)
+    var pinCode2 = Math.floor(100 + Math.random() * 900)
+    var personalisation = {
+      'otp_code': pinCode1 + "" + pinCode2,
+      'firstname': "Matt"
     }
+    notify.sendEmail(
+      'a9740904-4999-403e-aed0-64be567ce63f',
+      req.session.data['newEmailAddress'],
+      {personalisation: personalisation}
+    ).catch(err => console.error(err))
+    console.log("sent email")
   } else {
-    if (req.session.data['newMobileNum'] !== '') {
-      // generate a random 6 digit number for the SMS
-      var pinCode1 = Math.floor(100 + Math.random() * 900)
-      var pinCode2 = Math.floor(100 + Math.random() * 900)
-      var personalisation = {
-        'otp_code': pinCode1 + "" + pinCode2,
-        'firstname': "Matt"
-      }
-      notify.sendSms(
-        '8d109c95-4252-4a07-aa2d-f3e5a39e780e',
-        req.session.data['newMobileNum'],
-        {personalisation: personalisation}
-      ).catch(err => console.error(err))
-      console.log("sent SMS")
+    // generate a random 6 digit number for the Email
+    var pinCode1 = Math.floor(100 + Math.random() * 900)
+    var pinCode2 = Math.floor(100 + Math.random() * 900)
+    var personalisation = {
+      'otp_code': pinCode1 + "" + pinCode2,
+      'firstname': "Matt"
     }
+    notify.sendEmail(
+      'a9740904-4999-403e-aed0-64be567ce63f',
+      req.session.data['emailAddress'],
+      {personalisation: personalisation}
+    ).catch(err => console.error(err))
+    console.log("sent email")
   }
+  // hide for UR sessions
+  // if (result === 'bothgood'){
 
-  if (result === 'bothgood'){
-
-    if (contactMethod === 'email'){
-      if (req.session.data['newEmailAddress'] !== '') {
-        // generate a random 6 digit number for the Email
-        var pinCode1 = Math.floor(100 + Math.random() * 900)
-        var pinCode2 = Math.floor(100 + Math.random() * 900)
-        var personalisation = {
-          'otp_code': pinCode1 + "" + pinCode2,
-          'firstname': "Matt"
-        }
-        notify.sendEmail(
-          '96ff77f9-7525-44c3-880c-86d5ff05165f',
-          req.session.data['newEmailAddress'],
-          {personalisation: personalisation}
-        ).catch(err => console.error(err))
-        console.log("sent 2nd email")
-      }
-    } else {
-      if (req.session.data['newMobileNum'] !== '') {
-        // generate a random 6 digit number for the SMS
-        var pinCode1 = Math.floor(100 + Math.random() * 900)
-        var pinCode2 = Math.floor(100 + Math.random() * 900)
-        var personalisation = {
-          'otp_code': pinCode1 + "" + pinCode2,
-          'firstname': "Matt"
-        }
-        notify.sendSms(
-          '254dfd8b-9c74-4d5d-8c12-3b80073f5480',
-          req.session.data['newMobileNum'],
-          {personalisation: personalisation}
-        ).catch(err => console.error(err))
-        console.log("sent 2nd SMS")
-      }
-    }
-  }
+    // if (contactMethod === 'email'){
+    //   if (req.session.data['newEmailAddress'] !== '') {
+    //     // generate a random 6 digit number for the Email
+    //     var pinCode1 = Math.floor(100 + Math.random() * 900)
+    //     var pinCode2 = Math.floor(100 + Math.random() * 900)
+    //     var personalisation = {
+    //       'otp_code': pinCode1 + "" + pinCode2,
+    //       'firstname': "Matt"
+    //     }
+    //     notify.sendEmail(
+    //       '96ff77f9-7525-44c3-880c-86d5ff05165f',
+    //       req.session.data['newEmailAddress'],
+    //       {personalisation: personalisation}
+    //     ).catch(err => console.error(err))
+    //     console.log("sent 2nd email")
+    //   }
+    // } else {
+    //   if (req.session.data['newMobileNum'] !== '') {
+    //     // generate a random 6 digit number for the SMS
+    //     var pinCode1 = Math.floor(100 + Math.random() * 900)
+    //     var pinCode2 = Math.floor(100 + Math.random() * 900)
+    //     var personalisation = {
+    //       'otp_code': pinCode1 + "" + pinCode2,
+    //       'firstname': "Matt"
+    //     }
+    //     notify.sendSms(
+    //       '254dfd8b-9c74-4d5d-8c12-3b80073f5480',
+    //       req.session.data['newMobileNum'],
+    //       {personalisation: personalisation}
+    //     ).catch(err => console.error(err))
+    //     console.log("sent 2nd SMS")
+    //   }
+    // }
+  // }
   if (req.session.data['feedback'] === 'new') {
     res.redirect('/v6/standalone/confirmation-of-change-2')
   } else {
