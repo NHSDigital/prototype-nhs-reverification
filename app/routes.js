@@ -1168,6 +1168,10 @@ router.post('/v6/standalone/get-verification-otp-new', function (req, res) {
 router.post('/v6/standalone/verify-change-post', function (req, res) {
   var contactMethod = req.session.data['contactMethod']
   var result = req.session.data['result']
+  var firstname = 'Sarah'
+  if (req.session.data['first-name']) {
+    firstname = req.session.data['first-name']
+  }
 
   // always send confirmation to the email address
   // this is existing email address if they have changed mobile or new Email if they changed email
@@ -1179,7 +1183,7 @@ router.post('/v6/standalone/verify-change-post', function (req, res) {
     var pinCode2 = Math.floor(100 + Math.random() * 900)
     var personalisation = {
       'otp_code': pinCode1 + "" + pinCode2,
-      'firstname': "Matt"
+      'firstname': firstname
     }
     notify.sendEmail(
       'a9740904-4999-403e-aed0-64be567ce63f',
@@ -1193,7 +1197,7 @@ router.post('/v6/standalone/verify-change-post', function (req, res) {
     var pinCode2 = Math.floor(100 + Math.random() * 900)
     var personalisation = {
       'otp_code': pinCode1 + "" + pinCode2,
-      'firstname': "Matt"
+      'firstname': firstname
     }
     notify.sendEmail(
       'a9740904-4999-403e-aed0-64be567ce63f',
