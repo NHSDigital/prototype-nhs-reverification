@@ -51,8 +51,16 @@
       "url": "http://localhost:3000/v6/standalone/confirmation-of-change"
     },
     {
+      "label": "Reverification - confirmation-of-change-2",
+      "url": "http://localhost:3000/v6/standalone/confirmation-of-change-2"
+    },
+    {
       "label": "Reverification - confirmation-of-change-mobile",
       "url": "http://localhost:3000/v6/standalone/confirmation-of-change?contactMethod=sms"
+    },
+    {
+      "label": "Reverification - confirmation-of-change-2-mobile",
+      "url": "http://localhost:3000/v6/standalone/confirmation-of-change-2?contactMethod=sms"
     },
     {
       "label": "Reverification - contact-details-both-good",
@@ -60,11 +68,11 @@
     },
     {
       "label": "Reverification - contact-details-email-missing",
-      "url": "http://localhost:3000/v6/standalone/contactMethod=sms&result=singlegood&reason=missingemail"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&result=singlegood&reason=missingemail"
     },
     {
       "label": "Reverification - contact-details-email-malformed",
-      "url": "http://localhost:3000/v6/standalone/contactMethod=sms&result=singlegood&reason=malformedemail"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=sms&result=singlegood&reason=malformedemail"
     },
     {
       "label": "Reverification - contact-details-sms-missing",
@@ -72,7 +80,7 @@
     },
     {
       "label": "Reverification - contact-details-sms-malformed",
-      "url": "http://localhost:3000/v6/standalone/contactMethod=email&result=singlegood&reason=malformedmobile"
+      "url": "http://localhost:3000/v6/standalone/contact-details?contactMethod=email&result=singlegood&reason=malformedmobile"
     },
     {
       "label": "Reverification - do-you-know-nhs",
@@ -139,6 +147,10 @@
       "url": "http://localhost:3000/v6/standalone/feedback-page"
     },
     {
+      "label": "Reverification - feedback-final",
+      "url": "http://localhost:3000/v6/standalone/feedback-final"
+    },
+    {
       "label": "Reverification - get-security-code",
       "url": "http://localhost:3000/v6/standalone/get-security-code"
     },
@@ -201,6 +213,22 @@
     {
       "label": "Reverification - otp-new-sms",
       "url": "http://localhost:3000/v6/otp-new-sms"
+    },
+    {
+      "label": "Reverification - notification-sms-confirmation",
+      "url": "http://localhost:3000/v6/notification-sms-confirmation"
+    },
+    {
+      "label": "Reverification - notification-sms-2nd-confirmation",
+      "url": "http://localhost:3000/v6/notification-sms-2nd-confirmation"
+    },
+    {
+      "label": "Reverification - notification-email-confirmation",
+      "url": "http://localhost:3000/v6/notification-email-confirmation"
+    },
+    {
+      "label": "Reverification - notification-email-2nd-confirmation",
+      "url": "http://localhost:3000/v6/notification-email-2nd-confirmation"
     }
   ],
   "paths": {
