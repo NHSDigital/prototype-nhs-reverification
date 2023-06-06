@@ -23,7 +23,13 @@
   }}
 
 {% if feedbackType %}
-    {% include 'v6/includes/feedback.html' %}
+
+  {% if servicePhase === 'beta' %}
+    {% include 'v7/includes/feedback.html' %}
+  {% else %}
+     {% include 'v6/includes/feedback.html' %}
+  {% endif %}
+
 {% endif %}
 
 {% endblock %}
