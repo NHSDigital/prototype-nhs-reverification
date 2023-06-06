@@ -1,0 +1,53 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Checking your details
+{% endblock %}
+
+{% block content %}
+
+{% if result === '200' %}
+  <meta http-equiv="refresh" content="5;url={{ backlink.link() }}">
+{% else %}
+  <meta http-equiv="refresh" content="5;url=contact-details">
+{% endif %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Checking your details</h1>
+
+    <div class="bar_container">
+      <div id="main_container">
+        <div id="pbar" class="progress-spinner" data-percent="0">
+          <img src="/images/loader-spinner.svg" width="200px" height="200px" id="spinner" alt="" />
+          <div class="ppc-loading">
+            <div class="pcc-percents-wrapper">
+              <span id="spinner-status">Please wait</span><span aria-hidden="true">...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      setTimeout(function(){
+        $("#spinner-status").addClass("done")
+        $("#spinner").addClass("done")
+        document.getElementById("spinner-status").innerHTML = "Done"
+
+      }, 4200)
+    </script>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v7/includes/footer.html' %}
+{% endblock %}
