@@ -29,10 +29,14 @@ Are you trying to change your postal address?
       "fieldset": {
         "legend": {
           "text": "Are you trying to change your postal address?",
+          
           "classes": "nhsuk-fieldset__legend--l",
           "isPageHeading": "false"
         }
       },
+      {{ hint({
+        "text": "You are currently unable to update your postal address using this service.",
+      })}}
       "items": [
         {
           "value": "yes",
