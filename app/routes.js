@@ -1265,6 +1265,16 @@ router.post('/v6/standalone/create-account-post', function (req, res) {
 // V7 ROUTES
 
 // triage step
+router.post('/v7/standalone/triage-notified-post', function (req, res) {
+  var notified = req.session.data['notified']
+  if (notified === 'no'){
+    res.redirect('/v7/standalone/triage-address')
+  }else {
+    res.redirect('/v7/standalone/use-login')
+  }
+})
+
+// triage step
 router.post('/v7/standalone/triage-address-post', function (req, res) {
   var address = req.session.data['address']
   if (address === 'no'){
