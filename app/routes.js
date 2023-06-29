@@ -1502,6 +1502,11 @@ function devModeRoute(req, res, next) {
   } else {
     console.log('data found and set to ' + req.session.data['devMode'])
   }
+  if (process.env.PROD === 'TRUE') {
+    req.session.data['local'] = ''
+  } else {
+    req.session.data['local'] = 'true'
+  }
   next()
 }
 
