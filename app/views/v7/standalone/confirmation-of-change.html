@@ -1,10 +1,10 @@
 {% set serviceHome = '/v7/start' %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
+{% set feedbackType = 'final' %}
+{% set hideFeedback = 'true' %}
 {% extends 'layout.html' %}
 
 {% if data['newMobileNum'] %}
-  {% set mobile = data['newMobileNum'] | ukMobile %}
+{% set mobile = data['newMobileNum'] | ukMobile %}
 {% endif %}
 
 {% block pageTitle %}
@@ -13,40 +13,97 @@ Your details have been updated
 
 {% block content %}
 
-  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
-      <div aria-live="polite" class="nhsuk-u-reading-width">
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content"><h1 class="nhsuk-card__heading nhsuk-heading-l">Your details have been updated</h1>
-            <p class="nhsuk-card__description">
-              {% if data['contactMethod'] === 'sms' %}
-              Your mobile phone number has been updated to <strong class="app-nowrap">{{ mobile or '07463 966681'}}</strong>.
-              {% else %}
-              Your email address has been updated to <strong>{{ data['newEmailAddress'] or 'test@test.com'}}</strong>.
-              {% endif %}
-            </p>
-          </div>
+    <div aria-live="polite" class="nhsuk-u-reading-width">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content"><h1 class="nhsuk-card__heading nhsuk-heading-l">Your details have been updated</h1>
+          <p class="nhsuk-card__description">
+            {% if data['contactMethod'] === 'sms' %}
+            Your mobile phone number has been updated to <strong class="app-nowrap">{{ mobile or '07463 966681'}}</strong>.
+            {% else %}
+            Your email address has been updated to <strong>{{ data['newEmailAddress'] or 'test@test.com'}}</strong>.
+            {% endif %}
+          </p>
         </div>
-
-        <h2 class="nhsuk-heading-m">What happens next</h2>
-        <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>Your details will be updated for all NHS healthcare providers.</li>
-          {% if data['contactMethod'] === 'sms' %}
-          <li>Your GP surgery will be notified about this change.</li>
-          <li>Check your inbox for a confirmation email.</li>
-          {% endif %}
-        </ul>
-
       </div>
+
+      <h2 class="nhsuk-heading-m">What happens next</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Your details will be updated for all NHS healthcare providers.</li>
+        {% if data['contactMethod'] === 'sms' %}
+        <li>Your GP surgery will be notified about this change.</li>
+        {% endif %}
+        <li>Check your inbox for a confirmation email.</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-l">Feedback</h2>
+
+      <form action="feedback-confirmation" autocomplete="off" method="post">
+
+        {% call fieldset({
+        legend: {
+        "text": "Overall, how did you feel about the service you received today?",
+        "classes": "nhsuk-fieldset__legend--m",
+        "isPageHeading": false
+        }
+        }) %}
+        {{ radios({
+        "idPrefix": "satisfied",
+        "name": "satisfied",
+        "items": [
+          {
+            "value": "Very satisfied",
+            "text": "Very satisfied"
+          },
+          {
+            "value": "Satisfied",
+            "text": "Satisfied"
+          },
+          {
+            "value": "Neither satisfied or dissatisfied",
+            "text": "Neither satisfied or dissatisfied"
+          },
+          {
+            "value": "Dissatisfied",
+            "text": "Dissatisfied"
+          },
+          {
+            "value": "Very dissatisfied",
+            "text": "Very dissatisfied"
+          }
+        ]
+      }) }}
+        {% endcall %}
+
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-form-group"><label class="nhsuk-label" for="feedback" id="feedback--label">How can we improve this service?</label>
+            <div class="nhsuk-hint" id="feedback--hint">Do not include confidential or medical information in your
+              message. For example, your NHS number, date of birth, medical diagnosis or medical history.
+            </div>
+            <textarea aria-describedby="feedback--hint"  aria-labelledby="feedback--label" autocomplete="off"
+                      class="nhsuk-textarea" id="feedback" list="autocompleteOff" maxlength="2000" name="feedback"
+                      rows="8"></textarea></div>
+        </fieldset>
+
+        <input type="hidden" name="feedback-type" value="final" />
+
+        <button aria-disabled="false" class="nhsuk-button" id="submit-provide-feedback" type="submit">
+          Send feedback
+        </button>
+
+
+      </form>
 
     </div>
 
   </div>
+
+</div>
 {% endblock %}
 
 {% block footer %}
-{% set feedbackType = 'final' %}
-  {% include 'v7/includes/footer.html' %}
+{% include 'v7/includes/footer.html' %}
 {% endblock %}
