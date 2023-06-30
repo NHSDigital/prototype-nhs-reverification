@@ -127,6 +127,10 @@
       "url": "http://localhost:3000/v7/standalone/error-otpwrong"
     },
     {
+      "label": "Reverification - error-otpwronglimit",
+      "url": "http://localhost:3000/v7/standalone/error-otpwronglimit"
+    },
+    {
       "label": "Reverification - error-pdsmatch",
       "url": "http://localhost:3000/v7/standalone/error-pdsmatch"
     },
