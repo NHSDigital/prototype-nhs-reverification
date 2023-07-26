@@ -4,7 +4,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-You have entered an incorrect security code too many times
+You have entered an incorrect security code
 {% endblock %}
 
 {% block content %}
@@ -14,14 +14,18 @@ You have entered an incorrect security code too many times
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <h1 class="nhsuk-heading-l">
-      You have entered an incorrect security code too many times
+      You have entered an incorrect security code
     </h1>
 
     <div class="nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
-      <p>You must wait 1 hour before trying again.</p>
+      <p>Check your {% if data['contactMethod'] === 'sms' %}mobile phone{% else %}email{% endif %} for the last security code we sent you.</p>
+
+<!--      <p>Make sure you enter the most recent six digit security code.</p>-->
     </div>
 
-    {% include "../includes/other-channels.html" %}
+    <form action="{% if data['referer'] === 'checkmobile' %}check-your-mobile{% else %}check-your-email{% endif %}">
+      <button data-redirect="{% if data['referer'] === 'checkmobile' %}check-your-mobile{% else %}check-your-email{% endif %}" class="nhsuk-button full-width" id="button--save">Try again</button>
+    </form>
 
   </div>
 

@@ -13,6 +13,27 @@
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
 
     <form action="enter-your-new-email" method="post" class="form">
+
+      {% if data['error'] | length %}
+      <div class="nhsuk-error-summary"
+          id="nhsuk-nhs-no-error-summary"
+          aria-labelledby="error-summary-title"
+          role="alert"
+          tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <p>Please correct the following errors to continue:</p>
+          <ul class="nhsuk-list nhsuk-error-summary__list">
+            <li>
+              <a href="#sms-otp">{% if data['error'] === 'format' %}Your code must be six numbers only{% elif data['error'] === 'blank' %}Enter the 6 digit security code sent to your {% if data['contactMethod'] === 'sms' %}mobile phone{% else %}email{% endif %}{% endif %}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
       <h1 class="nhsuk-heading-l">
         Check your mobile
       </h1>
@@ -29,7 +50,7 @@
         </div>
       </details>
 
-      <div class="nhsuk-form-group">
+      <div class="nhsuk-form-group {% if data['error'] | length %} nhsuk-form-group--error{% endif %}">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <label class="nhsuk-label" for="sms-otp">
@@ -40,7 +61,13 @@
             The code is 6 digits
           </div>
 
-          <input class="nhsuk-input nhsuk-input--width-5" inputmode="numeric" spellcheck="false"  id="sms-otp" name="sms-otp" type="text" autocomplete="one-time-code">
+          {% if data['error'] | length %}
+          <span id="nhs-no-error-error" class="nhsuk-error-message">
+            {% if data['error'] === 'format' %}Your code must be six numbers only{% elif data['error'] === 'blank' %}Enter the 6 digit security code{% endif %}
+          </span>
+          {% endif %}
+
+          <input class="nhsuk-input nhsuk-input--width-5 {% if data['error'] | length %} nhsuk-input--error{% endif %}" inputmode="numeric" spellcheck="false"  id="sms-otp" name="sms-otp" type="text" autocomplete="one-time-code">
 
         </fieldset>
 
@@ -77,16 +104,23 @@
         <h4>Happy path</h4>
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="contact-details">Code entered is correct</a>
+            <a href="{% if data['contactMethod'] === 'sms' %}enter-your-new-email{% else %}enter-your-new-phone{% endif %}">Code entered is correct</a>
           </li>
         </ul>
         <h4>Business rule Errors</h4>
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            <a href="check-your-mobile?error=true">User gets OTP wrong</a>
+            <a href="error-otpwrong?referer=checkmobile">User gets OTP wrong</a>
           </li>
           <li>
-            <a href="error-otplimit?referer=checkmobile">User gets OTP wrong for the 4th time</a>
+            <a href="error-otpwronglimit?referer=checkmobile">User gets OTP wrong for the 4th time</a>
+          </li>
+
+          <li>
+            <a href="check-your-mobile?error=format">User enters code that isn't 6 digits</a>
+          </li>
+          <li>
+            <a href="check-your-mobile?error=blank">User submits blank field</a>
           </li>
         </ul>
       </div>
