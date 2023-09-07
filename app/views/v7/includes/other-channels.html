@@ -1,12 +1,14 @@
 <h2 class="nhsuk-heading-m">Other ways to update your details</h2>
 
-<p>You can update your contact details online through:</p>
+{% if data['login'] === 'true' %}
 
-<ul class="nhsuk-list nhsuk-list--bullet">
-  <li><a href="https://www.nhs.uk/nhs-app/account/">your NHS account</a></li>
-  <li><a href="https://www.nhs.uk/nhs-app/">the NHS App</a></li>
-</ul>
+  <p>You can use the <a href="https://www.nhsapp.service.nhs.uk/login">NHS website</a> or use the NHS App to change your mobile phone number or email address. <a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/nhs-app-account-and-settings/managing-your-nhs-app-account/#:~:text=How%20to%20change%20your%20NHS%20record%20contact%20details">To prove who you are and have full access change your contact details on the NHS website and NHS App.</a></p>
 
-<p>You can also update your contact details through your GP surgery.</p>
+{% else %}
 
-<p>If you are not registered with a GP you can find one using our <a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP</a> service.</p>
+  <p>You can <a href="https://www.nhsapp.service.nhs.uk/login">log in to the NHS website</a> or use the NHS App to change your mobile phone number or email address. <a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/nhs-app-account-and-settings/managing-your-nhs-app-account/#:~:text=How%20to%20change%20your%20NHS%20record%20contact%20details">Find out how to change your contact details on the NHS website and NHS App.</a></p>
+
+{% endif %}
+
+<p>Otherwise you need to contact your GP surgery.</p>
+<p>If you are not registered with a GP surgery or you have moved outside the catchment area of your current surgery, you can find one using our <a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP service.</a></p>

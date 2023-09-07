@@ -27,7 +27,7 @@
           <p>Please correct the following errors to continue:</p>
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#sms-otp">{% if data['error'] === 'format' %}Your code must be six numbers only{% elif data['error'] === 'blank' %}Enter the 6 digit security code sent to your {% if data['contactMethod'] === 'sms' %}mobile phone{% else %}email{% endif %}{% endif %}</a>
+              <a href="#sms-otp">{% if data['error'] === 'format' %}Security code must be 6 digits{% elif data['error'] === 'blank' %}Enter the security code{% endif %}</a>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
 
           {% if data['error'] | length %}
           <span id="nhs-no-error-error" class="nhsuk-error-message">
-            {% if data['error'] === 'format' %}Your code must be six numbers only{% elif data['error'] === 'blank' %}Enter the 6 digit security code{% endif %}
+            {% if data['error'] === 'format' %}Security code must be 6 digits{% elif data['error'] === 'blank' %}Enter the security code{% endif %}
           </span>
           {% endif %}
 

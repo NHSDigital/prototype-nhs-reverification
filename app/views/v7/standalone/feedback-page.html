@@ -1,0 +1,132 @@
+{% set serviceHome = '/v7/start' %}
+{% set feedbackType = 'step' %}
+{% set servicePhase = 'beta' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Provide feedback to improve the service
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <form action="feedback-confirmation" autocomplete="off" method="post">
+
+      <h1 class="nhsuk-heading-l" id="form-heading" tabindex="-1">Provide feedback to improve the service</h1>
+
+      <div class="nhsuk-hint"><p>Your feedback can help us improve the Add or correct your contact details
+        service.</p>
+        <p>All feedback will be anonymous.</p>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+        <div class="nhsuk-card--care__heading-container">
+          <h2 class="nhsuk-card--care__heading">
+            <span role="text">Do not use this form to:</span>
+          </h2>
+          <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="nhsuk-card__content">
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="-1">
+              <span class="nhsuk-details__summary-text">
+                  tell us about a medical problem
+              </span>
+            </summary>
+            <div class="nhsuk-details__text" id="nhsuk-details__text0">
+              <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="https://www.nhs.uk/contact-us/get-medical-help">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">find out how to get medical help</span>
+                </a>
+              </div>
+            </div>
+          </details>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text1" tabindex="-1">
+              <span class="nhsuk-details__summary-text">
+                  Submit request to change contact details
+              </span>
+            </summary>
+            <div class="nhsuk-details__text" id="nhsuk-details__text1">
+              <p>You can <a href="https://www.nhsapp.service.nhs.uk/login">log in to the NHS website</a> or use the NHS App to change your mobile phone number or email address. <a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/nhs-app-account-and-settings/managing-your-nhs-app-account/#:~:text=How%20to%20change%20your%20NHS%20record%20contact%20details">Find out how to change your contact details on the NHS website and NHS App.</a></p>
+              <p>Otherwise you need to contact your GP surgery.</p>
+              <p>If you are not registered with a GP surgery or you have moved outside the catchment area of your current surgery, you can find one using our <a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP service.</a></p>
+            </div>
+          </details>
+
+
+        </div>
+      </div>
+
+
+<!--      <p>The NHS website team does not access to individual patient information. If you have any questions or concerns-->
+<!--        about your patient record, please contact your current GP surgery.</p>-->
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-form-group"><label class="nhsuk-label" for="feedback" id="feedback--label">Describe what
+            happened on the page</label>
+            <div class="nhsuk-hint" id="feedback--hint">Do not include confidential or medical information in your
+              message. For example, your NHS number, date of birth, medical diagnosis or medical history.
+            </div>
+            <textarea aria-describedby="feedback--hint" aria-labelledby="feedback--label" autocomplete="off"
+                      class="nhsuk-textarea" id="feedback" list="autocompleteOff" maxlength="2000" name="feedback"
+                      rows="8"></textarea></div>
+        </fieldset>
+      </div>
+
+      <button aria-disabled="false" class="nhsuk-button" id="submit-provide-feedback" type="submit">
+        Send feedback
+      </button>
+    </form>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+
+    <details class="nhsuk-details dev-mode" role="group">
+      <summary class="nhsuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="nhsuk-details__summary-text">
+          Continue with testing scenario
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Happy path</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="feedback-confirmation">Feedback submitted</a>
+          </li>
+        </ul>
+        <h4>Business rule Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-feedback-limit">User has sent their feedback too many times</a>
+          </li>
+        </ul>
+        <h4>Notify Errors</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="error-notify-feedback-fail">Notify fails to send the message</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% set hideFeedback = 'true' %}
+  {% include 'v7/includes/footer.html' %}
+{% endblock %}
+
