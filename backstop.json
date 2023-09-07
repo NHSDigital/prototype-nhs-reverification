@@ -15,6 +15,10 @@
       "url": "http://localhost:3000/v7/start"
     },
     {
+      "label": "Reverification - triage-notified",
+      "url": "http://localhost:3000/v7/standalone/triage-notified"
+    },
+    {
       "label": "Reverification - triage-address",
       "url": "http://localhost:3000/v7/standalone/triage-address"
     },
@@ -147,12 +151,12 @@
       "url": "http://localhost:3000/v7/standalone/error-blocked"
     },
     {
-      "label": "Reverification - feedback-confirmation",
-      "url": "http://localhost:3000/v7/standalone/feedback-confirmation"
-    },
-    {
       "label": "Reverification - feedback-page",
       "url": "http://localhost:3000/v7/standalone/feedback-page"
+    },
+    {
+      "label": "Reverification - feedback-confirmation",
+      "url": "http://localhost:3000/v7/standalone/feedback-confirmation"
     },
     {
       "label": "Reverification - spinner",
@@ -205,6 +209,14 @@
     {
       "label": "Reverification - notification-sms-missing-reminder",
       "url": "http://localhost:3000/v7/notification-sms-missing-reminder"
+    },
+    {
+      "label": "Reverification - notification-sms-missing-reminder",
+      "url": "http://localhost:3000/v7/notification-email-confirmation"
+    },
+    {
+      "label": "Reverification - notification-sms-missing-reminder",
+      "url": "http://localhost:3000/v7/notification-email-security"
     },
     {
       "label": "Reverification - otp-email",
