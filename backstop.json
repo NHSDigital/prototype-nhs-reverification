@@ -211,11 +211,11 @@
       "url": "http://localhost:3000/v7/notification-sms-missing-reminder"
     },
     {
-      "label": "Reverification - notification-sms-missing-reminder",
+      "label": "Reverification - notification-sms-missing-confirmation",
       "url": "http://localhost:3000/v7/notification-email-confirmation"
     },
     {
-      "label": "Reverification - notification-sms-missing-reminder",
+      "label": "Reverification - notification-sms-missing-security",
       "url": "http://localhost:3000/v7/notification-email-security"
     },
     {
