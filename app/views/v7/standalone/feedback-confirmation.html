@@ -1,6 +1,6 @@
 {% set serviceHome = '/v7/start' %}
 {% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
+{% set feedbackType = 'final' %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -21,13 +21,15 @@ Thank you for your feedback
         </div>
       </div>
 
-      <p>Close this tab to go back to updating your details.</p></div>
+      {% if data['satisfied'] %}
+      <p>Close this tab to go back to updating your details.</p>
+      {% endif %}
 
     </div>
 
   </div>
-
 </div>
+
 {% endblock %}
 
 {% block footer %}
