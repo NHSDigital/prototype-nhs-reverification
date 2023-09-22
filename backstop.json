@@ -151,6 +151,18 @@
       "url": "http://localhost:3000/v7/standalone/error-blocked"
     },
     {
+      "label": "Reverification - error-under-16",
+      "url": "http://localhost:3000/v7/standalone/error-under-16"
+    },
+    {
+      "label": "Reverification - error-nojs",
+      "url": "http://localhost:3000/v7/standalone/error-nojs"
+    },
+    {
+      "label": "Reverification - error-maintenance",
+      "url": "http://localhost:3000/v7/standalone/error-maintenance"
+    },
+    {
       "label": "Reverification - feedback-page",
       "url": "http://localhost:3000/v7/standalone/feedback-page"
     },
@@ -215,8 +227,12 @@
       "url": "http://localhost:3000/v7/notification-email-confirmation"
     },
     {
-      "label": "Reverification - notification-sms-missing-security",
+      "label": "Reverification - notification-email-security",
       "url": "http://localhost:3000/v7/notification-email-security"
+    },
+    {
+      "label": "Reverification - notification-sms-security",
+      "url": "http://localhost:3000/v7/notification-sms-security"
     },
     {
       "label": "Reverification - otp-email",
