@@ -1,0 +1,57 @@
+{% set serviceHome = '/v6/start' %}
+{% set serviceFooter = 'v5/includes/footer' %}
+{% extends 'layout.html' %}
+
+{% set contactmethod = "sms" %}
+
+{% block pageTitle %}
+  Text message
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/notify-text.css" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block outerContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading-l">Text message</h1>
+
+    <div class="app-text-message">
+      <h2 class="nhsuk-heading-s">NHS</h2>
+      <p class="app-text-message__text">
+        {{ data['first-name'] or 'Sarah' }},<br>
+
+        Your mobile phone number has been updated.<br><br>
+
+        This message is sent to your old number for security reasons.<br><br>
+
+        If you did not make this change you can reverse it by emailing
+        <a href="mailto:england.addcorrectcontactdetails.stop@nhs.net">england.addcorrectcontactdetails.stop@nhs.net</a><br><br>
+
+        NHS<br><br>
+
+        National Service Desk 0300 303 5678
+
+      </p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

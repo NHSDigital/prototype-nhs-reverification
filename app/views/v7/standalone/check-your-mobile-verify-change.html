@@ -37,10 +37,12 @@
           <span class="nhsuk-details__summary-text"> Not received your security code?</span>
         </summary>
         <div id="nhsuk-details__text" class="nhsuk-details__text" aria-hidden="true">
-          <p> When we are really busy, it may take a bit longer for your code to arrive. <br><br><a href="#" onclick="return false;">Send the security code again</a></p>
+          <p> When we are really busy, it may take a bit longer for your code to arrive.</p>
+          <p><a href="?resend=true">Send the security code again</a> </p>
+          {% include "../includes/other-channels.html" %}
         </div>
       </details>
-
+      
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">

@@ -1,0 +1,32 @@
+{% set serviceHome = '/v7/start' %}
+<!--{% set servicePhase = 'beta' %}-->
+{% set feedbackType = '' %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Turn on Javascript to use this service
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-heading-l">Turn on Javascript to use this service</h1>
+
+      <p>Find out <a href="https://support.microsoft.com/en-us/office/enable-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361" target="_blank">how to enable Javascript for Windows</a>, or <a href="https://support.apple.com/en-gb/guide/safari/ibrw1074/14.0/mac/11.0" target="_blank">how to enable Javascript for Mac</a>.</p>
+
+      {% include "../includes/other-channels.html" %}
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer({
+    "links": [],
+    "copyright": "&copy; Crown copyright"
+  }) }}
+{% endblock %}
