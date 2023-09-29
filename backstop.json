@@ -183,10 +183,6 @@
       "url": "http://localhost:3000/v7/standalone/get-security-code?contactMethod=email"
     },
     {
-      "label": "Reverification - go-to-gp",
-      "url": "http://localhost:3000/v7/standalone/go-to-gp"
-    },
-    {
       "label": "Reverification - what-is-your-dob",
       "url": "http://localhost:3000/v7/standalone/what-is-your-dob"
     },

@@ -1,13 +1,13 @@
 <h2 class="nhsuk-heading-m">Other ways to update your details</h2>
 
-<p>If you are an NHS App user and have already proved who you are, you can change your mobile number or email address using the NHS App or by accessing your account through the NHS website. Find out more about
-  <a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/nhs-app-account-and-settings/managing-your-nhs-app-account/#:~:text=How%20to%20change%20your%20NHS%20record%20contact%20details">managing your contact details in the NHS App</a>.</p>
+{% if data['login'] === 'true' %}
+  <p>If you <a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/getting-started-with-the-nhs-app/proving-who-you-are-to-get-full-access/">have proved who you are and have full access</a>, you can change your mobile number or email address using the NHS App or by <a href="https://settings.login.nhs.uk/">accessing your account through the NHS website</a>.</p>
+{% else %}
+  <p>If you're an NHS App user and have already proved who you are, you can change your mobile number or email address using the NHS App or by <a href="https://settings.login.nhs.uk/">accessing your account through the NHS website</a>.</p>
+{% endif %}
+
+<p>Find out more about<a href="https://www.nhs.uk/nhs-app/nhs-app-help-and-support/nhs-app-account-and-settings/managing-your-nhs-app-account/">managing your account in the NHS App</a>, including how to change your contact details in your NHS record.</p>
   
 <p>You can also update your contact details through your GP surgery.</p>
 
-<p>If you are not registered with a GP surgery or you have moved outside the catchment area of your current surgery, you can find one using our
-  <a href="https://www.nhs.uk/service-search/find-a-gp">Find a GP service</a>.</p>
-
-{% if data['login'] === 'true' %}
-
-{% endif %}
+<p>If you're not registered with a GP surgery or you have moved outside the catchment area of your current surgery, <a href="https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/">find out how to register with a GP surgery</a>.</p>
